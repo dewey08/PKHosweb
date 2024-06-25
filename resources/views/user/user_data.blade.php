@@ -1,0 +1,63 @@
+@extends('layouts.user')
+@section('title','ZOffice || บุคคล')
+@section('content')
+<script>
+  function TypeAdmin() {
+      window.location.href = '{{ route('index') }}';
+  }
+</script>
+  <?php
+   if (Auth::check()) {
+      $type = Auth::user()->type;
+      $iduser = Auth::user()->id;
+  } else {
+      echo "<body onload=\"TypeAdmin()\"></body>";
+      exit();
+  }
+  $url = Request::url();
+  $pos = strrpos($url, '/') + 1;
+  ?>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    {{ __('You are logged in!  ') }}
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#saexampleModal">
+                      ข้อมูลบุคลากร
+                      </button>
+                      
+                      <!-- Modal -->
+                      <div class="modal fade" id="saexampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              ...
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

@@ -1,0 +1,23 @@
+.myTable thead tr{
+    background-color: rgb(2, 131, 136);
+    color: #ffffff;
+    text-align: center;
+}
+.myTable th .myTable td{
+    padding: 12px 5px;
+}
+.myTable tbody tr{
+    border-bottom: 1px solid #f30fcd;
+}
+.myTable tbody td{
+    font-size:5px;
+}
+.myTable tbody tr:nth-of-type(even){
+    background-color: #ffedeb;
+}
+.myTable tbody tr:last-of-type{
+    border-bottom: 3px solid #2ec4df;
+}
+.myTable tbody tr .active-row{
+    color: #2e43df;
+}

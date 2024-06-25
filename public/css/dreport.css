@@ -1,0 +1,31 @@
+/* .card{
+    border-radius: 3em 3em 3em 3em; 
+} */
+ 
+.cardshadow{
+    border-radius: 3em 3em 3em 3em;
+    box-shadow: 0 0 10px rgb(235, 192, 255);
+}
+.dshadow{
+    /* border-radius: 3em 3em 3em 3em; */
+    box-shadow: 0 0 10px rgb(235, 192, 255);
+}
+ 
+.cardreport{
+    border-radius: 3em 3em 3em 3em;
+    box-shadow: 0 0 10px rgb(235, 192, 255);
+    /* box-shadow: 0 0 10px rgb(247, 198, 176); */
+}
+
+ 
+.dcheckbox{         
+    width: 30px;
+    height: 30px;       
+    /* border-radius: 2em 2em 2em 2em; */
+    border: 10px solid rgb(235, 192, 255);
+    /* color: teal; */
+    /* border-color: teal; */
+    box-shadow: 0 0 10px rgb(235, 192, 255);
+    /* box-shadow: 0 0 10px teal; */
+}
+ 

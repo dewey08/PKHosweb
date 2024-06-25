@@ -1,0 +1,90 @@
+ 
+.card-ucs{
+    border-radius: 3em 3em 3em 3em;
+    border: none;
+    box-shadow: 0 0 10px rgb(14, 240, 240);
+    border:solid 1px #80acfd;
+}
+.card-ofc{
+    border-radius: 3em 3em 3em 3em;
+    border: none;
+    box-shadow: 0 0 10px rgb(10, 110, 223);
+    border:solid 1px #80acfd;
+}
+.card-lgo{
+    border-radius: 3em 3em 3em 3em;
+    border: none;
+    box-shadow: 0 0 10px teal;
+    border:solid 1px #80acfd;
+}
+.cardshadow{
+    border-radius: 3em 3em 3em 3em;
+    border: none;
+    box-shadow: 0 0 10px teal;
+    border:solid 1px #80acfd;
+}
+.d-shadow{
+    /* border-radius: 3em 3em 3em 3em; */
+    box-shadow: 0 0 10px teal;
+}
+.cardacc{
+    border-radius: 4em 4em 4em 4em;
+    box-shadow: 0 0 10px pink;
+    border:solid 1px #80acfd;
+    /* box-shadow: 0 0 10px rgb(232, 187, 243); */
+}
+.inputacc{
+    border-radius: 4em 4em 4em 4em;
+    border: none;
+    box-shadow: 0 0 10px pink;
+    border:solid 1px #80acfd;
+}
+.inputmedsalt{
+    border-radius: 4em 4em 4em 4em;
+    box-shadow: 0 0 10px rgb(189, 187, 187);
+}
+.cardmedsalt{
+    border-radius: 4em 4em 4em 4em;
+    box-shadow: 0 0 10px rgb(161, 160, 160);
+    /* box-shadow: 0 0 10px rgb(232, 187, 243); */
+}
+.cardclaim{
+    border-radius: 4em 4em 4em 4em;
+    box-shadow: 0 0 10px rgb(252, 161, 119);
+    border:solid 1px #80acfd;
+    /* box-shadow: 0 0 10px rgb(247, 198, 176); */
+}
+.inputaccs{
+    /* border-radius: 5em 5em 5em 5em; */
+    border: none;
+    box-shadow: 0 0 10px pink;
+    border:solid 1px #80acfd;
+    border-radius: 40px;
+}
+.add{
+    width: 60%;
+    height: 25px;
+    margin: 0 auto;
+    border: none; /* <-- This thing here */
+    border:solid 1px #ccc;
+    border-radius: 10px;
+}   
+
+ 
+.dcheckbox{         
+    width: 30px;
+    height: 30px;       
+    /* border-radius: 2em 2em 2em 2em; */
+    border: 10px solid pink;
+    /* color: teal; */
+    /* border-color: teal; */
+    box-shadow: 0 0 10px pink;
+    /* box-shadow: 0 0 10px teal; */
+}
+.cardot{
+    border-radius: 4em 4em 4em 4em;
+    box-shadow: 0 0 10px rgba(199, 181, 240);
+    border:solid 1px #f755ee;
+    /* box-shadow: 0 0 10px rgb(247, 198, 176); */
+}
+ 

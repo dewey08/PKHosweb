@@ -1,0 +1,37 @@
+<?xml version = "1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="SOGNSUMP62.xsl"?>
+<STMSUMP>
+<stmAccountID>SOGN</stmAccountID>
+<hcode>10978</hcode>
+<hname>โรงพยาบาลภูเขียวเฉลิมพระเกียรติ</hname>
+<AccPeriod desc = "ธันวาคม 2565">202212</AccPeriod>
+<dateStart>1  ธันวาคม 2565</dateStart>
+<dateEnd>31  ธันวาคม 2565</dateEnd>
+<dateDue>18  มกราคม  2566</dateDue>
+<dateIssue>10  มกราคม  2566</dateIssue>
+<stmno desc = "">10978_SOGNSUMP_202212</stmno>
+<acount>793</acount>
+<amount>535192.8600</amount>
+<thamount>ห้าแสนสามหมื่นห้าพันหนึ่งร้อยเก้าสิบสองบาทแปดสิบหกสตางค์</thamount>
+<atth desc ="สิ่งที่ส่งมาด้วย">
+<doc id ="1" desc ="บัญชีรายการแจ้งค่าใช้จ่ายฯ เลขที่ ">10978_SOGNSTMP_202212</doc>
+</atth>
+<chi>
+<image>logoCHI.jpg</image>
+</chi>
+<STMdat  code ="OP"   name = 'รายการผู้ป่วยนอก' desc1 ='ประเภทผู้ป่วยนอกทั่วไป' desc = 'บริการผู้ป่วยนอก' >
+<Gtotal>535192.8600</Gtotal>
+<tst>1</tst>
+<Dat  type ='B' desc = 'ยอดเบิก' desc1 ='จำนวนรายการ' desc2 = 'ยอดยกมา' desc3 = 'ยอดกันไว้'>
+<Tcount>793</Tcount>
+<Ttotal>535192.8600</Ttotal>
+<TFeecount>0</TFeecount>
+<TFeetotal>0.0000</TFeetotal>
+<Tamount desc = 'ยอดค่าใช้จ่าย'>535192.8600</Tamount>
+</Dat>
+</STMdat>
+<ticket>
+<id>38071</id>
+</ticket>
+<Notice>CHI : SSOP Generated document V2019.0.0 on 2023-01-11T08:35:28</Notice>
+</STMSUMP>

@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+     <!-- CSRF Token -->
+     <meta name="csrf-token" content="{{ csrf_token() }}">
+     <title>@yield('title')</title>
+    
+     <!-- Font Awesome -->
+     <link href="{{ asset('assets/fontawesome/css/all.css') }}" rel="stylesheet">
+    <!-- App favicon -->
+    {{-- <link rel="shortcut icon" href="{{ asset('apkclaim/images/favicon.ico') }}"> --}}
+    <link rel="shortcut icon" href="{{ asset('assets/images/logoZoffice2.ico') }}">
+
+    <!-- jquery.vectormap css -->
+    <link href="{{ asset('apkclaim/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}"
+        rel="stylesheet" type="text/css" />
+
+    <!-- twitter-bootstrap-wizard css -->
+    <link rel="stylesheet" href="{{ asset('apkclaim/libs/twitter-bootstrap-wizard/prettify.css') }}">
+    <!-- DataTables -->
+    <link href="{{ asset('apkclaim/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
+        type="text/css" />
+
+    <!-- Responsive datatable examples -->
+    <link href="{{ asset('apkclaim/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}"
+        rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Css -->
+    <link href="{{ asset('apkclaim/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{ asset('apkclaim/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{{ asset('apkclaim/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+
+    <link href="{{ asset('css/fullcalendar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
+   
+</head>
+<style>
+.select2-selection__rendered {
+    line-height: 38px !important;
+}
+.select2-container .select2-selection--single {
+    height: 39px !important;
+}
+.select2-selection__arrow {
+    height: 40px !important;
+}
+</style>
+
+<body data-topbar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <i class="ri-loader-line spin-icon"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href=" " class="logo logo-dark">
+                            {{-- <span class="logo-sm">
+                                    <img src="apkclaim/images/logo-sm.png" alt="logo-sm" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="apkclaim/images/logo-dark.png" alt="logo-dark" height="20">
+                                </span> --}}
+                        </a>
+
+                        <a href=" " class="logo logo-light">
+                            <span class="logo-sm"> 
+                                <img src="{{ asset('apkclaim/images/logo150.png') }}" alt="logo-sm-light" height="40">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="{{ asset('apkclaim/images/logo150.png') }}" alt="logo-sm-light" height="40">
+                                <label for="" style="color: white;font-size:25px;"
+                                    class="ms-2">PKClaim</label>
+                            </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect"
+                        id="vertical-menu-btn">
+                        <i class="ri-menu-2-line align-middle"></i>
+                    </button>
+                    {{-- <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                        Mega Menu
+                        <i class="mdi mdi-chevron-down"></i> 
+                    </button> --}}
+                    {{-- <a class="btn header-item waves-effect mt-3" href="{{url('bar')}}"><label for="" style="color: white">Dashboard</label></a> --}}
+                </div>
+
+                <div class="d-flex">
+
+                    <div class="dropdown d-inline-block me-4">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{-- <i class="ri-notification-3-line"></i> --}}
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            {{-- <span class="noti-dot"></span> --}}
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-2">
+                               
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+                                <a href="{{ route('logout') }}" class="text-reset notification-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-danger rounded-circle font-size-16">
+                                                <i class="fa-solid fa-right-from-bracket "></i>
+                                            </span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h6 class="mb-1">Logout</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1">ออกจากระบบ</p> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </a>
+ 
+                            </div>
+                            <div class="p-2 border-top">
+                                 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown d-inline-block user-dropdown">
+                        
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+                <!-- User details -->
+                <div class="user-profile text-center mt-3">
+                    <div class="">                       
+                        @if (Auth::user()->img == null)
+                        <img src="{{ asset('assets/images/default-image.jpg') }}" height="32px"
+                            width="32px" alt="Image" class="avatar-md rounded-circle">                                    
+                    @else
+                        <img src="{{ asset('storage/person/' . Auth::user()->img) }}" height="32px"
+                            width="32px" alt="Image" class="avatar-md rounded-circle">
+                    @endif
+                    </div>
+                    <div class="mt-3">
+                        <h4 class="font-size-16 mb-1">
+                            {{ Auth::user()->fname }} {{ Auth::user()->lname }}
+                        </h4>
+                        <span class="text-muted"><i
+                                class="ri-record-circle-line align-middle font-size-14 text-success"></i> Online</span>
+                    </div>
+                </div>
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled" id="side-menu">
+                        <li class="menu-title">Menu</li>
+
+                        <li>
+                            <a href="{{url('admin/home')}}" class="waves-effect">
+                                <i class="ri-dashboard-line"></i><span
+                                    class="badge rounded-pill bg-success float-end">3</span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="fa-solid fa-user-tie text-secondary"></i>
+                                <span>บุคลากร</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="true"> 
+                                <li><a href="{{url('person/person_index')}}">ข้อมูลบุคลากร</a></li>                               
+                                <li><a href="{{url('person/depsub_index')}}">ประชุมภายนอก</a></li> 
+                                <li><a href="{{url('person/depsubsub_index')}}">ประชุมภายใน</a></li> 
+                                <li><a href="{{url('person/person_index_add')}}">เพิ่มข้อมูลบุคลากร</a></li>
+                            </ul>
+                        </li>
+
+                        {{-- <li>
+                          <a href="javascript: void(0);" class="has-arrow waves-effect">
+                              <i class="fa-solid fa-person-circle-check text-warning"></i>
+                              <span>เงื่อนไขพิเศษเขต 9</span>
+                          </a>
+                          <ul class="sub-menu" aria-expanded="true">     
+                              <li><a href="javascript: void(0);">2563</a></li>
+                              <li><a href="javascript: void(0);">2564</a></li>
+                              <li><a href="javascript: void(0);">2565</a></li>
+                          </ul>
+                      </li> --}}
+
+                       
+
+
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+
+                @yield('content')
+
+            </div>
+            <!-- End Page-content -->
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © โรงพยาบาลภูเขียวเฉลิมพระเกียรติ
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block">
+                                Created with <i class="mdi mdi-heart text-danger"></i> by PKClaim
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+  
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="{{ asset('apkclaim/libs/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('apkclaim/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('apkclaim/libs/metismenu/metisMenu.min.js') }}"></script>
+    <script src="{{ asset('apkclaim/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('apkclaim/libs/node-waves/waves.min.js') }}"></script>
+
+    <!-- twitter-bootstrap-wizard js -->
+    <script src="{{ asset('apkclaim/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js') }}"></script>
+
+    <script src="{{ asset('apkclaim/libs/twitter-bootstrap-wizard/prettify.js') }}"></script>
+
+    <!-- form wizard init -->
+    <script src="{{ asset('apkclaim/js/pages/form-wizard.init.js') }}"></script>
+
+    <!-- jquery.vectormap map -->
+    <script src="{{ asset('apkclaim/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
+    <script src="{{ asset('apkclaim/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js') }}"></script>
+
+    <!-- Required datatable js -->
+    <script src="{{ asset('apkclaim/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('apkclaim/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+
+    <!-- Responsive examples -->
+    <script src="{{ asset('apkclaim/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('apkclaim/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
+
+    {{-- <script src="{{ asset('apkclaim/js/pages/dashboard.init.js') }}"></script> --}}
+    <script src="{{ asset('js/select2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('fullcalendar/lib/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('fullcalendar/fullcalendar.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('fullcalendar/lang/th.js') }}"></script>
+
+    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- App js -->
+    <script src="{{ asset('apkclaim/js/app.js') }}"></script>
+
+    @yield('footer')
+
+   
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('#example').DataTable();
+          $('#example2').DataTable();
+          $('#example3').DataTable();
+          $('#example4').DataTable();
+          $('#example5').DataTable();       
+      });
+  
+      $(document).ready(function(){
+            $('#insert_personForm').on('submit',function(e){
+                  e.preventDefault();
+                    //   alert('Person');
+                  var form = this;
+                
+                  $.ajax({
+                    url:$(form).attr('action'),
+                    method:$(form).attr('method'),
+                    data:new FormData(form),
+                    processData:false,
+                    dataType:'json',
+                    contentType:false,
+                    beforeSend:function(){
+                      $(form).find('span.error-text').text('');
+                    },
+                    success:function(data){
+                      if (data.status == 0 ) {  
+                        Swal.fire({
+                          icon: 'error',
+                          title: 'Username...!!',
+                          text: 'Username นี้ได้ถูกใช้ไปแล้ว!',
+                        }).then((result) => {
+                          if (result.isConfirmed) {                  
+                          
+                          }
+                        })   
+                      } else {                         
+                        Swal.fire({
+                          title: 'บันทึกข้อมูลสำเร็จ',
+                          text: "You Insert data success",
+                          icon: 'success',
+                          showCancelButton: false,
+                          confirmButtonColor: '#06D177', 
+                          confirmButtonText: 'เรียบร้อย'
+                        }).then((result) => {
+                          if (result.isConfirmed) {                  
+                            window.location="{{route('person.person_index')}}"; //
+                          }
+                        })      
+                      }
+                    }
+                  });
+            }); 
+      });
+  
+      $(document).ready(function(){
+            $('#update_personForm').on('submit',function(e){
+              e.preventDefault();
+            //   alert('Person');
+              var form = this;
+            
+              $.ajax({
+                url:$(form).attr('action'),
+                method:$(form).attr('method'),
+                data:new FormData(form),
+                processData:false,
+                dataType:'json',
+                contentType:false,
+                beforeSend:function(){
+                  $(form).find('span.error-text').text('');
+                },
+                success:function(data){
+                  if (data.status == 0 ) {  
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Username...!!',
+                      text: 'Username นี้ได้ถูกใช้ไปแล้ว!',
+                    }).then((result) => {
+                      if (result.isConfirmed) {                  
+                      
+                      }
+                    })   
+                  } else {                         
+                    Swal.fire({
+                      title: 'แก้ไขข้อมูลสำเร็จ',
+                      text: "You Edit data success",
+                      icon: 'success',
+                      showCancelButton: false,
+                      confirmButtonColor: '#06D177', 
+                      confirmButtonText: 'เรียบร้อย'
+                    }).then((result) => {
+                      if (result.isConfirmed) {                  
+                        window.location="{{route('person.person_index')}}"; //
+                      }
+                    })      
+                  }
+                }
+              });
+          }); 
+      });
+  
+      $(document).ready(function(){
+          $('#dep').select2({
+              placeholder:"กลุ่มงาน",
+              allowClear:true
+          });
+          $('#depsub').select2({
+              placeholder:"ฝ่าย/แผนก",
+              allowClear:true
+          });
+          $('#depsubsub').select2({
+              placeholder:"หน่วยงาน",
+              allowClear:true
+          });
+          $('#depsubsubtrue').select2({
+              placeholder:"หน่วยงานที่ปฎิบัติจริง",
+              allowClear:true
+          });
+          $('#position').select2({
+              placeholder:"ตำแหน่ง",
+              allowClear:true
+          });
+          $('#statusA').select2({
+              placeholder:"สถานะ",
+              allowClear:true
+          });
+          $('#pname').select2({
+              placeholder:"--เลือก--",
+              allowClear:true
+          });
+          $('#users_group_id').select2({
+              placeholder:"--เลือก--",
+              allowClear:true
+          });
+          $('#users_type_id').select2({
+              placeholder:"--เลือก--",
+              allowClear:true
+          }); 
+                
+         
+      });
+  </script>
+  <script>
+        $('.department').change(function () {
+                if ($(this).val() != '') {
+                        var select = $(this).val();
+                        var _token = $('input[name="_token"]').val();
+                        $.ajax({
+                                url: "{{route('person.department')}}",
+                                method: "GET",
+                                data: {
+                                        select: select,
+                                        _token: _token
+                                },
+                                success: function (result) {
+                                        $('.department_sub').html(result);
+                                }
+                        })
+                        // console.log(select);
+                }
+        });
+  
+        $('.department_sub').change(function () {
+                if ($(this).val() != '') {
+                        var select = $(this).val();
+                        var _token = $('input[name="_token"]').val();
+                        $.ajax({
+                                url: "{{route('person.departmenthsub')}}",
+                                method: "GET",
+                                data: {
+                                        select: select,
+                                        _token: _token
+                                },
+                                success: function (result) {
+                                        $('.department_sub_sub').html(result);
+                                }
+                        })
+                        // console.log(select);
+                }
+        });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+ 
+ 
+.inputtb{
+    border-radius: 4em 4em 4em 4em;
+    border: none;
+    box-shadow: 0 0 10px rgba(93, 199, 241);
+    border:solid 1px #80acfd;
+}
+/* rgba(93, 199, 241, 0.74)" */
+.cardtb{
+    border-radius: 4em 4em 4em 4em;
+    /* border: none; */
+    box-shadow: 0 0 10px rgba(93, 199, 241);
+    /* box-shadow: 0 0 10px rgb(247, 198, 176); */
+    border:solid 1px #80acfd;
+} 
+.dcheckbox{         
+    width: 30px;
+    height: 30px;       
+    border-radius: 2em 2em 2em 2em;
+    border: 10px solid rgba(93, 199, 241); 
+    box-shadow: 0 0 10px rgba(93, 199, 241);
+    border:solid 1px #80acfd;
+}
+.myTable tbody tr{
+    font-size:13px;
+    height: 13px;
+}
+ 

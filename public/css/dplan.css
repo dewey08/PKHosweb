@@ -1,0 +1,35 @@
+ 
+ 
+.inputplan{
+    border-radius: 4em 4em 4em 4em;
+    border: none;
+    box-shadow: 0 0 10px rgb(250, 209, 209);
+    border:solid 1px #80acfd;
+}
+.inputmedsalt{
+    border-radius: 4em 4em 4em 4em;
+    border: none;
+    box-shadow: 0 0 10px rgb(250, 209, 209);
+    border:solid 1px #80acfd;
+}
+ 
+.cardplan{
+    border-radius: 4em 4em 4em 4em;
+    /* border: none; */
+    box-shadow: 0 0 10px rgb(250, 209, 209);
+    /* box-shadow: 0 0 10px rgb(247, 198, 176); */
+    border:solid 1px #80acfd;
+} 
+.dcheckbox{         
+    width: 30px;
+    height: 30px;       
+    border-radius: 2em 2em 2em 2em;
+    border: 10px solid rgb(250, 209, 209); 
+    box-shadow: 0 0 10px rgb(250, 209, 209); 
+    border:solid 1px #80acfd;
+}
+.myTable tbody tr{
+    font-size:13px;
+    height: 13px;
+}
+ 

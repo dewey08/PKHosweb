@@ -1,0 +1,30 @@
+.table thead tr th {
+    font-family: sans-serif;
+    font-size: 12px;
+    background-color: #2cbec9;
+    color: #ffffff;
+    text-align: center;
+}
+
+.table td {
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+    .myTable th .myTable td{
+        padding: 3px 3px;
+    }
+    .myTable tbody tr{
+        border-bottom: 1px solid #08d1a9;
+    }
+    .myTable tbody tr:nth-of-type(even){
+        background-color: #c7eff5;
+    }
+    .myTable tbody tr:last-of-type{
+        border-bottom: 2px solid #f3760f;
+    }
+    .myTable tbody tr .active-row{
+        color: #f3760f;
+    }
+    /* 08d1a9 */
+    /* color: #f3760f; */

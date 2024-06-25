@@ -1,0 +1,1363 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>bootstrap-datepicker documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="None" href="index.html#document-index"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="http://bootstrap-datepicker.readthedocs.io/en/latest/" />
+
+<link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
+
+<script type="text/javascript" src="_static/readthedocs-data.js"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = 'index'
+</script>
+
+<script type="text/javascript" src="_static/readthedocs-dynamic-include.js"></script>
+
+<!-- end RTD <extrahead> --></head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html#document-index" class="icon icon-home"> bootstrap-datepicker
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-markup">Markup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#input">input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#component">component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#date-range">date-range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#inline-or-embedded">inline or embedded</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-options">Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#autoclose">autoclose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assumenearbyyear">assumeNearbyYear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#beforeshowday">beforeShowDay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#beforeshowmonth">beforeShowMonth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#beforeshowyear">beforeShowYear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#beforeshowdecade">beforeShowDecade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#beforeshowcentury">beforeShowCentury</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#calendarweeks">calendarWeeks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#clearbtn">clearBtn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#container">container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#datesdisabled">datesDisabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#daysofweekdisabled">daysOfWeekDisabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#daysofweekhighlighted">daysOfWeekHighlighted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#defaultviewdate">defaultViewDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#disabletouchkeyboard">disableTouchKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#enableonreadonly">enableOnReadonly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#enddate">endDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#forceparse">forceParse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#format">format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#immediateupdates">immediateUpdates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#inputs">inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#keepemptyvalues">keepEmptyValues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#keyboardnavigation">keyboardNavigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#language">language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#maxviewmode">maxViewMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#minviewmode">minViewMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#multidate">multidate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#multidateseparator">multidateSeparator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#orientation">orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#showonfocus">showOnFocus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#startdate">startDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#startview">startView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#templates">templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#showweekdays">showWeekDays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#title">title</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#todaybtn">todayBtn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#todayhighlight">todayHighlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#toggleactive">toggleActive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#updateviewdate">updateViewDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#weekstart">weekStart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#zindexoffset">zIndexOffset</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#quick-reference">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-methods">Methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#destroy">destroy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#show">show</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#hide">hide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#update">update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#setdate">setDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#setutcdate">setUTCDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#setdates">setDates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#cleardates">clearDates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#setutcdates">setUTCDates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#getdate">getDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#getutcdate">getUTCDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#getdates">getDates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#getutcdates">getUTCDates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#getstartdate">getStartDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#getenddate">getEndDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#setstartdate">setStartDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#setenddate">setEndDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#setdatesdisabled">setDatesDisabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#setdaysofweekdisabled">setDaysOfWeekDisabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#setdaysofweekhighlighted">setDaysOfWeekHighlighted</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-events">Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#show">show</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#hide">hide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#cleardate">clearDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#changedate">changeDate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#changemonth">changeMonth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#changeyear">changeYear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#changedecade">changeDecade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#changecentury">changeCentury</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-keyboard">Keyboard support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#up-down-left-right-arrow-keys">up, down, left, right arrow keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#enter">enter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#escape">escape</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-i18n">I18N</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html#document-index">bootstrap-datepicker</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html#document-index">Docs</a> &raquo;</li>
+        
+      <li>bootstrap-datepicker  documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/uxsolutions/bootstrap-datepicker/blob/master/docs/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bootstrap-datepicker">
+<h1>bootstrap-datepicker<a class="headerlink" href="#bootstrap-datepicker" title="Permalink to this headline">¶</a></h1>
+<p>Bootstrap-datepicker provides a flexible datepicker widget in the Bootstrap style.</p>
+<div class="figure align-center">
+<img alt="_images/demo_head.png" src="_images/demo_head.png" />
+</div>
+<p>Versions are incremented according to <a class="reference external" href="http://semver.org/">semver</a>.</p>
+<p><a class="reference external" href="https://eternicode.github.io/bootstrap-datepicker/">Online Demo</a></p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://getbootstrap.com/">Bootstrap</a> 2.0.4+</li>
+<li><a class="reference external" href="https://jquery.com/">jQuery</a> 1.7.1+</li>
+</ul>
+<p>These are the specific versions bootstrap-datepicker is tested against (<code class="docutils literal"><span class="pre">js</span></code> files) and built against (<code class="docutils literal"><span class="pre">css</span></code> files).  Use other versions at your own risk.</p>
+</div>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Requires bootstrap&#8217;s dropdown component (<code class="docutils literal"><span class="pre">dropdowns.less</span></code>) for some styles, and bootstrap&#8217;s sprites (<code class="docutils literal"><span class="pre">sprites.less</span></code> and associated images) for arrows.</p>
+<p>A standalone .css file (including necessary dropdown styles and alternative, text-based arrows) can be generated by running <code class="docutils literal"><span class="pre">build/build_standalone.less</span></code> through the <code class="docutils literal"><span class="pre">lessc</span></code> compiler:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span> <span class="nx">lessc</span> <span class="nx">build</span><span class="o">/</span><span class="nx">build_standalone</span><span class="p">.</span><span class="nx">less</span> <span class="nx">datepicker</span><span class="p">.</span><span class="nx">css</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>Call the datepicker via javascript:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="section" id="data-api">
+<h3>Data API<a class="headerlink" href="#data-api" title="Permalink to this headline">¶</a></h3>
+<p>As with bootstrap&#8217;s own plugins, datepicker provides a data-api that can be used to instantiate datepickers without the need for custom javascript.  For most datepickers, simply set <code class="docutils literal"><span class="pre">data-provide=&quot;datepicker&quot;</span></code> on the element you want to initialize, and it will be intialized lazily, in true bootstrap fashion.  For inline datepickers, use <code class="docutils literal"><span class="pre">data-provide=&quot;datepicker-inline&quot;</span></code>; these will be immediately initialized on page load, and cannot be lazily loaded.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">data-provide</span><span class="o">=</span><span class="s">&quot;datepicker&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Markup with component</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;input-group date&quot;</span> <span class="na">data-provide</span><span class="o">=</span><span class="s">&quot;datepicker&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;input-group-addon&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-th&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>You can disable datepicker&#8217;s data-api in the same way as you would disable other bootstrap plugins:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s1">&#39;.datepicker.data-api&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="index.html#document-options"><span class="doc">Options</span></a> are passed to the <code class="docutils literal"><span class="pre">datepicker</span></code> function via an options hash at instantiation:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">({</span>
+    <span class="nx">format</span><span class="o">:</span> <span class="s1">&#39;mm/dd/yyyy&#39;</span><span class="p">,</span>
+    <span class="nx">startDate</span><span class="o">:</span> <span class="s1">&#39;-3d&#39;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Most options may be provided as data-attributes on the target element:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;datepicker&quot;</span> <span class="na">data-date-format</span><span class="o">=</span><span class="s">&quot;mm/dd/yyyy&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">({</span>
+    <span class="nx">startDate</span><span class="o">:</span> <span class="s1">&#39;-3d&#39;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Defaults for all options can be modified directly by changing values in the <code class="docutils literal"><span class="pre">$.fn.datepicker.defaults</span></code> hash:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">datepicker</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">format</span> <span class="o">=</span> <span class="s2">&quot;mm/dd/yyyy&quot;</span><span class="p">;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">({</span>
+    <span class="nx">startDate</span><span class="o">:</span> <span class="s1">&#39;-3d&#39;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stylesheets">
+<h3>Stylesheets<a class="headerlink" href="#stylesheets" title="Permalink to this headline">¶</a></h3>
+<p>There are a few different stylesheets included in the library. This is an overview of what each file is to be used for:</p>
+<p><code class="code docutils literal"><span class="pre">bootstrap-datepicker.css</span></code> gives legacy support for twitter bootstrap v2, <code class="code docutils literal"><span class="pre">bootstrap-datepicker3.css</span></code> is used for twitter bootstrap v3 support
+and <code class="code docutils literal"><span class="pre">bootstrap-datepicker.standalone.css</span></code> can be used to include the datepicker without depending on the twitter bootstrap library.</p>
+</div>
+<div class="section" id="no-conflict-mode">
+<h3>No Conflict mode<a class="headerlink" href="#no-conflict-mode" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">$.fn.datepicker.noConflict</span></code> provides a way to avoid conflict with other jQuery datepicker plugins:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">datepicker</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">datepicker</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">();</span> <span class="c1">// return $.fn.datepicker to previously assigned value</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">bootstrapDP</span> <span class="o">=</span> <span class="nx">datepicker</span><span class="p">;</span>                 <span class="c1">// give $().bootstrapDP the bootstrap-datepicker functionality</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<span id="document-markup"></span><div class="section" id="markup">
+<h3>Markup<a class="headerlink" href="#markup" title="Permalink to this headline">¶</a></h3>
+<p>The following are examples of supported markup.  On their own, these will not provide a datepicker widget; you will need to instantiate the datepicker on the markup.</p>
+<div class="section" id="input">
+<h4>input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
+<p>The simplest case: focusing the input (clicking or tabbing into it) will show the picker.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;02-16-2012&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/markup_input.png" src="_images/markup_input.png" />
+</div>
+</div>
+<div class="section" id="component">
+<h4>component<a class="headerlink" href="#component" title="Permalink to this headline">¶</a></h4>
+<p>Adding the <code class="docutils literal"><span class="pre">date</span></code> class to an <code class="docutils literal"><span class="pre">input-group</span></code> bootstrap component will allow the <code class="docutils literal"><span class="pre">input-group-addon</span></code> elements to trigger the picker.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;input-group date&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;12-02-2012&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;input-group-addon&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-th&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/markup_component.png" src="_images/markup_component.png" />
+</div>
+</div>
+<div class="section" id="date-range">
+<span id="daterange"></span><h4>date-range<a class="headerlink" href="#date-range" title="Permalink to this headline">¶</a></h4>
+<p>Using the <code class="docutils literal"><span class="pre">input-daterange</span></code> construct with multiple child inputs will instantiate one picker per input and link them together to allow selecting ranges.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;input-group input-daterange&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2012-04-05&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;input-group-addon&quot;</span><span class="p">&gt;</span>to<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2012-04-19&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/markup_daterange.png" src="_images/markup_daterange.png" />
+</div>
+<p>Note that that <code class="docutils literal"><span class="pre">input-daterange</span></code> itself does not implement the <code class="docutils literal"><span class="pre">datepicker</span></code> methods. Methods should be directly called to the inputs. For example:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.input-daterange input&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">(</span><span class="s1">&#39;clearDates&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inline-or-embedded">
+<h4>inline or embedded<a class="headerlink" href="#inline-or-embedded" title="Permalink to this headline">¶</a></h4>
+<p>Instantiating the datepicker on a simple div will give an embedded picker that is always visible.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-date</span><span class="o">=</span><span class="s">&quot;12/03/2012&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/markup_inline.png" src="_images/markup_inline.png" />
+</div>
+<p>Example to save the embedded datepicker value to a hidden field</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;datepicker&quot;</span> <span class="na">data-date</span><span class="o">=</span><span class="s">&quot;12/03/2012&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;my_hidden_input&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#datepicker&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;changeDate&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#my_hidden_input&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">(</span><span class="s1">&#39;getFormattedDate&#39;</span><span class="p">)</span>
+    <span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+<span id="document-options"></span><div class="section" id="options">
+<h3>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<p>All options that take a &#8220;Date&#8221; can handle a <code class="docutils literal"><span class="pre">Date</span></code> object; a String formatted according to the given <code class="docutils literal"><span class="pre">format</span></code>; or a timedelta relative to today, eg &#8220;-1d&#8221;, &#8220;+6m +1y&#8221;, etc, where valid units are &#8220;d&#8221; (day), &#8220;w&#8221; (week), &#8220;m&#8221; (month), and &#8220;y&#8221; (year). Use &#8220;0&#8221; as today.
+There are also aliases for the relative timedelta&#8217;s: &#8220;yesterday&#8221; equals &#8220;-1d&#8221;, &#8220;today&#8221; is equal to &#8220;+0d&#8221; and &#8220;tomorrow&#8221; is equal to &#8220;+1d&#8221;.</p>
+<p>Most options can be provided via data-attributes.  An option can be converted to a data-attribute by taking its name, replacing each uppercase letter with its lowercase equivalent preceded by a dash, and prepending &#8220;data-date-&#8221; to the result.  For example, <code class="docutils literal"><span class="pre">startDate</span></code> would be <code class="docutils literal"><span class="pre">data-date-start-date</span></code>, <code class="docutils literal"><span class="pre">format</span></code> would be <code class="docutils literal"><span class="pre">data-date-format</span></code>, and <code class="docutils literal"><span class="pre">daysOfWeekDisabled</span></code> would be <code class="docutils literal"><span class="pre">data-date-days-of-week-disabled</span></code>.</p>
+<p>See the <a class="reference internal" href="#quick-reference">quick reference</a> for an overview of all options and their default values</p>
+<div class="section" id="autoclose">
+<h4>autoclose<a class="headerlink" href="#autoclose" title="Permalink to this headline">¶</a></h4>
+<p>Boolean.  Default: false</p>
+<p>Whether or not to close the datepicker immediately when a date is selected.</p>
+</div>
+<div class="section" id="assumenearbyyear">
+<h4>assumeNearbyYear<a class="headerlink" href="#assumenearbyyear" title="Permalink to this headline">¶</a></h4>
+<p>Boolean or Integer.  Default: false</p>
+<p>If true, manually-entered dates with two-digit years, such as &#8220;5/1/15&#8221;, will be parsed as &#8220;2015&#8221;, not &#8220;15&#8221;. If the year is less than 10 years in advance, the picker will use the current century, otherwise, it will use the previous one. For example &#8220;5/1/15&#8221; would parse to May 1st, 2015, but &#8220;5/1/97&#8221; would be May 1st, 1997.</p>
+<p>To configure the number of years in advance that the picker will still use the current century, use an Integer instead of the Boolean true. E.g. &#8220;assumeNearbyYear: 20&#8221;</p>
+</div>
+<div class="section" id="beforeshowday">
+<h4>beforeShowDay<a class="headerlink" href="#beforeshowday" title="Permalink to this headline">¶</a></h4>
+<p>Function(Date).  Default: $.noop</p>
+<p>A function that takes a date as a parameter and returns one of the following values:</p>
+<blockquote>
+<div><ul class="simple">
+<li>undefined to have no effect</li>
+<li>A Boolean, indicating whether or not this date is selectable</li>
+<li>A String representing additional CSS classes to apply to the date&#8217;s cell</li>
+<li>An object with the following properties:<ul>
+<li><code class="docutils literal"><span class="pre">enabled</span></code>: same as the Boolean value above</li>
+<li><code class="docutils literal"><span class="pre">classes</span></code>: same as the String value above</li>
+<li><code class="docutils literal"><span class="pre">tooltip</span></code>: a tooltip to apply to this date, via the <code class="docutils literal"><span class="pre">title</span></code> HTML attribute</li>
+<li><code class="docutils literal"><span class="pre">content</span></code>: the content to display in the day cell, rather than the default (day of month as text)</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="beforeshowmonth">
+<h4>beforeShowMonth<a class="headerlink" href="#beforeshowmonth" title="Permalink to this headline">¶</a></h4>
+<p>Function(Date).  Default: $.noop</p>
+<p>A function that takes a date as a parameter and returns one of the following values:</p>
+<blockquote>
+<div><ul class="simple">
+<li>undefined to have no effect</li>
+<li>A Boolean, indicating whether or not this month is selectable</li>
+<li>A String representing additional CSS classes to apply to the month&#8217;s cell</li>
+<li>An object with the following properties:<ul>
+<li><code class="docutils literal"><span class="pre">enabled</span></code>: same as the Boolean value above</li>
+<li><code class="docutils literal"><span class="pre">classes</span></code>: same as the String value above</li>
+<li><code class="docutils literal"><span class="pre">tooltip</span></code>: a tooltip to apply to this date, via the <code class="docutils literal"><span class="pre">title</span></code> HTML attribute</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="beforeshowyear">
+<h4>beforeShowYear<a class="headerlink" href="#beforeshowyear" title="Permalink to this headline">¶</a></h4>
+<p>Function(Date).  Default: $.noop</p>
+<p>A function that takes a date as a parameter and returns one of the following values:</p>
+<blockquote>
+<div><ul class="simple">
+<li>undefined to have no effect</li>
+<li>A Boolean, indicating whether or not this year is selectable</li>
+<li>A String representing additional CSS classes to apply to the year&#8217;s cell</li>
+<li>An object with the following properties:<ul>
+<li><code class="docutils literal"><span class="pre">enabled</span></code>: same as the Boolean value above</li>
+<li><code class="docutils literal"><span class="pre">classes</span></code>: same as the String value above</li>
+<li><code class="docutils literal"><span class="pre">tooltip</span></code>: a tooltip to apply to this year, via the <code class="docutils literal"><span class="pre">title</span></code> HTML attribute</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="beforeshowdecade">
+<h4>beforeShowDecade<a class="headerlink" href="#beforeshowdecade" title="Permalink to this headline">¶</a></h4>
+<p>Function(Date).  Default: $.noop</p>
+<p>A function that takes a date as a parameter and returns one of the following values:</p>
+<blockquote>
+<div><ul class="simple">
+<li>undefined to have no effect</li>
+<li>A Boolean, indicating whether or not this year is selectable</li>
+<li>A String representing additional CSS classes to apply to the year&#8217;s cell</li>
+<li>An object with the following properties:<ul>
+<li><code class="docutils literal"><span class="pre">enabled</span></code>: same as the Boolean value above</li>
+<li><code class="docutils literal"><span class="pre">classes</span></code>: same as the String value above</li>
+<li><code class="docutils literal"><span class="pre">tooltip</span></code>: a tooltip to apply to this year, via the <code class="docutils literal"><span class="pre">title</span></code> HTML attribute</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="beforeshowcentury">
+<h4>beforeShowCentury<a class="headerlink" href="#beforeshowcentury" title="Permalink to this headline">¶</a></h4>
+<p>Function(Date).  Default: $.noop</p>
+<p>A function that takes a date as a parameter and returns one of the following values:</p>
+<blockquote>
+<div><ul class="simple">
+<li>undefined to have no effect</li>
+<li>A Boolean, indicating whether or not this year is selectable</li>
+<li>A String representing additional CSS classes to apply to the year&#8217;s cell</li>
+<li>An object with the following properties:<ul>
+<li><code class="docutils literal"><span class="pre">enabled</span></code>: same as the Boolean value above</li>
+<li><code class="docutils literal"><span class="pre">classes</span></code>: same as the String value above</li>
+<li><code class="docutils literal"><span class="pre">tooltip</span></code>: a tooltip to apply to this year, via the <code class="docutils literal"><span class="pre">title</span></code> HTML attribute</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="calendarweeks">
+<h4>calendarWeeks<a class="headerlink" href="#calendarweeks" title="Permalink to this headline">¶</a></h4>
+<p>Boolean. Default: false</p>
+<p>Whether or not to show week numbers to the left of week rows.</p>
+<div class="figure align-center">
+<img alt="_images/option_calendarweeks.png" src="_images/option_calendarweeks.png" />
+</div>
+</div>
+<div class="section" id="clearbtn">
+<h4>clearBtn<a class="headerlink" href="#clearbtn" title="Permalink to this headline">¶</a></h4>
+<p>Boolean.  Default: false</p>
+<p>If true, displays a &#8220;Clear&#8221; button at the bottom of the datepicker to clear the input value. If &#8220;autoclose&#8221; is also set to true, this button will also close the datepicker.</p>
+<div class="figure align-center">
+<img alt="_images/option_clearbtn.png" src="_images/option_clearbtn.png" />
+</div>
+</div>
+<div class="section" id="container">
+<h4>container<a class="headerlink" href="#container" title="Permalink to this headline">¶</a></h4>
+<p>String.  Default: &#8220;body&#8221;</p>
+<p>Appends the date picker popup to a specific element; eg: container: &#8216;#picker-container&#8217; (will default to &#8220;body&#8221;)</p>
+</div>
+<div class="section" id="datesdisabled">
+<span id="id1"></span><h4>datesDisabled<a class="headerlink" href="#datesdisabled" title="Permalink to this headline">¶</a></h4>
+<p>String, Array.  Default: []</p>
+<p>Array of date strings or a single date string formatted in the given date format</p>
+</div>
+<div class="section" id="daysofweekdisabled">
+<span id="id2"></span><h4>daysOfWeekDisabled<a class="headerlink" href="#daysofweekdisabled" title="Permalink to this headline">¶</a></h4>
+<p>String, Array.  Default: []</p>
+<p>Days of the week that should be disabled. Values are 0 (Sunday) to 6 (Saturday). Multiple values should be comma-separated. Example: disable weekends: <code class="docutils literal"><span class="pre">'06'</span></code> or <code class="docutils literal"><span class="pre">'0,6'</span></code> or <code class="docutils literal"><span class="pre">[0,6]</span></code>.</p>
+<div class="figure align-center">
+<img alt="_images/option_daysofweekdisabled.png" src="_images/option_daysofweekdisabled.png" />
+</div>
+</div>
+<div class="section" id="daysofweekhighlighted">
+<span id="id3"></span><h4>daysOfWeekHighlighted<a class="headerlink" href="#daysofweekhighlighted" title="Permalink to this headline">¶</a></h4>
+<p>String, Array.  Default: []</p>
+<p>Days of the week that should be highlighted. Values are 0 (Sunday) to 6 (Saturday). Multiple values should be comma-separated. Example: highlight weekends: <code class="docutils literal"><span class="pre">'06'</span></code> or <code class="docutils literal"><span class="pre">'0,6'</span></code> or <code class="docutils literal"><span class="pre">[0,6]</span></code>.</p>
+</div>
+<div class="section" id="defaultviewdate">
+<h4>defaultViewDate<a class="headerlink" href="#defaultviewdate" title="Permalink to this headline">¶</a></h4>
+<p>Date, String or Object with keys <code class="docutils literal"><span class="pre">year</span></code>, <code class="docutils literal"><span class="pre">month</span></code>, and <code class="docutils literal"><span class="pre">day</span></code>. Default: today</p>
+<p>Date to view when initially opening the calendar. The internal value of the date remains today as default, but when the datepicker is first opened the calendar will open to <code class="docutils literal"><span class="pre">defaultViewDate</span></code> rather than today. If this option is not used, &#8220;today&#8221; remains the default view date.</p>
+<dl class="docutils">
+<dt>This option can be:</dt>
+<dd><ul class="first last simple">
+<li>A date, which should be in local timezone.</li>
+<li>A string which must be parsable with <code class="docutils literal"><span class="pre">format</span></code>.</li>
+<li>An object with keys <code class="docutils literal"><span class="pre">year</span></code>, <code class="docutils literal"><span class="pre">month</span></code> and <code class="docutils literal"><span class="pre">day</span></code> (can&#8217;t be set from a data attribute). If the given object is missing any of the required keys, their defaults are:<ul>
+<li><code class="docutils literal"><span class="pre">year</span></code>: the current year</li>
+<li><code class="docutils literal"><span class="pre">month</span></code>: 0 (Note that it starts with 0 for January)</li>
+<li><code class="docutils literal"><span class="pre">day</span></code>: 1</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="disabletouchkeyboard">
+<h4>disableTouchKeyboard<a class="headerlink" href="#disabletouchkeyboard" title="Permalink to this headline">¶</a></h4>
+<p>Boolean.  Default: false</p>
+<p>If true, no keyboard will show on mobile devices</p>
+</div>
+<div class="section" id="enableonreadonly">
+<h4>enableOnReadonly<a class="headerlink" href="#enableonreadonly" title="Permalink to this headline">¶</a></h4>
+<p>Boolean. Default: true</p>
+<p>If false the datepicker will not show on a readonly datepicker field.</p>
+</div>
+<div class="section" id="enddate">
+<span id="id4"></span><h4>endDate<a class="headerlink" href="#enddate" title="Permalink to this headline">¶</a></h4>
+<p>Date or String.  Default: End of time</p>
+<p>The latest date that may be selected; all later dates will be disabled.</p>
+<p>Date should be in local timezone. String must be parsable with <code class="docutils literal"><span class="pre">format</span></code>.</p>
+<div class="figure align-center">
+<img alt="_images/option_enddate.png" src="_images/option_enddate.png" />
+</div>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">data-date-end-date</span><span class="o">=</span><span class="s">&quot;0d&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Will disable all dates after today.</p>
+</div>
+<div class="section" id="forceparse">
+<h4>forceParse<a class="headerlink" href="#forceparse" title="Permalink to this headline">¶</a></h4>
+<p>Boolean.  Default: true</p>
+<p>Whether or not to force parsing of the input value when the picker is closed.  That is, when an invalid date is left in the input field by the user, the picker will forcibly parse that value, and set the input&#8217;s value to the new, valid date, conforming to the given <cite>format</cite>.</p>
+</div>
+<div class="section" id="format">
+<h4>format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h4>
+<p>String.  Default: &#8220;mm/dd/yyyy&#8221;</p>
+<p>The date format, combination of d, dd, D, DD, m, mm, M, MM, yy, yyyy.</p>
+<ul class="simple">
+<li>d, dd: Numeric date, no leading zero and leading zero, respectively.  Eg, 5, 05.</li>
+<li>D, DD: Abbreviated and full weekday names, respectively.  Eg, Mon, Monday.</li>
+<li>m, mm: Numeric month, no leading zero and leading zero, respectively.  Eg, 7, 07.</li>
+<li>M, MM: Abbreviated and full month names, respectively.  Eg, Jan, January</li>
+<li>yy, yyyy: 2- and 4-digit years, respectively.  Eg, 12, 2012.</li>
+</ul>
+<p>Object.</p>
+<p>Custom formatting options</p>
+<ul class="simple">
+<li>toDisplay: function (date, format, language) to convert date object to string, that will be stored in input field</li>
+<li>toValue: function (date, format, language) to convert string object to date, that will be used in date selection</li>
+</ul>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">({</span>
+    <span class="nx">format</span><span class="o">:</span> <span class="p">{</span>
+        <span class="cm">/*</span>
+<span class="cm">         * Say our UI should display a week ahead,</span>
+<span class="cm">         * but textbox should store the actual date.</span>
+<span class="cm">         * This is useful if we need UI to select local dates,</span>
+<span class="cm">         * but store in UTC</span>
+<span class="cm">         */</span>
+        <span class="nx">toDisplay</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">date</span><span class="p">,</span> <span class="nx">format</span><span class="p">,</span> <span class="nx">language</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
+            <span class="nx">d</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">-</span> <span class="mi">7</span><span class="p">);</span>
+            <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">();</span>
+        <span class="p">},</span>
+        <span class="nx">toValue</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">date</span><span class="p">,</span> <span class="nx">format</span><span class="p">,</span> <span class="nx">language</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
+            <span class="nx">d</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">+</span> <span class="mi">7</span><span class="p">);</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="immediateupdates">
+<h4>immediateUpdates<a class="headerlink" href="#immediateupdates" title="Permalink to this headline">¶</a></h4>
+<p>Boolean. Default: false</p>
+<p>If true, selecting a year or month in the datepicker will update the input value immediately. Otherwise, only selecting a day of the month will update the input value immediately.</p>
+</div>
+<div class="section" id="inputs">
+<h4>inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h4>
+<p>Array, jQuery. Default: None</p>
+<p>A list of inputs to be used in a range picker, which will be attached to the selected element.  Allows for explicitly creating a range picker on a non-standard element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;event_period&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;actual_range&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;actual_range&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#event_period&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">({</span>
+    <span class="nx">inputs</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.actual_range&#39;</span><span class="p">)</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="keepemptyvalues">
+<h4>keepEmptyValues<a class="headerlink" href="#keepemptyvalues" title="Permalink to this headline">¶</a></h4>
+<p>Boolean. Default: false</p>
+<p>Only effective in a range picker. If true, the selected value does not get propagated to other, currently empty, pickers in the range.</p>
+</div>
+<div class="section" id="keyboardnavigation">
+<h4>keyboardNavigation<a class="headerlink" href="#keyboardnavigation" title="Permalink to this headline">¶</a></h4>
+<p>Boolean.  Default: true</p>
+<p>Whether or not to allow date navigation by arrow keys.</p>
+<p>Keyboard navigation is not supported at all for embedded / inline mode. Also it&#8217;s not working if input element hasn&#8217;t focus. This could be an issue if used as component or if opened by <cite>show</cite> method.</p>
+</div>
+<div class="section" id="language">
+<h4>language<a class="headerlink" href="#language" title="Permalink to this headline">¶</a></h4>
+<p>String.  Default: &#8220;en&#8221;</p>
+<p>The IETF code (eg  &#8220;en&#8221; for English, &#8220;pt-BR&#8221; for Brazilian Portuguese) of the language to use for month and day names.  These will also be used as the input&#8217;s value (and subsequently sent to the server in the case of form submissions).  If a full code (eg &#8220;de-DE&#8221;) is supplied the picker will first check for an &#8220;de-DE&#8221; language and if not found will fallback and check for a &#8220;de&#8221; language.  If an unknown language code is given, English will be used.  See <a class="reference internal" href="index.html#document-i18n"><span class="doc">I18N</span></a>.</p>
+<div class="figure align-center">
+<img alt="_images/option_language.png" src="_images/option_language.png" />
+</div>
+</div>
+<div class="section" id="maxviewmode">
+<h4>maxViewMode<a class="headerlink" href="#maxviewmode" title="Permalink to this headline">¶</a></h4>
+<p>Number, String.  Default: 4, &#8220;centuries&#8221;</p>
+<p>Set a maximum limit for the view mode.  Accepts: 0 or &#8220;days&#8221; or &#8220;month&#8221;, 1 or &#8220;months&#8221; or &#8220;year&#8221;, 2 or &#8220;years&#8221; or &#8220;decade&#8221;, 3 or &#8220;decades&#8221; or &#8220;century&#8221;, and 4 or &#8220;centuries&#8221; or &#8220;millenium&#8221;.
+Gives the ability to pick only a day, a month, a year or a decade.  The day is set to the 1st for &#8220;months&#8221;, the month is set to January for &#8220;years&#8221;, the year is set to the first year from the decade for &#8220;decades&#8221;, and the year is set to the first from the millennium for &#8220;centuries&#8221;.</p>
+</div>
+<div class="section" id="minviewmode">
+<h4>minViewMode<a class="headerlink" href="#minviewmode" title="Permalink to this headline">¶</a></h4>
+<p>Number, String.  Default: 0, &#8220;days&#8221;</p>
+<p>Set a minimum limit for the view mode.  Accepts: 0 or &#8220;days&#8221; or &#8220;month&#8221;, 1 or &#8220;months&#8221; or &#8220;year&#8221;, 2 or &#8220;years&#8221; or &#8220;decade&#8221;, 3 or &#8220;decades&#8221; or &#8220;century&#8221;, and 4 or &#8220;centuries&#8221; or &#8220;millenium&#8221;.
+Gives the ability to pick only a month, a year or a decade.  The day is set to the 1st for &#8220;months&#8221;, and the month is set to January for &#8220;years&#8221;, the year is set to the first year from the decade for &#8220;decades&#8221;, and the year is set to the first from the millennium for &#8220;centuries&#8221;.</p>
+</div>
+<div class="section" id="multidate">
+<h4>multidate<a class="headerlink" href="#multidate" title="Permalink to this headline">¶</a></h4>
+<p>Boolean, Number.  Default: false</p>
+<p>Enable multidate picking.  Each date in month view acts as a toggle button, keeping track of which dates the user has selected in order.  If a number is given, the picker will limit how many dates can be selected to that number, dropping the oldest dates from the list when the number is exceeded.  <code class="docutils literal"><span class="pre">true</span></code> equates to no limit.  The input&#8217;s value (if present) is set to a string generated by joining the dates, formatted, with <code class="docutils literal"><span class="pre">multidateSeparator</span></code>.</p>
+<p>For selecting 2 dates as a range please see <a class="reference internal" href="index.html#daterange"><span class="std std-ref">date-range</span></a></p>
+<div class="figure align-center">
+<img alt="_images/option_multidate.png" src="_images/option_multidate.png" />
+</div>
+</div>
+<div class="section" id="multidateseparator">
+<h4>multidateSeparator<a class="headerlink" href="#multidateseparator" title="Permalink to this headline">¶</a></h4>
+<p>String.  Default: &#8221;,&#8221;</p>
+<p>The string that will appear between dates when generating the input&#8217;s value.  When parsing the input&#8217;s value for a multidate picker, this will also be used to split the incoming string to separate multiple formatted dates; as such, it is highly recommended that you not use a string that could be a substring of a formatted date (eg, using &#8216;-&#8216; to separate dates when your format is &#8216;yyyy-mm-dd&#8217;).</p>
+</div>
+<div class="section" id="orientation">
+<h4>orientation<a class="headerlink" href="#orientation" title="Permalink to this headline">¶</a></h4>
+<p>String.  Default: &#8220;auto&#8221;</p>
+<p>A space-separated string consisting of one or two of &#8220;left&#8221; or &#8220;right&#8221;, &#8220;top&#8221; or &#8220;bottom&#8221;, and &#8220;auto&#8221; (may be omitted); for example, &#8220;top left&#8221;, &#8220;bottom&#8221; (horizontal orientation will default to &#8220;auto&#8221;), &#8220;right&#8221; (vertical orientation will default to &#8220;auto&#8221;), &#8220;auto top&#8221;.  Allows for fixed placement of the picker popup.</p>
+<p>&#8220;orientation&#8221; refers to the location of the picker popup&#8217;s &#8220;anchor&#8221;; you can also think of it as the location of the trigger element (input, component, etc) relative to the picker.</p>
+<p>&#8220;auto&#8221; triggers &#8220;smart orientation&#8221; of the picker.  Horizontal orientation will default to &#8220;left&#8221; and left offset will be tweaked to keep the picker inside the browser viewport; vertical orientation will simply choose &#8220;top&#8221; or &#8220;bottom&#8221;, whichever will show more of the picker in the viewport.</p>
+</div>
+<div class="section" id="showonfocus">
+<h4>showOnFocus<a class="headerlink" href="#showonfocus" title="Permalink to this headline">¶</a></h4>
+<p>Boolean.  Default: true</p>
+<p>If false, the datepicker will be prevented from showing when the input field associated with it receives focus.</p>
+</div>
+<div class="section" id="startdate">
+<span id="id5"></span><h4>startDate<a class="headerlink" href="#startdate" title="Permalink to this headline">¶</a></h4>
+<p>Date or String.  Default: Beginning of time</p>
+<p>The earliest date that may be selected; all earlier dates will be disabled.</p>
+<p>Date should be in local timezone. String must be parsable with <code class="docutils literal"><span class="pre">format</span></code>.</p>
+<div class="figure align-center">
+<img alt="_images/option_startdate.png" src="_images/option_startdate.png" />
+</div>
+</div>
+<div class="section" id="startview">
+<h4>startView<a class="headerlink" href="#startview" title="Permalink to this headline">¶</a></h4>
+<p>Number, String.  Default: 0, &#8220;days&#8221;</p>
+<p>The view that the datepicker should show when it is opened.  Accepts: 0 or &#8220;days&#8221; or &#8220;month&#8221;, 1 or &#8220;months&#8221; or &#8220;year&#8221;, 2 or &#8220;years&#8221; or &#8220;decade&#8221;, 3 or &#8220;decades&#8221; or &#8220;century&#8221;, and 4 or &#8220;centuries&#8221; or &#8220;millenium&#8221;.  Useful for date-of-birth datepickers.</p>
+</div>
+<div class="section" id="templates">
+<h4>templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h4>
+<p>Object. Default:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nx">leftArrow</span><span class="o">:</span> <span class="s1">&#39;&amp;laquo;&#39;</span><span class="p">,</span>
+    <span class="nx">rightArrow</span><span class="o">:</span> <span class="s1">&#39;&amp;raquo;&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The templates used to generate some parts of the picker. Each property must be a string with only text, or valid html.
+You can use this property to use custom icons libs. for example:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nx">leftArrow</span><span class="o">:</span> <span class="s1">&#39;&lt;i class=&quot;fa fa-long-arrow-left&quot;&gt;&lt;/i&gt;&#39;</span><span class="p">,</span>
+    <span class="nx">rightArrow</span><span class="o">:</span> <span class="s1">&#39;&lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt;&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="showweekdays">
+<h4>showWeekDays<a class="headerlink" href="#showweekdays" title="Permalink to this headline">¶</a></h4>
+<p>Boolean.  Default: true</p>
+<p>If false, the datepicker will not append the names of the weekdays to its view. Default behavior is appending the weekdays.</p>
+</div>
+<div class="section" id="title">
+<h4>title<a class="headerlink" href="#title" title="Permalink to this headline">¶</a></h4>
+<p>String. Default: &#8220;&#8221;</p>
+<p>The string that will appear on top of the datepicker. If empty the title will be hidden.</p>
+</div>
+<div class="section" id="todaybtn">
+<h4>todayBtn<a class="headerlink" href="#todaybtn" title="Permalink to this headline">¶</a></h4>
+<p>Boolean, &#8220;linked&#8221;.  Default: false</p>
+<p>If true or &#8220;linked&#8221;, displays a &#8220;Today&#8221; button at the bottom of the datepicker to select the current date.  If true, the &#8220;Today&#8221; button will only move the current date into view; if &#8220;linked&#8221;, the current date will also be selected.</p>
+<div class="figure align-center">
+<img alt="_images/option_todaybtn.png" src="_images/option_todaybtn.png" />
+</div>
+</div>
+<div class="section" id="todayhighlight">
+<h4>todayHighlight<a class="headerlink" href="#todayhighlight" title="Permalink to this headline">¶</a></h4>
+<p>Boolean.  Default: false</p>
+<p>If true, highlights the current date.</p>
+<div class="figure align-center">
+<img alt="_images/option_todayhighlight.png" src="_images/option_todayhighlight.png" />
+</div>
+</div>
+<div class="section" id="toggleactive">
+<h4>toggleActive<a class="headerlink" href="#toggleactive" title="Permalink to this headline">¶</a></h4>
+<p>Boolean. Default: false</p>
+<p>If true, selecting the currently active date in the datepicker will unset the respective date. This option is always true when the multidate option is being used.</p>
+</div>
+<div class="section" id="updateviewdate">
+<h4>updateViewDate<a class="headerlink" href="#updateviewdate" title="Permalink to this headline">¶</a></h4>
+<p>Boolean. Default: true</p>
+<p>If false viewDate is set according to <cite>value</cite> on initialization and updated
+* if a day in last oder next month is selected or
+* if dates are changed by <cite>setDate</cite>, <cite>setDates</cite>, <cite>setUTCDate</cite> and <cite>setUTCDates</cite> methods.
+If <cite>multidate</cite> option is <cite>true</cite> the last selected date or the last date in array
+passed to <cite>setDates</cite> or <cite>setUTCDates</cite> is used.</p>
+</div>
+<div class="section" id="weekstart">
+<h4>weekStart<a class="headerlink" href="#weekstart" title="Permalink to this headline">¶</a></h4>
+<p>Integer.  Default: 0</p>
+<p>Day of the week start. 0 (Sunday) to 6 (Saturday)</p>
+<div class="figure align-center">
+<img alt="_images/option_weekstart.png" src="_images/option_weekstart.png" />
+</div>
+</div>
+<div class="section" id="zindexoffset">
+<h4>zIndexOffset<a class="headerlink" href="#zindexoffset" title="Permalink to this headline">¶</a></h4>
+<p>Integer.  Default: 10</p>
+<p>The CSS z-index of the open datepicker is the maximum z-index of the input and all of its DOM ancestors <em>plus</em> the <code class="docutils literal"><span class="pre">zIndexOffset</span></code>.</p>
+</div>
+</div>
+<div class="section" id="quick-reference">
+<h3>Quick reference<a class="headerlink" href="#quick-reference" title="Permalink to this headline">¶</a></h3>
+<p>This is a quick overview of all the options and their default values</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="47%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Default value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>autoclose</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>assumeNearbyYear</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>beforeShowDay</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>beforeShowMonth</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>beforeShowYear</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>beforeShowDecade</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>beforeShowCentury</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>calendarWeeks</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>clearBtn</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>container</td>
+<td>&#8216;body&#8217;</td>
+</tr>
+<tr class="row-even"><td>datesDisabled</td>
+<td>[]</td>
+</tr>
+<tr class="row-odd"><td>daysOfWeekDisabled</td>
+<td>[]</td>
+</tr>
+<tr class="row-even"><td>daysOfWeekHighlighted</td>
+<td>[]</td>
+</tr>
+<tr class="row-odd"><td>defaultViewDate</td>
+<td>today</td>
+</tr>
+<tr class="row-even"><td>disableTouchKeyboard</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>enableOnReadonly</td>
+<td>true</td>
+</tr>
+<tr class="row-even"><td>endDate</td>
+<td>Infinity</td>
+</tr>
+<tr class="row-odd"><td>forceParse</td>
+<td>true</td>
+</tr>
+<tr class="row-even"><td>format</td>
+<td>&#8216;mm/dd/yyyy&#8217;</td>
+</tr>
+<tr class="row-odd"><td>immediateUpdates</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>inputs</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>keepEmptyValues</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>keyboardNavigation</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>language</td>
+<td>&#8216;en&#8217;</td>
+</tr>
+<tr class="row-even"><td>maxViewMode</td>
+<td>4 &#8216;centuries&#8217;</td>
+</tr>
+<tr class="row-odd"><td>minViewMode</td>
+<td>0 &#8216;days&#8217;</td>
+</tr>
+<tr class="row-even"><td>multidate</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>multidateSeparator</td>
+<td>&#8216;,&#8217;</td>
+</tr>
+<tr class="row-even"><td>orientation</td>
+<td>&#8216;auto&#8217;</td>
+</tr>
+<tr class="row-odd"><td>showOnFocus</td>
+<td>true</td>
+</tr>
+<tr class="row-even"><td>startDate</td>
+<td>-Infinity</td>
+</tr>
+<tr class="row-odd"><td>startView</td>
+<td>0 &#8216;days&#8217; (current month)</td>
+</tr>
+<tr class="row-even"><td>templates</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>&#8216;&#8217;</td>
+</tr>
+<tr class="row-even"><td>todayBtn</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>todayHighlight</td>
+<td>true</td>
+</tr>
+<tr class="row-even"><td>toggleActive</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>weekStart</td>
+<td>0 (Sunday)</td>
+</tr>
+<tr class="row-even"><td>zIndexOffset</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span id="document-methods"></span><div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<p>Methods are called on a datepicker by calling the <code class="docutils literal"><span class="pre">datepicker</span></code> function with a string first argument, followed by any arguments the method takes</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">(</span><span class="s1">&#39;method&#39;</span><span class="p">,</span> <span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="destroy">
+<h4>destroy<a class="headerlink" href="#destroy" title="Permalink to this headline">¶</a></h4>
+<p>Arguments: None</p>
+<p>Remove the datepicker.  Removes attached events, internal attached objects, and added HTML elements.</p>
+<p><em>Alias: remove</em></p>
+</div>
+<div class="section" id="show">
+<h4>show<a class="headerlink" href="#show" title="Permalink to this headline">¶</a></h4>
+<p>Arguments: None</p>
+<p>Show the picker.</p>
+</div>
+<div class="section" id="hide">
+<h4>hide<a class="headerlink" href="#hide" title="Permalink to this headline">¶</a></h4>
+<p>Arguments: None</p>
+<p>Hide the picker.</p>
+</div>
+<div class="section" id="update">
+<h4>update<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h4>
+<p>Arguments:</p>
+<ul class="simple">
+<li>date (String|Date|Array, optional)</li>
+<li>date (String|Date, optional)</li>
+<li>...</li>
+</ul>
+<p>Update the datepicker with given arguments or the current input value.
+The arguments can be either an array of strings, an array of Date objects, multiples strings or multiples Date objects.
+If <code class="docutils literal"><span class="pre">date</span></code> arguments are provided and they are Date objects, it is assumed to be &#8220;local&#8221; Date objects, and will be converted to UTC for internal use.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">(</span><span class="s1">&#39;update&#39;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">(</span><span class="s1">&#39;update&#39;</span><span class="p">,</span> <span class="s1">&#39;2011-03-05&#39;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">(</span><span class="s1">&#39;update&#39;</span><span class="p">,</span> <span class="s1">&#39;2011-03-05&#39;</span><span class="p">,</span> <span class="s1">&#39;2011-03-07&#39;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">(</span><span class="s1">&#39;update&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2011</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">(</span><span class="s1">&#39;update&#39;</span><span class="p">,</span> <span class="p">[</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2011</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2011</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]);</span>
+</pre></div>
+</div>
+<p>To reset the datepicker and clear the selected date, pass an empty string with <code class="docutils literal"><span class="pre">update</span></code>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">(</span><span class="s1">&#39;update&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setdate">
+<h4>setDate<a class="headerlink" href="#setdate" title="Permalink to this headline">¶</a></h4>
+<p>Arguments:</p>
+<ul class="simple">
+<li>date (Date)</li>
+</ul>
+<p>Sets the internal date.  <code class="docutils literal"><span class="pre">date</span></code> is assumed to be a &#8220;local&#8221; date object, and will be converted to UTC for internal use.</p>
+</div>
+<div class="section" id="setutcdate">
+<h4>setUTCDate<a class="headerlink" href="#setutcdate" title="Permalink to this headline">¶</a></h4>
+<p>Arguments:</p>
+<ul class="simple">
+<li>date (Date)</li>
+</ul>
+<p>Sets the internal date.  <code class="docutils literal"><span class="pre">date</span></code> is assumed to be a UTC date object, and will not be converted.</p>
+</div>
+<div class="section" id="setdates">
+<h4>setDates<a class="headerlink" href="#setdates" title="Permalink to this headline">¶</a></h4>
+<p>Arguments:</p>
+<ul class="simple">
+<li>date[, date[, ...]] (Date)</li>
+</ul>
+<p>or</p>
+<ul class="simple">
+<li>[date[, date[, ...]]] (Array)</li>
+</ul>
+<p>Sets the internal date list; accepts multiple dates or a single array of dates as arguments.  Each <code class="docutils literal"><span class="pre">date</span></code> is assumed to be a &#8220;local&#8221; date object, and will be converted to UTC for internal use.  For use with multidate pickers.</p>
+</div>
+<div class="section" id="cleardates">
+<h4>clearDates<a class="headerlink" href="#cleardates" title="Permalink to this headline">¶</a></h4>
+<p>Arguments: None</p>
+<p>Clear dates.</p>
+</div>
+<div class="section" id="setutcdates">
+<h4>setUTCDates<a class="headerlink" href="#setutcdates" title="Permalink to this headline">¶</a></h4>
+<p>Arguments:</p>
+<ul class="simple">
+<li>date[, date[, ...]] (Date)</li>
+</ul>
+<p>or</p>
+<ul class="simple">
+<li>[date[, date[, ...]]] (Array)</li>
+</ul>
+<p>Sets the internal date list.  Each <code class="docutils literal"><span class="pre">date</span></code> is assumed to be a UTC date object, and will not be converted.  For use with multidate pickers.</p>
+</div>
+<div class="section" id="getdate">
+<h4>getDate<a class="headerlink" href="#getdate" title="Permalink to this headline">¶</a></h4>
+<p>Arguments: None</p>
+<p>Returns a localized date object representing the internal date object of the first datepicker in the selection.  For multidate pickers, returns the latest date selected.</p>
+</div>
+<div class="section" id="getutcdate">
+<h4>getUTCDate<a class="headerlink" href="#getutcdate" title="Permalink to this headline">¶</a></h4>
+<p>Arguments: None</p>
+<p>Returns the internal UTC date object, as-is and unconverted to local time, of the first datepicker in the selection.  For multidate pickers, returns the latest date selected.</p>
+</div>
+<div class="section" id="getdates">
+<h4>getDates<a class="headerlink" href="#getdates" title="Permalink to this headline">¶</a></h4>
+<p>Arguments: None</p>
+<p>Returns a list of localized date objects representing the internal date objects of the first datepicker in the selection.  For use with multidate pickers.</p>
+</div>
+<div class="section" id="getutcdates">
+<h4>getUTCDates<a class="headerlink" href="#getutcdates" title="Permalink to this headline">¶</a></h4>
+<p>Arguments: None</p>
+<p>Returns the internal list of UTC date objects, as they are and unconverted to local time, of the first datepicker in the selection.  For use with multidate pickers.</p>
+</div>
+<div class="section" id="getstartdate">
+<h4>getStartDate<a class="headerlink" href="#getstartdate" title="Permalink to this headline">¶</a></h4>
+<p>Arguments: None</p>
+<p>Returns the lower date limit on the datepicker.</p>
+</div>
+<div class="section" id="getenddate">
+<h4>getEndDate<a class="headerlink" href="#getenddate" title="Permalink to this headline">¶</a></h4>
+<p>Arguments: None</p>
+<p>Returns the upper date limit on the datepicker.</p>
+</div>
+<div class="section" id="setstartdate">
+<h4>setStartDate<a class="headerlink" href="#setstartdate" title="Permalink to this headline">¶</a></h4>
+<p>Arguments:</p>
+<ul class="simple">
+<li>startDate (Date)</li>
+</ul>
+<p>Sets a new lower date limit on the datepicker.  See <a class="reference internal" href="index.html#startdate"><span class="std std-ref">startDate</span></a> for valid values.</p>
+<p>Omit startDate (or provide an otherwise falsey value) to unset the limit.</p>
+</div>
+<div class="section" id="setenddate">
+<h4>setEndDate<a class="headerlink" href="#setenddate" title="Permalink to this headline">¶</a></h4>
+<p>Arguments:</p>
+<ul class="simple">
+<li>endDate (Date)</li>
+</ul>
+<p>Sets a new upper date limit on the datepicker.  See <a class="reference internal" href="index.html#enddate"><span class="std std-ref">endDate</span></a> for valid values.</p>
+<p>Omit endDate (or provide an otherwise falsey value) to unset the limit.</p>
+</div>
+<div class="section" id="setdatesdisabled">
+<h4>setDatesDisabled<a class="headerlink" href="#setdatesdisabled" title="Permalink to this headline">¶</a></h4>
+<p>Arguments:</p>
+<ul class="simple">
+<li>datesDisabled (String|Array)</li>
+</ul>
+<p>Sets the days that should be disabled.  See <a class="reference internal" href="index.html#datesdisabled"><span class="std std-ref">datesDisabled</span></a> for valid values.</p>
+<p>Omit datesDisabled (or provide an otherwise falsey value) to unset the disabled days.</p>
+</div>
+<div class="section" id="setdaysofweekdisabled">
+<h4>setDaysOfWeekDisabled<a class="headerlink" href="#setdaysofweekdisabled" title="Permalink to this headline">¶</a></h4>
+<p>Arguments:</p>
+<ul class="simple">
+<li>daysOfWeekDisabled (String|Array)</li>
+</ul>
+<p>Sets the days of week that should be disabled.  See <a class="reference internal" href="index.html#daysofweekdisabled"><span class="std std-ref">daysOfWeekDisabled</span></a> for valid values.</p>
+<p>Omit daysOfWeekDisabled (or provide an otherwise falsey value) to unset the disabled days of week.</p>
+</div>
+<div class="section" id="setdaysofweekhighlighted">
+<h4>setDaysOfWeekHighlighted<a class="headerlink" href="#setdaysofweekhighlighted" title="Permalink to this headline">¶</a></h4>
+<p>Arguments:</p>
+<ul class="simple">
+<li>daysOfWeekHighlighted (String|Array)</li>
+</ul>
+<p>Sets the days of week that should be highlighted.  See <a class="reference internal" href="index.html#daysofweekhighlighted"><span class="std std-ref">daysOfWeekHighlighted</span></a> for valid values.</p>
+<p>Omit daysOfWeekHighlighted (or provide an otherwise falsey value) to unset the highlighted days of week.</p>
+</div>
+</div>
+<span id="document-events"></span><div class="section" id="events">
+<h3>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h3>
+<p>Datepicker triggers a number of events in certain circumstances.  All events have extra data attached to the event object that is passed to any event handlers</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">picker_event</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// `e` here contains the extra attributes</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">date</span></code>: the relevant Date object, in local timezone.  For a multidate picker, this will be the latest date picked.</li>
+<li><code class="docutils literal"><span class="pre">dates</span></code>: an Array of Date objects, in local timezone, when using a multidate picker.</li>
+<li><code class="docutils literal"><span class="pre">format([ix],</span> <span class="pre">[format])</span></code>: a function to make formatting <code class="docutils literal"><span class="pre">date</span></code> easier.  <code class="docutils literal"><span class="pre">ix</span></code> can be the index of a Date in the <code class="docutils literal"><span class="pre">dates</span></code> array to format; if absent, the last date selected will be used.  <code class="docutils literal"><span class="pre">format</span></code> can be any format string that datepicker supports; if absent, the format set on the datepicker will be used.  Both arguments are optional.</li>
+</ul>
+<div class="section" id="show">
+<h4>show<a class="headerlink" href="#show" title="Permalink to this headline">¶</a></h4>
+<p>Fired when the date picker is displayed.</p>
+</div>
+<div class="section" id="hide">
+<h4>hide<a class="headerlink" href="#hide" title="Permalink to this headline">¶</a></h4>
+<p>Fired when the date picker is hidden.</p>
+</div>
+<div class="section" id="cleardate">
+<h4>clearDate<a class="headerlink" href="#cleardate" title="Permalink to this headline">¶</a></h4>
+<p>Fired when the date is cleared, normally when the &#8220;clear&#8221; button (enabled with the <code class="docutils literal"><span class="pre">clearBtn</span></code> option) is pressed.</p>
+</div>
+<div class="section" id="changedate">
+<h4>changeDate<a class="headerlink" href="#changedate" title="Permalink to this headline">¶</a></h4>
+<p>Fired when the date is changed.</p>
+</div>
+<div class="section" id="changemonth">
+<h4>changeMonth<a class="headerlink" href="#changemonth" title="Permalink to this headline">¶</a></h4>
+<p>Fired when the <em>view</em> month is changed from year view.</p>
+</div>
+<div class="section" id="changeyear">
+<h4>changeYear<a class="headerlink" href="#changeyear" title="Permalink to this headline">¶</a></h4>
+<p>Fired when the <em>view</em> year is changed from decade view.</p>
+</div>
+<div class="section" id="changedecade">
+<h4>changeDecade<a class="headerlink" href="#changedecade" title="Permalink to this headline">¶</a></h4>
+<p>Fired when the <em>view</em> decade is changed from century view.</p>
+</div>
+<div class="section" id="changecentury">
+<h4>changeCentury<a class="headerlink" href="#changecentury" title="Permalink to this headline">¶</a></h4>
+<p>Fired when the <em>view</em> century is changed from millennium view.</p>
+</div>
+</div>
+<span id="document-keyboard"></span><div class="section" id="keyboard-support">
+<h3>Keyboard support<a class="headerlink" href="#keyboard-support" title="Permalink to this headline">¶</a></h3>
+<p>The datepicker includes keyboard navigation.  The &#8220;focused date&#8221; is kept track of and highlighted (as with mouse hover) during keyboard nav, and is cleared when a date is toggled or the picker is hidden.</p>
+<div class="section" id="up-down-left-right-arrow-keys">
+<h4>up, down, left, right arrow keys<a class="headerlink" href="#up-down-left-right-arrow-keys" title="Permalink to this headline">¶</a></h4>
+<p>By themselves, left/right will move focus backward/forward one day, up/down will move focus back/forward one week.</p>
+<p>With the shift key, up/left will move focus backward one month, down/right will move focus forward one month.</p>
+<p>With the ctrl key, up/left will move focus backward one year, down/right will move focus forward one year.</p>
+<p>Shift+ctrl behaves the same as ctrl &#8211; that is, it does not change both month and year simultaneously, only the year.</p>
+</div>
+<div class="section" id="enter">
+<h4>enter<a class="headerlink" href="#enter" title="Permalink to this headline">¶</a></h4>
+<p>When the picker is visible, enter will toggle the focused date (if there is one).  When the picker is not visible, enter will have normal effects &#8211; submitting the current form, etc.</p>
+<p>When the date is deselected, the <code class="docutils literal"><span class="pre">clearDate</span></code> event is triggered; otherwise, the <code class="docutils literal"><span class="pre">changeDate</span></code> event is triggered.  If <code class="docutils literal"><span class="pre">autoclose</span></code> is enabled, the picker will be hidden after selection or deselection.</p>
+</div>
+<div class="section" id="escape">
+<h4>escape<a class="headerlink" href="#escape" title="Permalink to this headline">¶</a></h4>
+<p>The escape key can be used to clear the focused date and hide and re-show the datepicker; hiding the picker is necessary if the user wants to manually edit the value.</p>
+</div>
+</div>
+<span id="document-i18n"></span><div class="section" id="i18n">
+<h3>I18N<a class="headerlink" href="#i18n" title="Permalink to this headline">¶</a></h3>
+<p>The plugin supports i18n for the month and weekday names and the <code class="docutils literal"><span class="pre">weekStart</span></code> option.  The default is English (&#8220;en&#8221;); other available translations are available in the <code class="docutils literal"><span class="pre">js/locales/</span></code> directory, simply include your desired locale after the plugin.  To add more languages, simply add a key to <code class="docutils literal"><span class="pre">$.fn.datepicker.dates</span></code>, before calling <code class="docutils literal"><span class="pre">.datepicker()</span></code>.  Example</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">datepicker</span><span class="p">.</span><span class="nx">dates</span><span class="p">[</span><span class="s1">&#39;en&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">days</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Sunday&quot;</span><span class="p">,</span> <span class="s2">&quot;Monday&quot;</span><span class="p">,</span> <span class="s2">&quot;Tuesday&quot;</span><span class="p">,</span> <span class="s2">&quot;Wednesday&quot;</span><span class="p">,</span> <span class="s2">&quot;Thursday&quot;</span><span class="p">,</span> <span class="s2">&quot;Friday&quot;</span><span class="p">,</span> <span class="s2">&quot;Saturday&quot;</span><span class="p">],</span>
+    <span class="nx">daysShort</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Sun&quot;</span><span class="p">,</span> <span class="s2">&quot;Mon&quot;</span><span class="p">,</span> <span class="s2">&quot;Tue&quot;</span><span class="p">,</span> <span class="s2">&quot;Wed&quot;</span><span class="p">,</span> <span class="s2">&quot;Thu&quot;</span><span class="p">,</span> <span class="s2">&quot;Fri&quot;</span><span class="p">,</span> <span class="s2">&quot;Sat&quot;</span><span class="p">],</span>
+    <span class="nx">daysMin</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Su&quot;</span><span class="p">,</span> <span class="s2">&quot;Mo&quot;</span><span class="p">,</span> <span class="s2">&quot;Tu&quot;</span><span class="p">,</span> <span class="s2">&quot;We&quot;</span><span class="p">,</span> <span class="s2">&quot;Th&quot;</span><span class="p">,</span> <span class="s2">&quot;Fr&quot;</span><span class="p">,</span> <span class="s2">&quot;Sa&quot;</span><span class="p">],</span>
+    <span class="nx">months</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;January&quot;</span><span class="p">,</span> <span class="s2">&quot;February&quot;</span><span class="p">,</span> <span class="s2">&quot;March&quot;</span><span class="p">,</span> <span class="s2">&quot;April&quot;</span><span class="p">,</span> <span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;June&quot;</span><span class="p">,</span> <span class="s2">&quot;July&quot;</span><span class="p">,</span> <span class="s2">&quot;August&quot;</span><span class="p">,</span> <span class="s2">&quot;September&quot;</span><span class="p">,</span> <span class="s2">&quot;October&quot;</span><span class="p">,</span> <span class="s2">&quot;November&quot;</span><span class="p">,</span> <span class="s2">&quot;December&quot;</span><span class="p">],</span>
+    <span class="nx">monthsShort</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Jan&quot;</span><span class="p">,</span> <span class="s2">&quot;Feb&quot;</span><span class="p">,</span> <span class="s2">&quot;Mar&quot;</span><span class="p">,</span> <span class="s2">&quot;Apr&quot;</span><span class="p">,</span> <span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;Jun&quot;</span><span class="p">,</span> <span class="s2">&quot;Jul&quot;</span><span class="p">,</span> <span class="s2">&quot;Aug&quot;</span><span class="p">,</span> <span class="s2">&quot;Sep&quot;</span><span class="p">,</span> <span class="s2">&quot;Oct&quot;</span><span class="p">,</span> <span class="s2">&quot;Nov&quot;</span><span class="p">,</span> <span class="s2">&quot;Dec&quot;</span><span class="p">],</span>
+    <span class="nx">today</span><span class="o">:</span> <span class="s2">&quot;Today&quot;</span><span class="p">,</span>
+    <span class="nx">clear</span><span class="o">:</span> <span class="s2">&quot;Clear&quot;</span><span class="p">,</span>
+    <span class="nx">format</span><span class="o">:</span> <span class="s2">&quot;mm/dd/yyyy&quot;</span><span class="p">,</span>
+    <span class="nx">titleFormat</span><span class="o">:</span> <span class="s2">&quot;MM yyyy&quot;</span><span class="p">,</span> <span class="cm">/* Leverages same syntax as &#39;format&#39; */</span>
+    <span class="nx">weekStart</span><span class="o">:</span> <span class="mi">0</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Right-to-left languages may also include <code class="docutils literal"><span class="pre">rtl:</span> <span class="pre">true</span></code> to make the calendar display appropriately.</p>
+<p>If your browser (or those of your users) is displaying characters wrong, chances are the browser is loading the javascript file with a non-unicode encoding.  Simply add <code class="docutils literal"><span class="pre">charset=&quot;UTF-8&quot;</span></code> to your <code class="docutils literal"><span class="pre">script</span></code> tag:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;bootstrap-datepicker.XX.js&quot;</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">({</span>
+    <span class="nx">language</span><span class="o">:</span> <span class="s1">&#39;XX&#39;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/option_language.png" src="_images/option_language.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, eternicode.
+      
+        <span class="commit">
+          Revision <code>4e607141</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: master
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl>
+        <dt>Versions</dt>
+        
+          <dd><a href="/en/latest/">latest</a></dd>
+        
+          <dd><a href="/en/stable/">stable</a></dd>
+        
+          <dd><a href="/en/v1.6.4/">v1.6.4</a></dd>
+        
+          <dd><a href="/en/v1.6.1/">v1.6.1</a></dd>
+        
+          <dd><a href="/en/v1.6.0/">v1.6.0</a></dd>
+        
+          <dd><a href="/en/v1.5.1/">v1.5.1</a></dd>
+        
+          <dd><a href="/en/v1.5.0/">v1.5.0</a></dd>
+        
+          <dd><a href="/en/v1.4.1/">v1.4.1</a></dd>
+        
+          <dd><a href="/en/v1.4.0/">v1.4.0</a></dd>
+        
+          <dd><a href="/en/1.3.1/">1.3.1</a></dd>
+        
+          <dd><a href="/en/1.3.0/">1.3.0</a></dd>
+        
+          <dd><a href="/en/master/">master</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="//readthedocs.org/projects/bootstrap-datepicker/downloads/pdf/master/">pdf</a></dd>
+        
+          <dd><a href="//readthedocs.org/projects/bootstrap-datepicker/downloads/htmlzip/master/">htmlzip</a></dd>
+        
+          <dd><a href="//readthedocs.org/projects/bootstrap-datepicker/downloads/epub/master/">epub</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>On Read the Docs</dt>
+          <dd>
+            <a href="//readthedocs.org/projects/bootstrap-datepicker/?fromdocs=bootstrap-datepicker">Project Home</a>
+          </dd>
+          <dd>
+            <a href="//readthedocs.org/builds/bootstrap-datepicker/?fromdocs=bootstrap-datepicker">Builds</a>
+          </dd>
+      </dl>
+      <hr/>
+      Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+
+    </div>
+  </div>
+
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
