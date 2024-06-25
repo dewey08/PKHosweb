@@ -694,6 +694,39 @@ class EnvController extends Controller
         return redirect()->back();
     }
 
+    public function env_water_parameter_set (Request $request)
+    {
+        $datestart = $request->startdate;
+        $dateend = $request->enddate;
+        $iduser = Auth::user()->id;
+        $data['users'] = User::get();
+        $data['leave_month'] = DB::table('leave_month')->get();
+        $data['users_group'] = DB::table('users_group')->get();
+        $data['p4p_workgroupset'] = P4p_workgroupset::where('p4p_workgroupset_user','=',$iduser)->get();
+ 
+        $data_water_parameter_set = DB::table('env_water_parameter')->get(); 
+
+        $datashow = DB::connection('mysql')->select('
+        SELECT DISTINCT(t.trash_bill_on) ,t.trash_id , t.trash_date , t.trash_time ,t.trash_sub , pv.vendor_name ,
+        CONCAT(u.fname," ",u.lname) as trash_user
+        FROM env_trash t
+        LEFT JOIN env_trash_sub ts on ts.trash_id = t.trash_id
+        LEFT JOIN products_vendor pv on pv.vendor_id = t.trash_sub
+        LEFT JOIN users u on u.id = t.trash_user 
+        order by t.trash_id desc;
+        ');
+        
+        
+
+        return view('env.env_water_parameter_set', $data,[
+            'startdate'                 => $datestart,
+            'enddate'                   => $dateend,
+            'data_water_parameter_set'  => $data_water_parameter_set, 
+            'datashow'                  => $datashow, 
+        ]);
+    }
+
+
 //**************************************************************ระบบขยะติดเชื้อ*********************************************
 
     public function env_trash (Request $request)

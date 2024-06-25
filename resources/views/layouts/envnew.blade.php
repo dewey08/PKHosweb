@@ -335,6 +335,7 @@
                             </a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="{{ url('env_water_parameter') }}">ตั้งค่า Parameter น้ำ</a></li>
+                                <li><a href="{{ url('env_water_parameter_set') }}">ตั้งค่า บ่อบำบัด</a></li>
                                 <li><a href="{{ url('env_trash_parameter') }}">ตั้งค่า ประเภทขยะ</a></li>
                                 {{-- <li><a href="{{ url('env_vendor') }}">ตั้งค่าบริษัท</a></li> --}}
                             </ul>
