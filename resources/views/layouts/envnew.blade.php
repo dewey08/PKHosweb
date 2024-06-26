@@ -75,6 +75,29 @@
   		background-image: url('/pkbackoffice/public/images/bgside.jpg');
 		background-repeat: no-repeat;
 	}
+    .card_audit_2b{
+        border-radius: 0em 0em 3em 3em;
+        box-shadow: 0 0 10px rgb(4, 224, 4);
+    }
+    .card_audit_4c{
+        border-radius: 2em 2em 2em 2em;
+        box-shadow: 0 0 15px rgb(4, 224, 4);
+        border:solid 1px #80acfd;
+    }
+    .card_audit_4{
+        border-radius: 3em 3em 3em 3em;
+        box-shadow: 0 0 10px rgb(4, 224, 4);
+    }
+    .dcheckbox_{         
+        width: 20px;
+        height: 20px;       
+        /* border-radius: 2em 2em 2em 2em; */
+        border: 10px solid rgb(4, 224, 4);
+        /* color: teal; */
+        /* border-color: teal; */
+        box-shadow: 0 0 10px rgb(4, 224, 4);
+        /* box-shadow: 0 0 10px teal; */
+    }
   </style>
     <?php
         if (Auth::check()) {

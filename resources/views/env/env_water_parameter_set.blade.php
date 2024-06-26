@@ -76,18 +76,138 @@ if (Auth::check()) {
               
         </div> 
 
-       
-
-        <div class="main-card mb-3 card">
-            <div class="card-header">
-                รายละเอียดั้งค่าบ่อบำบัด
-                
-                <div class="btn-actions-pane-right">
-                    <div class="nav">
-                        <a href="{{ url('env_water_parameter_add') }}" class="mb-2 me-2 btn-icon btn-shadow btn-dashed btn btn-outline-info">เพิ่มข้อมูลบ่อบำบัด</a>                        
-                    </div>
-                </div>
+        <div class="row">  
+            <div class="col-md-3">
+                <h4 >Detail POND</h4>
+                <p >รายละเอียดั้งค่าบ่อบำบัด</p>
             </div>
+            <div class="col"></div> 
+            <div class="col-md-2 text-end"> 
+                <button type="button" class="me-2 btn-icon btn-shadow btn-dashed btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="fa-solid fa-file-invoice-dollar text-primary me-2"></i>
+                    เพิ่มข้อมูลบ่อบำบัด
+                </button>
+            </div> 
+        </div>
+
+        <div class="row"> 
+            <div class="col-xl-12 col-md-6">
+                <div class="main-card card p-3"> 
+                    <table class="table table-sm" id="example" style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th class="text-center">ลำดับ</th> 
+                                <th class="text-center">รหัส</th>
+                                <th class="text-center">ชื่อผัง</th>
+                                <th class="text-center">pttype</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $number = 0;
+                            $total1 = 0; ?>
+                            @foreach ($datashow as $item)
+                                <?php $number++; ?> 
+                                <tr id="#sid{{ $item->acc_setpang_type_id }}">
+                                    <td class="text-center" width="5%">{{ $number }}</td> 
+                                    <td class="text-center" width="10%" >
+                                        {{-- <button type="button"class="btn-icon btn-shadow btn-dashed btn btn-outline-danger editModal" value="{{ $item->acc_setpang_id }}" data-bs-toggle="tooltip" data-bs-placement="left" title="แก้ไข">
+                                            {{ $item->pang }}
+                                        </button> --}}
+                                        {{-- <button type="button"class="btn-icon btn-shadow btn-dashed btn btn-outline-danger editModal" value="{{ $item->acc_setpang_id }}" data-bs-toggle="tooltip" data-bs-placement="left" title="แก้ไข">
+                                            {{ $item->icode }}
+                                        </button>
+                                        <button type="button"class="btn-icon btn-shadow btn-dashed btn btn-outline-danger editModal" value="{{ $item->acc_setpang_id }}" data-bs-toggle="tooltip" data-bs-placement="left" title="แก้ไข">
+                                            {{ $item->hospmain }}
+                                        </button> --}}
+                                    </td> 
+                                    <td >   
+                                        <?php 
+                                            // $data_sub_ = DB::connection('mysql')->select('
+                                            //     SELECT * from acc_setpang_type a
+                                            //     LEFT JOIN pttype p ON p.pttype = a.pttype 
+                                            //     WHERE acc_setpang_id = "'.$item->acc_setpang_id.'"');
+    
+                                            // $data_subcount_ = DB::connection('mysql')->select('SELECT COUNT(acc_setpang_id) as acc_setpang_id from acc_setpang_type WHERE acc_setpang_id = "'.$item->acc_setpang_id.'"');
+                                            // foreach ($data_subcount_ as $key => $value) {
+                                            //     $data_subcount = $value->acc_setpang_id;
+                                            // }
+                                        ?>
+                                        <div id="headingTwo" class="b-radius-0 card-header">
+                                            {{-- @if ($data_subcount == '0') --}}
+                                                <button type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne2{{ $item->acc_setpang_id }}" aria-expanded="false"
+                                                    aria-controls="collapseTwo" class="text-start m-0 p-0 btn btn-link btn-block">
+                                                    <h5 style="color: rgb(207, 204, 204)">{{ $item->pangname }} <label for="" style="color: red"> !! รายละเอียด คลิก !!</label></h5> 
+                                                </button>
+                                            {{-- @else
+                                                <button type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne2{{ $item->acc_setpang_id }}" aria-expanded="false"
+                                                    aria-controls="collapseTwo" class="text-start m-0 p-0 btn btn-link btn-block">
+                                                    <h5 >{{ $item->pangname }} <label for="" style="color: red"> !! รายละเอียด คลิก !!</label></h5> 
+                                                </button>
+                                                    
+                                            @endif --}}
+                                            
+                                        </div>
+                                        
+                                        <div data-parent="#accordion" id="collapseOne2{{ $item->acc_setpang_id }}" class="collapse">
+                                            <div class="card-body">
+                                                <div class="row ms-3 me-3">
+                                                    {{-- @foreach ($data_sub_ as $itemsub)
+                                                        <div class="col-md-4 mb-2">
+                                                            @if ($itemsub->pttype != '')
+                                                                <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-info" onclick="sub_destroy({{ $itemsub->acc_setpang_type_id }})">
+                                                                    {{$itemsub->pttype}} - {{$itemsub->name}} / {{$itemsub->opdipd}}
+                                                                </button>
+                                                            @else                                                                    
+                                                            @endif
+    
+                                                            @if ($itemsub->icode != '')
+                                                                <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-primary" onclick="subicode_destroy({{ $itemsub->acc_setpang_type_id }})">
+                                                                    ICODE - {{$itemsub->icode}}  
+                                                                </button> 
+                                                            @else                                                              
+                                                            @endif
+    
+                                                            @if ($itemsub->no_icode != '')
+                                                                <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-danger" onclick="subicode_destroy({{ $itemsub->acc_setpang_type_id }})">
+                                                                   NO ICODE - {{$itemsub->no_icode}}  
+                                                                </button> 
+                                                            @else                                                              
+                                                            @endif
+    
+                                                            @if ($itemsub->hospmain != '')
+                                                                <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-warning" onclick="hospmain_destroy({{ $itemsub->acc_setpang_type_id }})">
+                                                                    Hospmain - {{$itemsub->hospmain}}  
+                                                                </button> 
+                                                            @else                                                                    
+                                                            @endif
+                                                            
+                                                        </div>
+                                                        
+                                                    @endforeach --}}
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </td> 
+                                    
+                                    <td class="text-center" width="7%"> 
+                                        <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-success addpttypeModal" value="{{ $item->acc_setpang_id }}" data-bs-toggle="tooltip" data-bs-placement="left" title="เพิ่ม pttype">
+                                            <i class="fa-solid fa-plus text-success"></i>
+                                            pttype
+                                        </button>
+                                    </td>
+                                    
+                                   
+                                </tr> 
+                            @endforeach
+    
+                        </tbody>
+                    </table> 
+                </div>
+            </div> 
+        </div>
+        {{-- <div class="card card_audit_4c">
             <div class="card-body">
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab-eg2-0" role="tabpanel">
@@ -101,20 +221,16 @@ if (Auth::check()) {
                                     <thead>
                                         <tr>
                                             <th>ลำดับ</th> 
-                                            <th>ชื่อพารามิเตอร์</th>
-                                            <th>หน่วย</th>
-                                            <th>วิธีวิเคราะห์</th>
-                                            <th>เกณฑ์มาตรฐาน</th> 
-                                            <th>ค่ามาตรฐาน</th>
-                                            <th>สถานะ</th>
-                                            <th>ตั้งค่า</th> 
+                                            <th>รหัสบ่อ</th>
+                                            <th>ชื่อบ่อบำบบัด</th>
+                                            <th>พารามิเตอร์</th>                                                                                        
                                         </tr>
                                     </thead>
-                                    {{-- <tbody>
+                                    <tbody>
                                         <?php $i = 1;
                                         $date = date('Y');
                                         ?>
-                                        @foreach ($data_water_parameter_set as $item)
+                                        @foreach ($datashow as $item)
                                             <tr id="sid{{ $item->water_parameter_id }}">
                                                 <td class="text-center" width="3%">{{ $i++ }}</td>
                                                 <td class="p-2" width="18%">{{ $item->water_parameter_name }} </td>
@@ -161,7 +277,7 @@ if (Auth::check()) {
                                                 </td>
                                             </tr>
                                         @endforeach
-                                    </tbody> --}}
+                                    </tbody>
                                 </table>
                             </div> 
                         </p>
@@ -170,14 +286,54 @@ if (Auth::check()) {
                 </div>
             </div>
             
-        </div>
+        </div> --}}
 </div> 
 
- 
+<!-- Insert Modal -->
+<div class="modal fade" id="exampleModal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ตั้งค่าบ่อบำบัด</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="pang" class="form-label">รหัสบ่อบำบัด</label>
+                        <div class="input-group input-group-sm"> 
+                            <input type="text" class="form-control" id="pang" name="pang">  
+                        </div>
+                    </div>  
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label for="pangname" class="form-label">ชื่อบ่อบำบัด</label>
+                        <div class="input-group input-group-sm"> 
+                            <input type="text" class="form-control" id="pangname" name="pangname">  
+                        </div>
+                    </div>  
+                </div> 
+                                
+                <input type="hidden" name="user_id" id="user_id" value="{{$iduser}}"> 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="me-2 btn-icon btn-shadow btn-dashed btn btn-outline-info" id="Savedata">
+                    <i class="pe-7s-diskette btn-icon-wrapper"></i>Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
       
 @endsection
 @section('footer')
-<script>
+{{-- <script>
     function switchactive(idfunc){
             // var nameVar = document.getElementById("name").value;
             var checkBox = document.getElementById(idfunc);
@@ -196,7 +352,7 @@ if (Auth::check()) {
                         data:{onoff:onoff,idfunc:idfunc,_token:_token}
                 })
        }
-</script>
+</script> --}}
 <script>
     
     $(document).ready(function() {

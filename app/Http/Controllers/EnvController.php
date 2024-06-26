@@ -706,18 +706,21 @@ class EnvController extends Controller
  
         $data_water_parameter_set = DB::table('env_water_parameter')->get(); 
 
-        $datashow = DB::connection('mysql')->select('
-        SELECT DISTINCT(t.trash_bill_on) ,t.trash_id , t.trash_date , t.trash_time ,t.trash_sub , pv.vendor_name ,
-        CONCAT(u.fname," ",u.lname) as trash_user
-        FROM env_trash t
-        LEFT JOIN env_trash_sub ts on ts.trash_id = t.trash_id
-        LEFT JOIN products_vendor pv on pv.vendor_id = t.trash_sub
-        LEFT JOIN users u on u.id = t.trash_user 
-        order by t.trash_id desc;
-        ');
-        
-        
+        // $datashow = DB::connection('mysql')->select('
+        //     SELECT 
+        //     ;
+        // ');
 
+        $datashow = DB::connection('mysql')->select('
+        SELECT 
+         a.acc_setpang_id,a.pang,a.pangname,a.active,b.acc_setpang_type_id,b.acc_setpang_id as acc_setpang_id2,b.pang as pang2
+         ,b.pttype as pttype2,b.hipdata_code,b.icode as icode2,b.icode,b.hospmain
+        from acc_setpang a
+        LEFT JOIN acc_setpang_type b ON b.acc_setpang_id = a.acc_setpang_id
+        GROUP BY a.pang
+        ORDER BY b.pang DESC
+        '); 
+                
         return view('env.env_water_parameter_set', $data,[
             'startdate'                 => $datestart,
             'enddate'                   => $dateend,
