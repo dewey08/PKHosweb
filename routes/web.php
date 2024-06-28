@@ -3092,7 +3092,7 @@ Route::match(['get','post'],'env_water_parameter_update',[App\Http\Controllers\E
 Route::match(['get','post'],'env_water_parameter_delete/{id}',[App\Http\Controllers\EnvController::class, 'env_water_parameter_delete'])->name('env.env_water_parameter_delete');//ลบข้อมูล
 Route::match(['get','post'],'env_water_parameter_switchactive',[App\Http\Controllers\EnvController::class, 'env_water_parameter_switchactive'])->name('env.env_water_parameter_switchactive');//สถานะ
 Route::match(['get','post'],'env_water_parameter_set',[App\Http\Controllers\EnvController::class, 'env_water_parameter_set'])->name('env.env_water_parameter_set');//ตั้งค่ากลุ่มบ่อบำบัด
-
+Route::match(['get','post'],'env_water_parameter_para_id/{id}',[App\Http\Controllers\EnvController::class, 'env_water_parameter_para_id'])->name('env.env_water_parameter_para_id');//
 
 //ตั้งค่าประเภทขยะ
 Route::match(['get','post'],'env_trash_parameter',[App\Http\Controllers\EnvController::class, 'env_trash_parameter'])->name('env.env_trash_parameter');//หน้าหลักแสดงข้อมูล

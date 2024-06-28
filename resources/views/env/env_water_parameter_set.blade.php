@@ -97,9 +97,9 @@ if (Auth::check()) {
                         <thead>
                             <tr>
                                 <th class="text-center">ลำดับ</th> 
-                                <th class="text-center">รหัส</th>
-                                <th class="text-center">ชื่อผัง</th>
-                                <th class="text-center">pttype</th>
+                                <th class="text-center">รหัสบ่อบำบัด</th>
+                                <th class="text-center">ชื่อบ่อบำบัด</th>
+                                <th class="text-center">เพิ่มพารามิเตอร์</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -107,37 +107,23 @@ if (Auth::check()) {
                             $total1 = 0; ?>
                             @foreach ($datashow as $item)
                                 <?php $number++; ?> 
-                                <tr id="#sid{{ $item->acc_setpang_type_id }}">
+                                <tr id="#sid{{ $item->pond_sub_id }}">
                                     <td class="text-center" width="5%">{{ $number }}</td> 
-                                    <td class="text-center" width="10%" >
-                                        {{-- <button type="button"class="btn-icon btn-shadow btn-dashed btn btn-outline-danger editModal" value="{{ $item->acc_setpang_id }}" data-bs-toggle="tooltip" data-bs-placement="left" title="แก้ไข">
-                                            {{ $item->pang }}
-                                        </button> --}}
-                                        {{-- <button type="button"class="btn-icon btn-shadow btn-dashed btn btn-outline-danger editModal" value="{{ $item->acc_setpang_id }}" data-bs-toggle="tooltip" data-bs-placement="left" title="แก้ไข">
-                                            {{ $item->icode }}
-                                        </button>
-                                        <button type="button"class="btn-icon btn-shadow btn-dashed btn btn-outline-danger editModal" value="{{ $item->acc_setpang_id }}" data-bs-toggle="tooltip" data-bs-placement="left" title="แก้ไข">
-                                            {{ $item->hospmain }}
-                                        </button> --}}
-                                    </td> 
+                                    <td class="text-center" width="10%" > {{$item->pond_id}} </td> 
                                     <td >   
-                                        <?php 
-                                            // $data_sub_ = DB::connection('mysql')->select('
-                                            //     SELECT * from acc_setpang_type a
-                                            //     LEFT JOIN pttype p ON p.pttype = a.pttype 
-                                            //     WHERE acc_setpang_id = "'.$item->acc_setpang_id.'"');
-    
-                                            // $data_subcount_ = DB::connection('mysql')->select('SELECT COUNT(acc_setpang_id) as acc_setpang_id from acc_setpang_type WHERE acc_setpang_id = "'.$item->acc_setpang_id.'"');
-                                            // foreach ($data_subcount_ as $key => $value) {
-                                            //     $data_subcount = $value->acc_setpang_id;
-                                            // }
+                                        <?php
+                                            //  $data_sub = DB::connection('mysql')->select('
+                                            //     SELECT * from pond_sub ps
+                                            //     LEFT JOIN env_water_parameter w ON w.water_parameter_id = ps.water_parameter_id 
+                                            //     WHERE pond_id = "'.$item->pond_id.'"');
+                                            
                                         ?>
                                         <div id="headingTwo" class="b-radius-0 card-header">
                                             {{-- @if ($data_subcount == '0') --}}
                                                 <button type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseOne2{{ $item->acc_setpang_id }}" aria-expanded="false"
+                                                    data-bs-target="#collapseOne2{{ $item->pond_sub_id }}" aria-expanded="false"
                                                     aria-controls="collapseTwo" class="text-start m-0 p-0 btn btn-link btn-block">
-                                                    <h5 style="color: rgb(207, 204, 204)">{{ $item->pangname }} <label for="" style="color: red"> !! รายละเอียด คลิก !!</label></h5> 
+                                                    <h5 style="color: rgb(207, 204, 204)">{{ $item->pond_name }} <label for="" style="color: red"> !! รายละเอียด คลิก !!</label></h5> 
                                                 </button>
                                             {{-- @else
                                                 <button type="button" data-bs-toggle="collapse"
@@ -150,36 +136,15 @@ if (Auth::check()) {
                                             
                                         </div>
                                         
-                                        <div data-parent="#accordion" id="collapseOne2{{ $item->acc_setpang_id }}" class="collapse">
+                                        <div data-parent="#accordion" id="collapseOne2{{ $item->pond_sub_id }}" class="collapse">
                                             <div class="card-body">
                                                 <div class="row ms-3 me-3">
                                                     {{-- @foreach ($data_sub_ as $itemsub)
                                                         <div class="col-md-4 mb-2">
-                                                            @if ($itemsub->pttype != '')
-                                                                <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-info" onclick="sub_destroy({{ $itemsub->acc_setpang_type_id }})">
-                                                                    {{$itemsub->pttype}} - {{$itemsub->name}} / {{$itemsub->opdipd}}
+                                                            @if ($itemsub->parameter != '')
+                                                                <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-info" onclick="sub_destroy({{ $itemsub->pond_sub_id }})">
+                                                                    {{$itemsub->parameter}}
                                                                 </button>
-                                                            @else                                                                    
-                                                            @endif
-    
-                                                            @if ($itemsub->icode != '')
-                                                                <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-primary" onclick="subicode_destroy({{ $itemsub->acc_setpang_type_id }})">
-                                                                    ICODE - {{$itemsub->icode}}  
-                                                                </button> 
-                                                            @else                                                              
-                                                            @endif
-    
-                                                            @if ($itemsub->no_icode != '')
-                                                                <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-danger" onclick="subicode_destroy({{ $itemsub->acc_setpang_type_id }})">
-                                                                   NO ICODE - {{$itemsub->no_icode}}  
-                                                                </button> 
-                                                            @else                                                              
-                                                            @endif
-    
-                                                            @if ($itemsub->hospmain != '')
-                                                                <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-warning" onclick="hospmain_destroy({{ $itemsub->acc_setpang_type_id }})">
-                                                                    Hospmain - {{$itemsub->hospmain}}  
-                                                                </button> 
                                                             @else                                                                    
                                                             @endif
                                                             
@@ -191,12 +156,18 @@ if (Auth::check()) {
                                         </div> 
                                     </td> 
                                     
-                                    <td class="text-center" width="7%"> 
-                                        <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-success addpttypeModal" value="{{ $item->acc_setpang_id }}" data-bs-toggle="tooltip" data-bs-placement="left" title="เพิ่ม pttype">
+                                    <td class="text-center" width="10%"> 
+                                        <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-success addparameterModal" value="{{ $item->pond_sub_id }}" data-bs-toggle="tooltip" data-bs-placement="left" title="เพิ่ม Parameter">
                                             <i class="fa-solid fa-plus text-success"></i>
-                                            pttype
+                                            Parameter
                                         </button>
                                     </td>
+                                    {{-- <td class="text-center" width="10%"> 
+                                        <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-success addparameterModal" data-bs-toggle="tooltip" data-bs-placement="left" title="เพิ่ม Parameter">
+                                            <i class="fa-solid fa-plus text-success"></i>
+                                            Parameter
+                                        </button>
+                                    </td> --}}
                                     
                                    
                                 </tr> 
@@ -302,18 +273,18 @@ if (Auth::check()) {
 
                 <div class="row">
                     <div class="col-md-12">
-                        <label for="pang" class="form-label">รหัสบ่อบำบัด</label>
+                        <label for="pond_id" class="form-label">รหัสบ่อบำบัด</label>
                         <div class="input-group input-group-sm"> 
-                            <input type="text" class="form-control" id="pang" name="pang">  
+                            <input type="text" class="form-control" id="pond_id" name="pond_id">  
                         </div>
                     </div>  
                 </div>
 
                 <div class="row mt-3">
                     <div class="col-md-12">
-                        <label for="pangname" class="form-label">ชื่อบ่อบำบัด</label>
+                        <label for="pond_name" class="form-label">ชื่อบ่อบำบัด</label>
                         <div class="input-group input-group-sm"> 
-                            <input type="text" class="form-control" id="pangname" name="pangname">  
+                            <input type="text" class="form-control" id="pond_name" name="pond_name">  
                         </div>
                     </div>  
                 </div> 
@@ -328,6 +299,69 @@ if (Auth::check()) {
         </div>
     </div>
 </div> 
+
+<!-- addparameterModal Modal -->
+<div class="modal fade" id="addparameterModal"  tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">เพิ่ม Parameter</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body"> 
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="editpond_id" class="form-label">รหัสบ่อบำบัด</label>
+                            <div class="input-group input-group-sm"> 
+                                <input type="text" class="form-control" id="editpond_id" name="editpond_id" >  
+                            </div>
+                        </div>  
+                        <div class="col-md-8">
+                            <label for="editpond_name" class="form-label">ชื่อบ่อบำบัด</label>
+                            <div class="input-group input-group-sm"> 
+                                <input type="text" class="form-control" id="editpond_name" name="editpond_name" >  
+                            </div>
+                        </div> 
+                    </div>
+    
+
+                    <div class="row mt-3">
+                        {{-- <div class="col-md-4">
+                            <label for="pttype" class="form-label">OPD-IPD</label>
+                            <div class="input-group input-group-sm"> 
+                                <select name="opdipd" id="opdipd" class="form-control" style="width: 100%">
+                                    <option value="OPD">- OPD -</option>
+                                    <option value="IPD">- IPD -</option>
+                                </select>                                 
+                            </div>
+                        </div>   --}}
+                        <div class="col-md-8">
+                            <label for="adddata_parameter" class="form-label">เพิ่ม Parameter</label>
+                            <div class="input-group input-group-sm">  
+                                <select name="adddata_parameter" id="adddata_parameter" class="form-control" style="width: 100%">
+                                    <option value="">-Choose-</option>
+                                    @foreach ($data_parameter as $item1)
+                                        <option value="{{$item1->water_parameter_id}}">{{$item1->water_parameter_id}} {{$item1->water_parameter_name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>  
+                        
+                    </div> 
+                
+                <input type="hidden" name="user_id" id="adduser_id"> 
+                <input type="hidden" name="editpond_sub_id" id="editpond_sub_id"> 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="me-2 btn-icon btn-shadow btn-dashed btn btn-outline-info" id="Updatetype">
+                    <i class="pe-7s-diskette btn-icon-wrapper"></i>Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
       
@@ -377,6 +411,13 @@ if (Auth::check()) {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
         });
+
+        $('#addpttype').select2({
+            dropdownParent: $('#addparameterModal')
+        });
+
+
+
         $('#HR_DEPARTMENT_ID').select2({
                 placeholder: "--เลือก--",
                 allowClear: true
@@ -433,6 +474,24 @@ if (Auth::check()) {
                 },
             });
         });  
+
+        $(document).on('click', '.addparameterModal', function() {
+        var pond_sub_id = $(this).val(); 
+        // alert(pond_sub_id);
+        $('#addparameterModal').modal('show');
+        $.ajax({
+            type: "GET",
+            url: "{{ url('env_water_parameter_para_id') }}" + '/' + pond_sub_id,
+            success: function(data) {
+                console.log(data.data_para.pond_sub_id); 
+                $('#editpond_id').val(data.data_para.pond_id)
+                $('#editpond_name').val(data.data_para.pond_name)
+                $('#water_parameter_id').val(data.data_para.water_parameter_id) 
+                $('#water_parameter_short_name').val(data.data_para.water_parameter_short_name) 
+                $('#editpond_sub_id').val(data.data_para.pond_sub_id)
+            },
+        });
+    });
     });
 </script>
 <script>

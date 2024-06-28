@@ -43,7 +43,7 @@ use App\Models\Book_type;
 use App\Models\Book_import_fam;
 use App\Models\Book_signature;
 use App\Models\Env_pond;
-use App\Models\Book_objective;
+use App\Models\Env_pond_sub;
 use App\Models\Book_senddep;
 use App\Models\Book_senddep_sub;
 use App\Models\Book_send_person;
@@ -694,6 +694,7 @@ class EnvController extends Controller
         return redirect()->back();
     }
 
+//**************************************************************ระบบตั้งค่า บ่อบำบัด*********************************************
     public function env_water_parameter_set (Request $request)
     {
         $datestart = $request->startdate;
@@ -704,28 +705,34 @@ class EnvController extends Controller
         $data['users_group'] = DB::table('users_group')->get();
         $data['p4p_workgroupset'] = P4p_workgroupset::where('p4p_workgroupset_user','=',$iduser)->get();
  
-        $data_water_parameter_set = DB::table('env_water_parameter')->get(); 
-
-        // $datashow = DB::connection('mysql')->select('
-        //     SELECT 
-        //     ;
-        // ');
+        // $data_water_parameter_set = DB::table('env_water_parameter')->get(); 
 
         $datashow = DB::connection('mysql')->select('
-        SELECT 
-         a.acc_setpang_id,a.pang,a.pangname,a.active,b.acc_setpang_type_id,b.acc_setpang_id as acc_setpang_id2,b.pang as pang2
-         ,b.pttype as pttype2,b.hipdata_code,b.icode as icode2,b.icode,b.hospmain
-        from acc_setpang a
-        LEFT JOIN acc_setpang_type b ON b.acc_setpang_id = a.acc_setpang_id
-        GROUP BY a.pang
-        ORDER BY b.pang DESC
-        '); 
-                
+            SELECT p.pond_id , p.pond_name , ps.pond_sub_id , ps.pond_id , ps.pond_name , ps.water_parameter_id , ps.water_parameter_short_name 
+            from env_pond p
+            LEFT JOIN env_pond_sub ps on ps.pond_id = p.pond_id
+            ');
+        
+        $data_parameter = DB::connection('mysql')->select('SELECT * from env_water_parameter');
+
         return view('env.env_water_parameter_set', $data,[
             'startdate'                 => $datestart,
-            'enddate'                   => $dateend,
-            'data_water_parameter_set'  => $data_water_parameter_set, 
+            'enddate'                   => $dateend,            
+            // 'data_water_parameter_set'  => $data_water_parameter_set, 
             'datashow'                  => $datashow, 
+            'data_parameter'            => $data_parameter,
+        ]);
+    }
+
+    public function env_water_parameter_para_id(Request $request,$id)
+    {
+        // $data_para = Env_pond_sub::find($id);
+        // $data_para = Env_pond_sub::find($id);
+        $data_para =DB::table('env_pond_sub')->where('pond_sub_id',$id)->first();
+
+        return response()->json([
+            'status'               => '200', 
+            'data_para'            =>  $data_para,
         ]);
     }
 
