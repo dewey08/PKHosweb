@@ -500,6 +500,7 @@
                             </div>
                         </div>
                     </div>  --}}
+                   
                     <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="400">
                         <div class="team-member">
                             <div class="member-img text-center">
@@ -549,7 +550,7 @@
                                     <a href=""><i class="bi bi-instagram"></i></a>
                                     <a href=""><i class="bi bi-linkedin"></i></a>
                                 </div>
-                                <h4>นายสถาพร ป้อมสุวรรณ</h4>
+                                <h5>นายสถาพร ป้อมสุวรรณ</h5>
                                 <span>รองผู้อำนวยการฝ่ายบริหาร</span>
                             </div>
                         </div>
@@ -566,7 +567,7 @@
                                     <a href=""><i class="bi bi-instagram"></i></a>
                                     <a href=""><i class="bi bi-linkedin"></i></a>
                                 </div>
-                                <h4>แพทย์หญิงโอทนี สุวรรณมาลี</h4>
+                                <h5>แพทย์หญิงโอทนี สุวรรณมาลี</h5>
                                 <span>รองผู้อำนวยการฝ่ายการแพทย์</span>
                             </div>
                         </div>
@@ -583,7 +584,7 @@
                                     <a href=""><i class="bi bi-instagram"></i></a>
                                     <a href=""><i class="bi bi-linkedin"></i></a>
                                 </div>
-                                <h4>นางสิริพร ศัลย์วิเศษ</h4>
+                                <h5>นางสิริพร ศัลย์วิเศษ</h5>
                                 <span>หัวหน้ากลุ่มภารกิจด้านการพยาบาล</span>
                             </div>
                         </div>
@@ -591,7 +592,7 @@
                 </div>
                 <div class="row gy-5 mt-2">
                     {{-- <div class="col"></div> --}}
-                    <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="400">
                         <div class="team-member">
                             <div class="member-img text-center">
                                 <img src="{{ asset('medical/assets/img/niwat.png') }}" class="img-fluid" alt="">
@@ -603,12 +604,12 @@
                                     <a href=""><i class="bi bi-instagram"></i></a>
                                     <a href=""><i class="bi bi-linkedin"></i></a>
                                 </div>
-                                <h4>นายแพทย์นิวัฒน์ ขจัดพาล</h4>
+                                <h6>นายแพทย์นิวัฒน์ ขจัดพาล</h6>
                                 <span>หัวหน้ากลุ่มภารกิจด้านพัฒนาระบบบริการและสนับสนุนบริการสุขภาพ(พรส)</span>
                             </div>
                         </div>
                     </div> 
-                    <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="400">
                         <div class="team-member">
                             <div class="member-img text-center">
                                 <img src="{{ asset('medical/assets/img/naruemon.png') }}" class="img-fluid" alt="">
@@ -620,15 +621,15 @@
                                     <a href=""><i class="bi bi-instagram"></i></a>
                                     <a href=""><i class="bi bi-linkedin"></i></a>
                                 </div>
-                                <h4>แพทย์หญิงนฤมล บำเพ็ญเกียรติกุล</h4>
+                                <h6>แพทย์หญิงนฤมล บำเพ็ญเกียรติกุล</h6>
                                 <span>หัวหน้ากลุ่มภารกิจด้านบริการปฐมภูมิ</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="col-xl-3 col-md-6 d-flex" style="" data-aos="zoom-in" data-aos-delay="600">
                         <div class="team-member">
                             <div class="member-img text-center">
-                                <img src="{{ asset('medical/assets/img/') }}" class="img-fluid" alt="">
+                                <img src="{{ asset('medical/assets/img/naruemon.png') }}" class="img-fluid" alt="">
                             </div>
                             <div class="member-info mt-1">
                                 <div class="social">
@@ -637,13 +638,32 @@
                                     <a href=""><i class="bi bi-instagram"></i></a>
                                     <a href=""><i class="bi bi-linkedin"></i></a>
                                 </div>
-                                <h4>นายปรเมษฐ แควภูเขียว</h4>
+                                <h6>ทันตแพทย์อตินาต ธรรมรัชสุนทร</h6>
+                                <span>หัวหน้ากลุ่มภารกิจด้านทันตกรรม</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="800">
+                        <div class="team-member">
+                            <div class="member-img text-center">
+                                <img src="{{ asset('medical/assets/img/naruemon.png') }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info mt-1">
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                                <h6>นายปรเมษฐ แควภูเขียว</h6>
                                 <span>หัวหน้ากลุ่มภารกิจสุขภาพดิจิทัล</span>
                             </div>
                         </div>
-                    </div> 
-                    <div class="col"></div>
+                    </div>
+                    
                 </div>
+                 
+                
 
             </div>
         </section><!-- End Team Section -->

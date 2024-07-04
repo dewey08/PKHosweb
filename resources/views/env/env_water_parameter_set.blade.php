@@ -46,6 +46,52 @@
     function TypeAdmin() {
         window.location.href = '{{ route('index') }}';
     }
+    function env_parameter_destroy(pond_sub_id) { 
+        Swal.fire({
+            position: "top-end",
+            title: 'ต้องการลบใช่ไหม?',
+            text: "ข้อมูลนี้จะถูกลบไปเลย !!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'ใช่, ลบเดี๋ยวนี้ !',
+            cancelButtonText: 'ไม่, ยกเลิก'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "{{ url('env_parameter_destroy') }}" + '/' + pond_sub_id,
+                    type: 'POST',
+                    data: {
+                        _token: $("input[name=_token]").val()
+                    },
+                    success: function(response) {
+                            if (response.status == 200) {
+                                Swal.fire({  
+                                position: "top-end",
+                                title: 'ลบข้อมูล!',
+                                text: "You Delet data success",
+                                icon: 'success',
+                                showCancelButton: false,
+                                confirmButtonColor: '#06D177',
+                                // cancelButtonColor: '#d33',
+                                confirmButtonText: 'เรียบร้อย'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    $("#sid" + pond_sub_id).remove();
+                                    window.location.reload();
+                                    //   window.location = "/person/person_index"; //     
+                                }
+                            })
+                        } else {
+                            
+                        }
+                        
+                    }
+                })
+            }
+        })
+    }
 </script>
 <?php
 if (Auth::check()) {
@@ -112,10 +158,10 @@ if (Auth::check()) {
                                     <td class="text-center" width="10%" > {{$item->pond_id}} </td> 
                                     <td >   
                                         <?php
-                                            //  $data_sub = DB::connection('mysql')->select('
-                                            //     SELECT * from pond_sub ps
-                                            //     LEFT JOIN env_water_parameter w ON w.water_parameter_id = ps.water_parameter_id 
-                                            //     WHERE pond_id = "'.$item->pond_id.'"');
+                                             $data_sub_ = DB::connection('mysql')->select('
+                                                SELECT * from env_pond_sub ps
+                                                LEFT JOIN env_water_parameter w ON w.water_parameter_id = ps.water_parameter_id 
+                                                WHERE ps.pond_id = "'.$item->pond_id.'"');
                                             
                                         ?>
                                         <div id="headingTwo" class="b-radius-0 card-header">
@@ -138,19 +184,19 @@ if (Auth::check()) {
                                         
                                         <div data-parent="#accordion" id="collapseOne2{{ $item->pond_sub_id }}" class="collapse">
                                             <div class="card-body">
-                                                <div class="row ms-3 me-3">
-                                                    {{-- @foreach ($data_sub_ as $itemsub)
-                                                        <div class="col-md-4 mb-2">
-                                                            @if ($itemsub->parameter != '')
-                                                                <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-info" onclick="sub_destroy({{ $itemsub->pond_sub_id }})">
-                                                                    {{$itemsub->parameter}}
-                                                                </button>
-                                                            @else                                                                    
+                                                <div class="row ms-2 me-2">
+                                                    @foreach ($data_sub_ as $itemsub)
+                                                        <div class="col-md-2">
+                                                            @if ($itemsub->water_parameter_id != '')
+                                                            <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-info" onclick="env_parameter_destroy({{ $itemsub->pond_sub_id }})">
+                                                                {{-- <button type="button" class="btn-icon btn-shadow btn-dashed btn btn-outline-info"> --}}
+                                                                    {{$itemsub->water_parameter_short_name}}
+                                                                </button>                                                         
                                                             @endif
                                                             
                                                         </div>
                                                         
-                                                    @endforeach --}}
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div> 
@@ -315,32 +361,24 @@ if (Auth::check()) {
                         <div class="col-md-4">
                             <label for="editpond_id" class="form-label">รหัสบ่อบำบัด</label>
                             <div class="input-group input-group-sm"> 
-                                <input type="text" class="form-control" id="editpond_id" name="editpond_id" >  
+                                <input type="text" class="form-control" id="editpond_id" name="editpond_id" readonly>  
                             </div>
                         </div>  
                         <div class="col-md-8">
                             <label for="editpond_name" class="form-label">ชื่อบ่อบำบัด</label>
                             <div class="input-group input-group-sm"> 
-                                <input type="text" class="form-control" id="editpond_name" name="editpond_name" >  
+                                <input type="text" class="form-control" id="editpond_name" name="editpond_name" readonly>  
                             </div>
                         </div> 
                     </div>
     
 
                     <div class="row mt-3">
-                        {{-- <div class="col-md-4">
-                            <label for="pttype" class="form-label">OPD-IPD</label>
-                            <div class="input-group input-group-sm"> 
-                                <select name="opdipd" id="opdipd" class="form-control" style="width: 100%">
-                                    <option value="OPD">- OPD -</option>
-                                    <option value="IPD">- IPD -</option>
-                                </select>                                 
-                            </div>
-                        </div>   --}}
+                        
                         <div class="col-md-8">
-                            <label for="adddata_parameter" class="form-label">เพิ่ม Parameter</label>
+                            <label for="editwater_parameter_id" class="form-label">เพิ่ม Parameter</label>
                             <div class="input-group input-group-sm">  
-                                <select name="adddata_parameter" id="adddata_parameter" class="form-control" style="width: 100%">
+                                <select name="editwater_parameter_id" id="editwater_parameter_id" class="form-control" style="width: 100%">
                                     <option value="">-Choose-</option>
                                     @foreach ($data_parameter as $item1)
                                         <option value="{{$item1->water_parameter_id}}">{{$item1->water_parameter_id}} {{$item1->water_parameter_name}}</option>
@@ -367,26 +405,7 @@ if (Auth::check()) {
       
 @endsection
 @section('footer')
-{{-- <script>
-    function switchactive(idfunc){
-            // var nameVar = document.getElementById("name").value;
-            var checkBox = document.getElementById(idfunc);
-            var onoff;
-            
-            if (checkBox.checked == true){
-                onoff = "TRUE";
-            } else {
-                onoff = "FALSE";
-            }
  
-            var _token=$('input[name="_token"]').val();
-                $.ajax({
-                        url:"{{route('env.env_water_parameter_switchactive')}}",
-                        method:"GET",
-                        data:{onoff:onoff,idfunc:idfunc,_token:_token}
-                })
-       }
-</script> --}}
 <script>
     
     $(document).ready(function() {
@@ -398,14 +417,7 @@ if (Auth::check()) {
         $('#datepicker2').datepicker({
             format: 'yyyy-mm-dd'
         });
-
-        $('#datepicker3').datepicker({
-            format: 'yyyy-mm-dd'
-        });
-        $('#datepicker4').datepicker({
-            format: 'yyyy-mm-dd'
-        });
-
+ 
         $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -416,22 +428,70 @@ if (Auth::check()) {
             dropdownParent: $('#addparameterModal')
         });
 
-
-
-        $('#HR_DEPARTMENT_ID').select2({
-                placeholder: "--เลือก--",
-                allowClear: true
-            });
-        $('#HR_DEPARTMENT_SUB_ID').select2({
-                placeholder: "--เลือก--",
-                allowClear: true
-            });
-        $('#HR_DEPARTMENT_SUB_SUB_ID').select2({
-            placeholder: "--เลือก--",
-            allowClear: true
-        });
+ 
 
         $("#spinner-div").hide(); //Request is complete so hide spinner
+
+        $('#Updatetype').click(function() {
+            var editpond_id       = $('#editpond_id').val();
+            var editpond_name     = $('#editpond_name').val();
+            var editwater_parameter_id = $('#editwater_parameter_id').val(); 
+            var editpond_sub_id   = $('#editpond_sub_id').val(); 
+            
+            $.ajax({
+                url: "{{ route('env.env_parameter_save') }}",
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    editpond_id,
+                    editpond_name,
+                    editwater_parameter_id,
+                    editpond_sub_id
+                },
+                success: function(data) {
+                    if (data.status == 200) { 
+                        Swal.fire({
+                            position: "top-end",
+                            title: 'บันทึกข้อมูลสำเร็จ',
+                            text: "You Insert data success",
+                            icon: 'success',
+                            showCancelButton: false,
+                            confirmButtonColor: '#06D177',
+                            confirmButtonText: 'เรียบร้อย'
+                        }).then((result) => {
+                            if (result
+                                .isConfirmed) {
+                                console.log(
+                                    data);
+
+                                window.location
+                                    .reload();
+                            }
+                        })
+                    } else {
+                        Swal.fire({
+                            position: "top-end",
+                            title: 'มีข้อมูลอยู่แล้ว',
+                            text: "You Have data success",
+                            icon: 'success',
+                            showCancelButton: false,
+                            confirmButtonColor: '#06D177',
+                            confirmButtonText: 'เรียบร้อย'
+                        }).then((result) => {
+                            if (result
+                                .isConfirmed) {
+                                console.log(
+                                    data);
+
+                                window.location
+                                    .reload();
+                            }
+                        })
+                    }
+
+                },
+            });
+        });  
 
         $('#Savetime').click(function() {
             var startdate = $('#datepicker').val();
@@ -476,19 +536,19 @@ if (Auth::check()) {
         });  
 
         $(document).on('click', '.addparameterModal', function() {
-        var pond_sub_id = $(this).val(); 
-        // alert(pond_sub_id);
+        var pondsub_id = $(this).val(); 
+        // alert(pondsub_id);
         $('#addparameterModal').modal('show');
         $.ajax({
             type: "GET",
-            url: "{{ url('env_water_parameter_para_id') }}" + '/' + pond_sub_id,
-            success: function(data) {
-                console.log(data.data_para.pond_sub_id); 
-                $('#editpond_id').val(data.data_para.pond_id)
-                $('#editpond_name').val(data.data_para.pond_name)
-                $('#water_parameter_id').val(data.data_para.water_parameter_id) 
-                $('#water_parameter_short_name').val(data.data_para.water_parameter_short_name) 
-                $('#editpond_sub_id').val(data.data_para.pond_sub_id)
+            url: "{{ url('env_water_parameter_para_id') }}" + '/' + pondsub_id,
+            success: function(response) {
+                console.log(response.data_para.pond_sub_id); 
+                $('#editpond_id').val(response.data_para.pond_id)
+                $('#editpond_name').val(response.data_para.pond_name)
+                $('#editpond_sub_id').val(response.data_para.pond_sub_id)
+                $('#editwater_parameter_id').val(response.data_para.water_parameter_id)
+                
             },
         });
     });

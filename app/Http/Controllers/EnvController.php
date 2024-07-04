@@ -708,10 +708,16 @@ class EnvController extends Controller
         // $data_water_parameter_set = DB::table('env_water_parameter')->get(); 
 
         $datashow = DB::connection('mysql')->select('
-            SELECT p.pond_id , p.pond_name , ps.pond_sub_id , ps.pond_id , ps.pond_name , ps.water_parameter_id , ps.water_parameter_short_name 
-            from env_pond p
-            LEFT JOIN env_pond_sub ps on ps.pond_id = p.pond_id
+            SELECT *
+            from env_pond_sub  
+            group by pond_id
             ');
+            // $datashow = DB::connection('mysql')->select('
+            // SELECT p.pond_id , p.pond_name , ps.pond_sub_id , ps.pond_id , ps.pond_name , ps.water_parameter_id , ps.water_parameter_short_name 
+            // from env_pond p
+            // LEFT JOIN env_pond_sub ps on ps.pond_id = p.pond_id
+            // group by p.pond_id
+            // ');
         
         $data_parameter = DB::connection('mysql')->select('SELECT * from env_water_parameter');
 
@@ -726,9 +732,9 @@ class EnvController extends Controller
 
     public function env_water_parameter_para_id(Request $request,$id)
     {
-        // $data_para = Env_pond_sub::find($id);
-        // $data_para = Env_pond_sub::find($id);
-        $data_para =DB::table('env_pond_sub')->where('pond_sub_id',$id)->first();
+        
+        // $data_para = Env_pond_sub::where('pond_sub_id','=',$id)->first();
+        $data_para = DB::table('env_pond_sub')->where('pond_sub_id','=',$id)->first();
 
         return response()->json([
             'status'               => '200', 
@@ -736,6 +742,85 @@ class EnvController extends Controller
         ]);
     }
 
+    public function env_water_parameter_set_save(Request $request)
+    {  
+        // $add = new Env_pond_sub(); 
+        // $add->pond_id                       = $request->input('pond_id');
+        // $add->pond_name                     = $request->input('pond_name');
+        // $add->water_parameter_id            = $request->input('water_parameter_id');
+        // $add->water_parameter_short_name    = $request->input('water_parameter_short_name'); 
+        // $add->save();
+
+        DB::table('env_pond_sub')->insert([
+            'pond_id'                     => $request->input('pond_id'),
+            'pond_name'                   => $request->input('pond_name'),
+            'water_parameter_id'          => $request->input('water_parameter_id'),
+            'water_parameter_short_name'  => $request->input('water_parameter_short_name')
+        ]);
+
+        return response()->json([
+            'status'     => '200',
+        ]);
+    }
+
+    
+    public function env_parameter_save(Request $request)
+    {  
+        $id       = $request->editpond_sub_id;
+        $ids_     = Env_water_parameter::where('water_parameter_id',$request->editwater_parameter_id)->first(); 
+        // dd($id);
+        $ids_id   = $ids_->water_parameter_id;
+        $ids_name = $ids_->water_parameter_name;
+        $ids_shotname = $ids_->water_parameter_short_name;
+        $pondid = $request->input('editpond_id');
+        $waterparameter_id = $ids_id;
+
+        $check_count = DB::table('env_pond_sub')->where('pond_id',$pondid)->where('water_parameter_id',$request->editwater_parameter_id)->count();
+        $idpond_     = Env_pond::where('pond_id',$pondid)->first();
+        $idpond      = $idpond_->pond_id;
+        $namepond      = $idpond_->pond_name;
+        if ( $check_count > 0) {
+            // DB::table('env_pond_sub')->where('pond_sub_id',$id)->update([
+            //     'pond_id'                     => $request->input('editpond_id'),
+            //     'pond_name'                   => $request->input('editpond_name'),
+            //     'water_parameter_id'          => $ids_id,
+            //     'water_parameter_short_name'  => $ids_shotname,
+            // ]);
+            return response()->json([
+                'status'     => '100',
+            ]);
+        } else {
+            DB::table('env_pond_sub')->insert([
+                'pond_id'                     => $idpond,
+                'pond_name'                   => $namepond,
+                'water_parameter_id'          => $ids_id,
+                'water_parameter_short_name'  => $ids_shotname,
+            ]);
+            return response()->json([
+                'status'     => '200',
+            ]);
+           
+        }
+        
+       
+
+        // $update = Env_pond_sub::find($id); 
+        // $update->pond_id                       = $request->input('editpond_id');
+        // $update->pond_name                     = $request->input('editpond_name');
+        // $update->water_parameter_id            = $ids_id; 
+        // $update->water_parameter_short_name    = $ids_shotname;  
+        // $update->save();
+
+        // return response()->json([
+        //     'status'     => '200',
+        // ]);
+    }
+    public function env_parameter_destroy(Request $request,$id)
+    { 
+        $del = DB::table('env_pond_sub')->where('pond_sub_id',$id);
+        $del->delete();  
+        return response()->json(['status' => '200']);
+    }
 
 //**************************************************************ระบบขยะติดเชื้อ*********************************************
 
