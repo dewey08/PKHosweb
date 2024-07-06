@@ -565,6 +565,19 @@ class EnvController extends Controller
 
         ]);
     }
+
+    public function env_water_add_pond (Request $request)
+    { 
+        // $startdate = $request->startdate;
+        // $enddate = $request->enddate;
+        
+        
+        return view('env.env_water_add_pond', [
+            // 'startdate'  =>  $startdate,
+            // 'enddate'    =>  $enddate,
+
+        ]);
+    }
 //**************************************************************ตั้งค่า parameter น้ำ*********************************************
 
     public function env_water_parameter (Request $request)
