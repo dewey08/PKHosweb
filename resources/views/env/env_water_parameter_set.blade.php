@@ -169,7 +169,7 @@ if (Auth::check()) {
                                                 <button type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseOne2{{ $item->pond_sub_id }}" aria-expanded="false"
                                                     aria-controls="collapseTwo" class="text-start m-0 p-0 btn btn-link btn-block">
-                                                    <h5 style="color: rgb(207, 204, 204)">{{ $item->pond_name }} <label for="" style="color: red"> !! รายละเอียด คลิก !!</label></h5> 
+                                                    <h5 style="color: rgba(207, 204, 204, 0.623)">{{ $item->pond_name }} <label for="" style="color: rgb(84, 65, 250)"> !! รายละเอียด คลิก !!</label></h5> 
                                                 </button>
                                             {{-- @else
                                                 <button type="button" data-bs-toggle="collapse"

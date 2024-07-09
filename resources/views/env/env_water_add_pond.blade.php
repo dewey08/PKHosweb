@@ -72,31 +72,69 @@ $datenow = date('Y-m-d');
 
 
 
-<div class="container-fluid" style="width: 97%">
+<div class="container-fluid" style="width: 100%">
     <div class="row ">
-        <div class="col-md-12">
-            <div class="card shadow">
-                 
-                        <div class="card-header">
-                            <div class="d-flex">
-                                <div class="">
-                                    <label for="">เพิ่มข้อมูลผลวิเคราะห์คุณภาพน้ำทิ้ง </label>
-                                </div>
-                                <div class="ms-auto">
-    
-                                </div>
-                            </div>
-                        </div>               
+        <div class="col-md-4">
+            <h2 class="card-title">ประเภทบ่อบำบัด</h2>
+            <p class="card-title-desc"></p>
+        </div>
+    </div>
 
-                        
-                    
-                </div>
+    <div class="row ">
+        
+        <div class="col-md-4">
+            <div class="main-card mb-3 card shadow" style="height: 300px">                 
+                <div class="card-header">
+                    <div class="d-flex">
+                        <div class="">
+                            <label for=""> บ่อปรับเสถียร </label>
+                        </div> 
+                        <div class="ms-auto">
+                        </div>                           
+                    </div>                            
+                </div> 
+                <div class="member-img text-center">
+                    <img src="{{ asset('medical/assets/img/pond1.jpg') }}" class="img-fluid" alt="">
+                </div> 
             </div>
         </div>
-        
+
+        <div class="col-md-4">
+            <div class="main-card mb-3 card shadow" style="height: 300px">                 
+                <div class="card-header">
+                    <div class="d-flex">
+                        <div class="">
+                            <label for=""> บ่อคลองวนเวียน </label>
+                        </div>
+                        <div class="ms-auto">
+                        </div>                                   
+                    </div>                            
+                </div>
+                <div class="member-img text-center">
+                    <img src="{{ asset('medical/assets/img/pond2.jpg') }}" class="img-fluid" alt="">
+                </div> 
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="main-card mb-3 card shadow" style="height: 300px">                 
+                <div class="card-header">
+                    <div class="d-flex">
+                        <div class="">
+                            <label for=""> บ่อสัมผัสคลอลีน </label>
+                        </div>
+                        <div class="ms-auto">
+                        </div>                                   
+                    </div>                            
+                </div>
+                <div class="member-img text-center">
+                    <img src="{{ asset('medical/assets/img/pond3.jpg') }}" class="img-fluid" alt="">
+                </div> 
+            </div>
+        </div>
+
     </div>
 </div>
-
 
 @endsection
 @section('footer')

@@ -629,7 +629,7 @@
                     <div class="col-xl-3 col-md-6 d-flex" style="" data-aos="zoom-in" data-aos-delay="600">
                         <div class="team-member">
                             <div class="member-img text-center">
-                                <img src="{{ asset('medical/assets/img/Dent.png') }}" class="img-fluid" alt="">
+                                <img src="{{ asset('medical/assets/img/Dent.png') }}" class="img-fluid" alt="" >
                             </div>
                             <div class="member-info mt-1">
                                 <div class="social">
