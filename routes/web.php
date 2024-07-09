@@ -3072,7 +3072,9 @@ Route::match(['get','post'],'env_water_update',[App\Http\Controllers\EnvControll
 Route::match(['get','post'],'env_water_delete/{id}',[App\Http\Controllers\EnvController::class, 'env_water_delete'])->name('env.env_water_delete');//ลบข้อมูล
 Route::match(['get','post'],'env_water_datetime',[App\Http\Controllers\EnvController::class, 'env_water_datetime'])->name('env.env_water_datetime');//ค้นตามช่วงวันที่
 Route::match(['get','post'],'env_water_add_pond',[App\Http\Controllers\EnvController::class, 'env_water_add_pond'])->name('env.env_water_add_pond');//เมนูเลือกบ่อบำบัดน้ำเสีย
-
+Route::match(['get','post'],'env_water_add_pond1',[App\Http\Controllers\EnvController::class, 'env_water_add_pond1'])->name('env.env_water_add_pond1');//บ่อปรับเสถียร
+Route::match(['get','post'],'env_water_add_pond2',[App\Http\Controllers\EnvController::class, 'env_water_add_pond2'])->name('env.env_water_add_pond2');//บ่อคลองวนเวียน
+Route::match(['get','post'],'env_water_add_pond3',[App\Http\Controllers\EnvController::class, 'env_water_add_pond3'])->name('env.env_water_add_pond3');//บ่อสัมผัสคลอลีน
 
 //ขยะ//////////////////////////////////////////////////////////////
 //ลงผลข้อมูลขยะ

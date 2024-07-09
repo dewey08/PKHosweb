@@ -79,69 +79,12 @@ $datenow = date('Y-m-d');
 <div class="container-fluid" style="width: 100%">
     <div class="row ">
         <div class="col-md-4">
-            <h2 class="card-title">ประเภทบ่อบำบัด</h2>
+            <h2 class="card-title">บ่อปรับเสถียร</h2>
             <p class="card-title-desc"></p>
         </div>
     </div>
 
-    <div class="row" >  
-        <div class="col"></div>
-
-        <div class="col-md-3 ">
-            <div class="main-card mb-3 card shadow" style="height: 300px " >
-
-                <div class="card-header ">
-                    <div class=" d-flex ">                        
-                        <div class="card-body p-3">
-                            <label for=""> บ่อปรับเสถียร </label>
-                        </div> 
-                        <div class="ms-auto">
-                        </div>                           
-                    </div>                            
-                </div> 
-                <div class="member-img text-center">
-                    <a href="{{url('env_water_add_pond1')}}" target="_blank"> <img src="{{ asset('medical/assets/img/pond1.jpg') }}" height="150px" width="150px" class="rounded-circle me-3"> </a>                     
-                </div> 
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="main-card mb-3 card shadow" style="height: 300px">                 
-                <div class="card-header">
-                    <div class="d-flex">
-                        <div class="">
-                            <label for=""> บ่อคลองวนเวียน </label>
-                        </div>
-                        <div class="ms-auto">
-                        </div>                                   
-                    </div>                            
-                </div>
-                <div class="member-img text-center">
-                    <a href="{{url('env_water_add_pond2')}}" target="_blank"> <img src="{{ asset('medical/assets/img/pond2.jpg') }}" height="150px" width="150px" class="rounded-circle me-3"> </a>
-                </div> 
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="main-card mb-3 card shadow" style="height: 300px">                 
-                <div class="card-header">
-                    <div class="d-flex">
-                        <div class="">
-                            <label for=""> บ่อสัมผัสคลอลีน </label>
-                        </div>
-                        <div class="ms-auto">
-                        </div>                                   
-                    </div>                            
-                </div>
-                <div class="member-img text-center">
-                    <a href="{{url('env_water_add_pond3')}}" target="_blank"> <img src="{{ asset('medical/assets/img/pond3.jpg') }}" height="150px" width="150px" class="rounded-circle me-3"> </a>
-                </div> 
-            </div>
-        </div> 
-
-        <div class="col"></div>
-
-    </div>
+    
 </div>
 
 @endsection

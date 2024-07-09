@@ -578,6 +578,45 @@ class EnvController extends Controller
 
         ]);
     }
+
+    public function env_water_add_pond1 (Request $request) //บ่อปรับเสถียร
+    { 
+        // $startdate = $request->startdate;
+        // $enddate = $request->enddate;
+        
+        
+        return view('env.env_water_add_pond1', [
+            // 'startdate'  =>  $startdate,
+            // 'enddate'    =>  $enddate,
+
+        ]);
+    }
+
+    public function env_water_add_pond2 (Request $request) //บ่อคลองวนเวียน
+    { 
+        // $startdate = $request->startdate;
+        // $enddate = $request->enddate;
+        
+        
+        return view('env.env_water_add_pond2', [
+            // 'startdate'  =>  $startdate,
+            // 'enddate'    =>  $enddate,
+
+        ]);
+    }
+
+    public function env_water_add_pond3 (Request $request) //บ่อสัมผัสคลอลีน
+    { 
+        // $startdate = $request->startdate;
+        // $enddate = $request->enddate;
+        
+        
+        return view('env.env_water_add_pond3', [
+            // 'startdate'  =>  $startdate,
+            // 'enddate'    =>  $enddate,
+
+        ]);
+    }
 //**************************************************************ตั้งค่า parameter น้ำ*********************************************
 
     public function env_water_parameter (Request $request)
