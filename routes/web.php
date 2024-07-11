@@ -3408,7 +3408,25 @@ Route::match(['get','post'],'tree_document_destroy/{id}',[App\Http\Controllers\T
 
 Route::match(['get','post'],'nurse_dashboard',[App\Http\Controllers\NurseController::class, 'nurse_dashboard'])->name('d.nurse_dashboard');//
 Route::match(['get','post'],'nurse_index',[App\Http\Controllers\NurseController::class, 'nurse_index'])->name('d.nurse_index');//
+Route::match(['get','post'],'nurse_index_excel',[App\Http\Controllers\NurseController::class, 'nurse_index_excel'])->name('d.nurse_index_excel');//
+Route::match(['get','post'],'nurse_index_process',[App\Http\Controllers\NurseController::class, 'nurse_index_process'])->name('d.nurse_index_process');//
+Route::match(['get','post'],'nurse_index_editable',[App\Http\Controllers\NurseController::class, 'nurse_index_editable'])->name('d.nurse_index_editable');//
+
+// ************************************* Supplies ***********************************************************
+
+Route::match(['get','post'],'main_repaire_sup',[App\Http\Controllers\SupController::class, 'main_repaire_sup'])->name('d.main_repaire_sup');//
+Route::match(['get','post'],'sup_add_air',[App\Http\Controllers\SupController::class, 'sup_add_air'])->name('d.sup_add_air');//
+Route::match(['get','post'],'capture',[App\Http\Controllers\SupController::class, 'capture'])->name('webcam.capture');//
+
+// ************************************* VACCINE ***********************************************************
+Route::match(['get','post'],'vaccine_big',[App\Http\Controllers\VaccineController::class, 'vaccine_big'])->name('vac.vaccine_big');//
+Route::match(['get','post'],'vaccine_big_process',[App\Http\Controllers\VaccineController::class, 'vaccine_big_process'])->name('vac.vaccine_big_process');//
+Route::match(['get','post'],'vaccine_big_import',[App\Http\Controllers\VaccineController::class, 'vaccine_big_import'])->name('vac.vaccine_big_import');//
+Route::match(['get','post'],'vaccine_big_send',[App\Http\Controllers\VaccineController::class, 'vaccine_big_send'])->name('vac.vaccine_big_send');//
 
 
+// ************************************* OR ***********************************************************
+Route::match(['get','post'],'or_mis',[App\Http\Controllers\OrController::class, 'or_mis'])->name('or.or_mis');//
+Route::match(['get','post'],'or_ercp',[App\Http\Controllers\OrController::class, 'or_ercp'])->name('or.or_ercp');//
 
 });

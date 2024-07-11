@@ -79,9 +79,17 @@ $datenow = date('Y-m-d');
 <div class="container-fluid" style="width: 100%">
     <div class="row ">
         <div class="col-md-4">
-            <h2 class="card-title">บ่อปรับเสถียร</h2>
+            <h3 style="color:green ">บ่อปรับเสถียร</h3>
             <p class="card-title-desc"></p>
         </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-md-4">
+            <h2 class="card-title">ข้อมูลตรวจวัดค่าพารามิเตอร์</h2>
+            <p class="card-title-desc"></p>
+        </div>
+
     </div>
 
     

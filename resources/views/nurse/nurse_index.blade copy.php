@@ -129,19 +129,16 @@
         </div>
         
         <div class="row"> 
-            <div class="col-md-8"> 
-                <h3 style="color:green">จำนวนอัตรากำลังกลุ่มภารกิจด้านการพยาบาล</h3> 
+            <div class="col-md-4"> 
+                <h5 class="card-title" style="color:green">Process data Nurse</h5> 
             </div>
             <div class="col"></div> 
-            <div class="col-md-3 text-end">
+            <div class="col-md-2 text-end">
                 <input type="hidden" name="data_insert" id="data_insert" value="1">
                 <button type="button" class="ladda-button me-2 btn-pill btn btn-primary card_audit_4c" id="Pulldata">
                     <span class="ladda-label"> <i class="fa-solid fa-file-circle-plus text-white me-2"></i>ประมวลผล</span>
                     <span class="ladda-spinner"></span>
                 </button>
-                <a href="{{url('nurse_index_excel')}}" class="ladda-button btn-pill btn btn-success card_audit_4c">
-                    <span class="ladda-label"> <i class="fa-solid fa-file-excel text-white me-2"></i>Export To Excel</span>  
-                </a>
             </div>
         </div>
          
@@ -150,93 +147,83 @@
                 <div class="card card_audit_4c">
                     <div class="card-body">
                         <div class="table-responsive">  
-                                <table id="Tabledit" class="table table-bordered border-primary table-hover table-sm" style="border-collapse: collapse;border-spacing: 0; width: 100%;">
+                                <table id="Tabledit" class="table table-striped table-hover table-sm" style="border-collapse: collapse;border-spacing: 0; width: 100%;">
                                 <thead>
-                                    <tr style="font-size: 13px">                                        
-                                        <th class="text-center" rowspan="2" style="background: #fdf7e4">ward</th>
-                                        <th class="text-center" width="15%" rowspan="2" style="background: #fdf7e4">ward name</th> 
-                                        <th class="text-center" style="background: #e4fdfc">ยอดผู้ป่วย</th> 
-                                        <th class="text-center" style="background: #e4fdfc" colspan="2">จำนวนพยาบาลเวรเช้า</th>
-                                        <th class="text-center" style="background: #e4fdfc" rowspan="2">Nursing <br> product</th>
+                                    <tr>
+                                        {{-- <th class="text-center">วันที่</th> --}}
+                                        {{-- <th class="text-center">ลำดับ</th> --}}
 
-                                        <th class="text-center" style="background: #dadffa">ยอดผู้ป่วย</th> 
-                                        <th class="text-center" style="background: #dadffa" colspan="2">จำนวนพยาบาลเวรบ่าย</th>
-                                        <th class="text-center" style="background: #dadffa" rowspan="2">Nursing<br> product</th>
+                                        {{-- <th class="text-center" rowspan="2">ward</th>
+                                        <th class="text-center" width="15%" rowspan="2">ward name</th>
 
-                                        <th class="text-center" style="background: #fadbda">ยอดผู้ป่วย</th> 
-                                        <th class="text-center" style="background: #fadbda" colspan="2">จำนวนพยาบาลเวรดึก</th> 
-                                        <th class="text-center" style="background: #fadbda" rowspan="2">Nursing<br> product</th>  
+                                        <th class="text-center">ยอดผู้ป่วย</th> 
+                                        <th class="text-center" colspan="2">เวรเช้า</th>
+                                        <th class="text-center" rowspan="2">Nursing <br> product</th>
+
+                                        <th class="text-center" >ยอดผู้ป่วย</th> 
+                                        <th class="text-center" colspan="2">เวรบ่าย</th>
+                                        <th class="text-center" rowspan="2">Nursing <br> product</th>
+
+                                        <th class="text-center" >ยอดผู้ป่วย</th> 
+                                        <th class="text-center" colspan="2">เวรดึก</th> 
+                                        <th class="text-center" rowspan="2" >Nursing<br> product</th> 
+                                        <th class="text-center" rowspan="2">Edit</th> --}}
+                                        <th class="text-center">ward</th>
+                                        <th class="text-center" width="15%">ward name</th>
+
+                                        <th class="text-center">ยอดผู้ป่วย</th> 
+                                        <th class="text-center">เวรเช้า</th>
+                                        <th class="text-center">Nursing product</th>
+
+                                        <th class="text-center" >ยอดผู้ป่วย</th> 
+                                        <th class="text-center">เวรบ่าย</th>
+                                        <th class="text-center">Nursing product</th>
+
+                                        <th class="text-center" >ยอดผู้ป่วย</th> 
+                                        <th class="text-center">เวรดึก</th> 
+                                        <th class="text-center">Nursing product</th> 
+                                        <th class="text-center">Edit</th>
                                     </tr>
-                                    <tr style="font-size: 13px"> 
-                                        <th class="text-center" style="background: #fde4f8">8.00</th>
-                                        <th class="text-center" style="background: #fde4f8">ควรจะเป็น</th>
-                                        <th class="text-center" style="background: #fde4f8">ขึ้นจริง</th> 
+                                    {{-- <tr>
+                                        <th class="text-center">8.00</th>
+                                        <th class="text-center">ควรจะเป็น</th>
+                                        <th class="text-center">ขึ้นจริง</th> 
 
-                                        <th class="text-center" style="background: #fde4f8">16.00</th>
-                                        <th class="text-center" style="background: #fde4f8">ควรจะเป็น</th>
-                                        <th class="text-center" style="background: #fde4f8">ขึ้นจริง</th> 
+                                        <th class="text-center">16.00</th>
+                                        <th class="text-center">ควรจะเป็น</th>
+                                        <th class="text-center">ขึ้นจริง</th> 
 
-                                        <th class="text-center" style="background: #fde4f8">24.00</th>
-                                        <th class="text-center" style="background: #fde4f8">ควรจะเป็น</th>
-                                        <th class="text-center" style="background: #fde4f8">ขึ้นจริง</th>                                          
-                                    </tr>
+                                        <th class="text-center">24.00</th>
+                                        <th class="text-center">ควรจะเป็น</th>
+                                        <th class="text-center">ขึ้นจริง</th> 
+                                    </tr> --}}
                                 </thead>
                                 <tbody>
-                                    <?php $i = 1;
-                                        $total1 = 0; $total2 = 0; $total3 = 0; $total4 = 0; $total5 = 0; $total6 = 0;
-                                        $total7 = 0; $total8 = 0; $total9 = 0; $total10 = 0; $total11 = 0; $total12 = 0;
-                                    ?>
+                                    <?php $i = 1; ?>
                                     @foreach ($datashow as $item) 
-                                        <tr style="font-size:13px"> 
+                                        <tr style="font-size:13px">
+                                            {{-- <td class="text-center" width="10%">{{ Datethai($item->datesave )}}</td> --}}
+                                            {{-- <td class="text-center" width="5%">{{ $i++ }}</td>   --}}
                                             <td class="text-center" width="5%" >{{ $item->ward }} </td>
                                             <td class="p-2"> {{ $item->ward_name }}</td>
 
-                                            <td class="text-center" width="7%">{{ $item->count_an1 }} </td> 
-                                            <td class="text-center" width="7%">{{$item->soot_a}} </td> 
-                                            <td class="text-center" width="7%">{{ $item->np_a }} </td>
-                                            <td class="text-center" width="7%"> {{number_format($item->soot_a_total, 2) }}</td>
+                                            <td class="text-center" width="10%">{{ $item->count_an1 }} </td> 
+                                            <td class="text-center" width="7%">{{$item->np_a}} </td> 
+                                            <td class="text-center" width="5%">{{ $item->soot_a }} </td>
+                                            <td class="text-center" width="10%"> {{$item->soot_a_total }}</td>
 
-                                            <td class="text-center" width="7%">{{ $item->count_an2 }} </td>  
-                                            <td class="text-center" width="7%">{{ $item->soot_b }} </td>  
-                                                <td class="text-center" width="7%"> {{$item->np_b}} </td>                                          
-                                            <td class="text-center" width="7%">{{number_format($item->soot_b_total, 2) }}</td>
+                                         
+                                            <td class="text-center" width="7%"> {{$item->np_b}} </td>  
+                                            <td class="text-center" width="5%">{{ $item->soot_b }} </td>                                          
+                                            <td class="text-center" width="10%">{{ $item->soot_b_total }}</td>
 
-                                            <td class="text-center" width="7%">{{ $item->count_an3 }} </td>  
-                                            <td class="text-center" width="7%">{{ $item->soot_c}} </td>  
-                                            <td class="text-center" width="7%"> {{$item->np_c}} </td>                                          
-                                            <td class="text-center" width="7%">{{number_format($item->soot_c_total, 2) }}</td>
+                                           
+                                            <td class="text-center" width="7%"> {{$item->np_c}} </td>  
+                                            <td class="text-center" width="5%">{{ $item->soot_c}} </td>                                          
+                                            <td class="text-center" width="10%">{{ $item->soot_c_total }}</td>
                                         </tr>
-                                        <?php 
-                                        $total1 = $total1 + $item->count_an1;
-                                        $total2 = $total2 + $item->soot_a;
-                                        $total3 = $total3 + $item->np_a;
-                                        $total4 = $total4 + $item->soot_a_total;
-                                        $total5 = $total5 + $item->count_an2;
-                                        $total6 = $total6 + $item->soot_b;
-                                        $total7 = $total7 + $item->np_b;
-                                        $total8 = $total8 + $item->soot_b_total;
-                                        $total9 = $total9 + $item->count_an3;
-                                        $total10 = $total10 + $item->soot_c;
-                                        $total11 = $total11 + $item->np_c;
-                                        $total12 = $total12 + $item->soot_c_total;
-                                    ?>
                                     @endforeach
                                 </tbody>
-                                <tr style="background-color: #f3fca1">
-                                    <td colspan="2" class="text-end" style="background-color: #f7e0e0"></td>
-                                    <td class="text-center" style="background-color: #fadbda"><label for="">{{$total1 }}</label></td>
-                                    <td class="text-center" style="background-color: #fadbda"><label for="">{{ $total2}}</label></td>
-                                    <td class="text-center" style="background-color: #fadbda"><label for="">{{ $total3}}</label> </td>
-                                    <td class="text-center" style="background-color: #ace2fc"><label for="">{{ number_format($total4, 2) }}</label></td>
-                                    <td class="text-center" style="background-color: #fadbda"><label for="">{{ $total5 }}</label></td>
-                                    <td class="text-center" style="background-color: #fadbda"><label for="">{{ $total6 }}</label></td>
-                                    <td class="text-center" style="background-color: #fadbda"><label for="">{{$total7 }}</label></td>
-                                    <td class="text-center" style="background-color: #65ccfc"><label for="">{{ number_format($total8, 2) }}</label></td>
-                                    <td class="text-center" style="background-color: #fadbda"><label for="">{{ $total9 }}</label></td>
-                                    <td class="text-center" style="background-color: #fadbda"><label for="">{{ $total10}}</label></td>
-                                    <td class="text-center" style="background-color: #fadbda"><label for="">{{ $total11 }}</label></td>
-                                    <td class="text-center" style="background-color: #f8b6b4"><label for="">{{ number_format($total12, 2) }}</label></td> 
-                                </tr>  
                             </table>
                         </div>
                     </div>
@@ -255,22 +242,15 @@
             $('#example2').DataTable();
             $('#example3').DataTable();
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
             $('#Tabledit').Tabledit({
                 url:'{{route("d.nurse_index_editable")}}',
-                
                 dataType:"json",
                 // editButton: true,
                 removeButton: false,
                 columns:{
-                    identifier:[0,'ward'],
+                    identifier:[1,'ward'],
                     // editable:[[1,'group2'],[2,'fbillcode'],[3,'nbillcode'],[4,'dname'],[5,'pay_rate'],[6,'price'],[7,'price2'],[8,'price3']]
-                    editable: [[4, 'np_a'], [8, 'np_b'], [12, 'np_c']]
+                    editable: [[4, 'np_a'], [7, 'np_b'], [10, 'np_c']]
                 },
                 // restoreButton:false,
                 deleteButton: false,
@@ -278,32 +258,19 @@
                 autoFocus: false,
                 buttons: {
                     edit: {
-                        class:'btn btn-sm btn-default',
-                        // class: 'btn-icon btn-shadow btn-dashed btn btn-outline-warning',
-                        html: '<i class="fa-regular fa-pen-to-square text-danger"></i>',
+                        class: 'btn-icon btn-shadow btn-dashed btn btn-sm btn-outline-warning',
+                        html: '<i class="fa-regular fa-pen-to-square"></i>',
                         action: 'Edit'
                     }
                 },
-                // onSuccess:function(data,textStatus,jqXHR)
-                onSuccess:function(data)
+                onSuccess:function(data,textStatus,jqXHR)
                 {
-                   if (data.status == 200) {
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: "Your Edit Success",
-                            showConfirmButton: false,
-                            timer: 1500
-                            });
-                            window.location.reload();
-                   } else {
-                    
-                   }
-                    // if (data.action == 'Edit') 
-                    // {
-                    //     // $('#'+data.icode).remove();
-                    //     window.location.reload();
-                    // }
+                   
+                    if (data.action == 'Edit') 
+                    {
+                        // $('#'+data.icode).remove();
+                        window.location.reload();
+                    }
                 }
 
             });
@@ -358,7 +325,7 @@
                                          Swal.fire({
                                              position: "top-end",
                                              title: 'ประมวลผลสำเร็จ',
-                                            text: "You Process data success",
+                                    text: "You Process data success",
                                              icon: 'success',
                                              showCancelButton: false,
                                              confirmButtonColor: '#06D177',

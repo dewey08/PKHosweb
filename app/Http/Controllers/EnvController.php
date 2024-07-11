@@ -579,15 +579,45 @@ class EnvController extends Controller
         ]);
     }
 
-    public function env_water_add_pond1 (Request $request) //บ่อปรับเสถียร
-    { 
-        // $startdate = $request->startdate;
-        // $enddate = $request->enddate;
+    // public function env_water_add_pond1 (Request $request) //บ่อปรับเสถียร
+    // { 
+    //     // $startdate = $request->startdate;
+    //     // $enddate = $request->enddate;
         
         
+    //     return view('env.env_water_add_pond1', [
+    //         // 'startdate'  =>  $startdate,
+    //         // 'enddate'    =>  $enddate,
+
+    //     ]);
+    // }
+
+    public function env_water_add_pond1(Request $request)
+    {
+        $startdate     = $request->startdate;
+        $enddate       = $request->enddate;
+        $data_insert   = $request->data_insert;
+        $dabudget_year = DB::table('budget_year')->where('active', '=', true)->first();
+        $leave_month_year = DB::table('leave_month')->orderBy('MONTH_ID', 'ASC')->get();
+        $date = date('Y-m-d');
+        $y = date('Y') + 543;
+        $newweek = date('Y-m-d', strtotime($date . ' -1 week')); //ย้อนหลัง 1 สัปดาห์
+        $newDate = date('Y-m-d', strtotime($date . ' -5 months')); //ย้อนหลัง 5 เดือน
+        $newyear = date('Y-m-d', strtotime($date . ' -1 year')); //ย้อนหลัง 1 ปี
+
+        if ($data_insert == '') {
+            # code...
+        } else {
+            
+        }
+
+
+        $datashow = DB::connection('mysql')->select('SELECT * FROM env_pond_sub WHERE pond_id = "1"');
+
         return view('env.env_water_add_pond1', [
-            // 'startdate'  =>  $startdate,
-            // 'enddate'    =>  $enddate,
+            'startdate'        => $startdate,
+            'enddate'          => $enddate,
+            'datashow'         => $datashow,
 
         ]);
     }
