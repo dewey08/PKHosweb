@@ -92,6 +92,36 @@ $datenow = date('Y-m-d');
 
     </div>
 
+    <div class="row">
+        <div class="col-md-2 text-end">
+            <label for="water_date">วันที่บันทึก :</label>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <input id="water_date" type="date"
+                    class="form-control form-control-sm" name="water_date" value="{{$datenow}}">
+            </div>
+        </div>
+        <div class="col-md-2 text-end">
+            <label for="water_user">ผู้บันทึก :</label>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                    <select id="water_user1" name="water_user"
+                    class="form-control form-control-sm" style="width: 100%">
+                    <option value="">--เลือก--</option>
+                    {{-- @foreach ($users as $ue) 
+                        @if ($iduser == $ue->id )
+                        <option value="{{ $ue->id }}" selected> {{ $ue->fname }}  {{ $ue->lname }} </option>  
+                        @else
+                        <option value="{{ $ue->id }}"> {{ $ue->fname }}  {{ $ue->lname }} </option>  
+                        @endif                                     
+                    @endforeach --}}
+                </select>
+            </div>
+        </div>
+    </div>
+
     
 </div>
 

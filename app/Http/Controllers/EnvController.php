@@ -240,9 +240,7 @@ class EnvController extends Controller
                 WHERE w.water_date BETWEEN "'.$startdate.'" AND "'.$enddate.'"
                 ORDER BY w.water_id DESC  
             ');
-        }
-        
-        
+        }   
          
         return view('env.env_water',[
             'startdate' => $startdate,
@@ -268,9 +266,7 @@ class EnvController extends Controller
         //     group by u.dep_subsubtrueid;
         // ');
 
-
-        $data_parameter = DB::table('env_water_parameter')->where('water_parameter_active','=','TRUE')->get();
-         
+        $data_parameter = DB::table('env_water_parameter')->where('water_parameter_active','=','TRUE')->get();         
 
         return view('env.env_water_add', $data,[
             'start'           => $startdate,
@@ -597,6 +593,7 @@ class EnvController extends Controller
         $startdate     = $request->startdate;
         $enddate       = $request->enddate;
         $data_insert   = $request->data_insert;
+        $data['users'] = User::get();
         $dabudget_year = DB::table('budget_year')->where('active', '=', true)->first();
         $leave_month_year = DB::table('leave_month')->orderBy('MONTH_ID', 'ASC')->get();
         $date = date('Y-m-d');
@@ -794,19 +791,13 @@ class EnvController extends Controller
             from env_pond_sub  
             group by pond_id
             ');
-            // $datashow = DB::connection('mysql')->select('
-            // SELECT p.pond_id , p.pond_name , ps.pond_sub_id , ps.pond_id , ps.pond_name , ps.water_parameter_id , ps.water_parameter_short_name 
-            // from env_pond p
-            // LEFT JOIN env_pond_sub ps on ps.pond_id = p.pond_id
-            // group by p.pond_id
-            // ');
+           
         
         $data_parameter = DB::connection('mysql')->select('SELECT * from env_water_parameter');
 
         return view('env.env_water_parameter_set', $data,[
             'startdate'                 => $datestart,
-            'enddate'                   => $dateend,            
-            // 'data_water_parameter_set'  => $data_water_parameter_set, 
+            'enddate'                   => $dateend,
             'datashow'                  => $datashow, 
             'data_parameter'            => $data_parameter,
         ]);
@@ -862,12 +853,7 @@ class EnvController extends Controller
         $idpond      = $idpond_->pond_id;
         $namepond      = $idpond_->pond_name;
         if ( $check_count > 0) {
-            // DB::table('env_pond_sub')->where('pond_sub_id',$id)->update([
-            //     'pond_id'                     => $request->input('editpond_id'),
-            //     'pond_name'                   => $request->input('editpond_name'),
-            //     'water_parameter_id'          => $ids_id,
-            //     'water_parameter_short_name'  => $ids_shotname,
-            // ]);
+            
             return response()->json([
                 'status'     => '100',
             ]);
@@ -884,18 +870,6 @@ class EnvController extends Controller
            
         }
         
-       
-
-        // $update = Env_pond_sub::find($id); 
-        // $update->pond_id                       = $request->input('editpond_id');
-        // $update->pond_name                     = $request->input('editpond_name');
-        // $update->water_parameter_id            = $ids_id; 
-        // $update->water_parameter_short_name    = $ids_shotname;  
-        // $update->save();
-
-        // return response()->json([
-        //     'status'     => '200',
-        // ]);
     }
     public function env_parameter_destroy(Request $request,$id)
     { 
