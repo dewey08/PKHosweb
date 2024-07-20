@@ -451,7 +451,7 @@ if (Auth::check()) {
                 success: function(data) {
                     if (data.status == 200) { 
                         Swal.fire({
-                            position: "top-end",
+                            // position: "top-end",
                             title: 'บันทึกข้อมูลสำเร็จ',
                             text: "You Insert data success",
                             icon: 'success',
@@ -470,13 +470,13 @@ if (Auth::check()) {
                         })
                     } else {
                         Swal.fire({
-                            position: "top-end",
-                            title: 'มีข้อมูลอยู่แล้ว',
-                            text: "You Have data success",
-                            icon: 'success',
+                            // position: "top-end",
+                            icon: "error",
+                            title: 'อุ๊ยยย !!!',
+                            text: "มีข้อมูลอยู่แล้ว",
                             showCancelButton: false,
                             confirmButtonColor: '#06D177',
-                            confirmButtonText: 'เรียบร้อย'
+                            confirmButtonText: 'OK เนาะ !!!'
                         }).then((result) => {
                             if (result
                                 .isConfirmed) {

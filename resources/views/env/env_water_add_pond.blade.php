@@ -100,7 +100,7 @@ $datenow = date('Y-m-d');
                     </div>                            
                 </div> 
                 <div class="member-img text-center">
-                    <a href="{{url('env_water_add_pond1')}}" target="_blank"> <img src="{{ asset('medical/assets/img/pond1.jpg') }}" height="150px" width="150px" class="rounded-circle me-3"> </a>                     
+                    <a href="{{url('env_water_add_pond1/1')}}" target="_blank"> <img src="{{ asset('medical/assets/img/pond1.jpg') }}" height="150px" width="150px" class="rounded-circle me-3"> </a>                     
                 </div> 
             </div>
         </div>
@@ -117,7 +117,7 @@ $datenow = date('Y-m-d');
                     </div>                            
                 </div>
                 <div class="member-img text-center">
-                    <a href="{{url('env_water_add_pond2')}}" target="_blank"> <img src="{{ asset('medical/assets/img/pond2.jpg') }}" height="150px" width="150px" class="rounded-circle me-3"> </a>
+                    <a href="{{url('env_water_add_pond2/2')}}" target="_blank"> <img src="{{ asset('medical/assets/img/pond2.jpg') }}" height="150px" width="150px" class="rounded-circle me-3"> </a>
                 </div> 
             </div>
         </div>
@@ -134,7 +134,7 @@ $datenow = date('Y-m-d');
                     </div>                            
                 </div>
                 <div class="member-img text-center">
-                    <a href="{{url('env_water_add_pond3')}}" target="_blank"> <img src="{{ asset('medical/assets/img/pond3.jpg') }}" height="150px" width="150px" class="rounded-circle me-3"> </a>
+                    <a href="{{url('env_water_add_pond3/3')}}" target="_blank"> <img src="{{ asset('medical/assets/img/pond3.jpg') }}" height="150px" width="150px" class="rounded-circle me-3"> </a>
                 </div> 
             </div>
         </div> 

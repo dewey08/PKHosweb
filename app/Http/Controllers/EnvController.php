@@ -588,7 +588,7 @@ class EnvController extends Controller
     //     ]);
     // }
 
-    public function env_water_add_pond1(Request $request)
+    public function env_water_add_pond1(Request $request,$id)
     {
         $startdate     = $request->startdate;
         $enddate       = $request->enddate;
@@ -608,13 +608,25 @@ class EnvController extends Controller
             
         }
 
-
         $datashow = DB::connection('mysql')->select('SELECT * FROM env_pond_sub WHERE pond_id = "1"');
 
-        return view('env.env_water_add_pond1', [
+        $count    = DB::table('env_pond_sub')->where('pond_id', '=',$id)->where('water_parameter_id', '=',$request->enddate)->count();
+        if ($count > 0) {
+            # code...
+        } else {
+             
+
+        }
+        
+
+        $env_pond_sub = DB::table('env_pond_sub')->where('pond_id', '=',$id )->get();
+
+        return view('env.env_water_add_pond1', $data, [
             'startdate'        => $startdate,
             'enddate'          => $enddate,
             'datashow'         => $datashow,
+            'env_pond_sub'     => $env_pond_sub,
+
 
         ]);
     }
