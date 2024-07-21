@@ -75,6 +75,9 @@ use App\Models\Env_water_save;
 use App\Models\Env_water_sub;
 use App\Models\Env_water;
 
+// use App\Models\Env_pond;
+// use App\Models\Env_pond_sub;
+
 use Auth;
 
 class EnvController extends Controller
@@ -209,10 +212,7 @@ class EnvController extends Controller
           
 
         ));
-        // return view('env.env_dashboard', $data,[
-        //     'start' => $datestart,
-        //     'end' => $dateend, 
-        // ]);
+        
     }
 
 //**************************************************************ระบบน้ำเสีย*********************************************
@@ -259,13 +259,7 @@ class EnvController extends Controller
         $data['leave_month'] = DB::table('leave_month')->get();
         $data['users_group'] = DB::table('users_group')->get();
         $data['p4p_workgroupset'] = P4p_workgroupset::where('p4p_workgroupset_user','=',$iduser)->get();
-
-        // $acc_debtors = DB::select('
-        //     SELECT count(*) as I from users u
-        //     left join p4p_workload l on l.p4p_workload_user=u.id
-        //     group by u.dep_subsubtrueid;
-        // ');
-
+        
         $data_parameter = DB::table('env_water_parameter')->where('water_parameter_active','=','TRUE')->get();         
 
         return view('env.env_water_add', $data,[
@@ -279,8 +273,7 @@ class EnvController extends Controller
     {   
         $startdate = $request->startdate;
         $enddate = $request->enddate;
-
-        // $iduser = Auth::user()->id;
+        
         $iduser = $request->water_user1;
         $data['users'] = User::get();
         $data['leave_month'] = DB::table('leave_month')->get();
@@ -333,15 +326,7 @@ class EnvController extends Controller
                     $add_sub->use_analysis_results                  = $idwater->water_parameter_icon_end.''.$idwater->water_parameter_normal_end;
 
                     $qty = $water_qty[$count];
-                    // dd($qty);
-                    // dd($idwater->water_parameter_id);
-                    // dd($water_qty[$count].' '.$idwater->water_parameter_icon.' '.$idwater->water_parameter_normal);
                     
-                    // if ($idwater->water_parameter_id == 7 && $water_qty[$count].' '.$idwater->water_parameter_icon.' '.$idwater->water_parameter_normal) {
-                    //     $status = 'ปกติ';
-                    // } else {
-                    //     $status = 'ผิดปกติ';
-                    // }
                     if ($idwater->water_parameter_id == '1' && $qty <= '20' ) {
                         $status = 'ปกติ';                    
                     }elseif($idwater->water_parameter_id == '2' && $qty <= '120' ) {
@@ -377,7 +362,7 @@ class EnvController extends Controller
                     } else {
                         $status = 'ผิดปกติ';
                     }
-                    // dd($status); 
+                    
 
                     $add_sub->status                         = $status;
                     $add_sub->water_parameter_short_name     = $water_parameter_short_name[$count];
@@ -575,19 +560,6 @@ class EnvController extends Controller
         ]);
     }
 
-    // public function env_water_add_pond1 (Request $request) //บ่อปรับเสถียร
-    // { 
-    //     // $startdate = $request->startdate;
-    //     // $enddate = $request->enddate;
-        
-        
-    //     return view('env.env_water_add_pond1', [
-    //         // 'startdate'  =>  $startdate,
-    //         // 'enddate'    =>  $enddate,
-
-    //     ]);
-    // }
-
     public function env_water_add_pond1(Request $request,$id)
     {
         $startdate     = $request->startdate;
@@ -613,11 +585,9 @@ class EnvController extends Controller
         $count    = DB::table('env_pond_sub')->where('pond_id', '=',$id)->where('water_parameter_id', '=',$request->enddate)->count();
         if ($count > 0) {
             # code...
-        } else {
-             
+        } else {             
 
-        }
-        
+        }        
 
         $env_pond_sub = DB::table('env_pond_sub')->where('pond_id', '=',$id )->get();
 
@@ -629,6 +599,182 @@ class EnvController extends Controller
 
 
         ]);
+    }
+
+    public function env_water_add_pond1_save (Request $request)
+    {   
+        $startdate = $request->startdate;
+        $enddate = $request->enddate;
+        
+        $iduser = $request->water_user1;
+        $data['users'] = User::get();
+        $data['leave_month'] = DB::table('leave_month')->get();
+        $data['users_group'] = DB::table('users_group')->get();
+        $data['p4p_workgroupset'] = P4p_workgroupset::where('p4p_workgroupset_user','=',$iduser)->get();
+
+        $acc_debtors = DB::select('
+            SELECT count(*) as I from users u
+            left join p4p_workload l on l.p4p_workload_user=u.id
+            group by u.dep_subsubtrueid;
+        ');      
+        
+        $idpon =  $request->env_pond;
+        $namepond = Env_pond::where('pond_id','=', $idpon)->first();
+       
+        $add = new Env_water();
+        $add->water_date            = $request->input('water_date');
+        $add->water_user            = $request->input('water_user');
+        $add->pond_id               = $namepond->pond_id;
+        $add->water_location        = $namepond->pond_name; 
+        $add->water_group_excample  = $request->input('water_group_excample');
+        $add->water_comment         = $request->input('water_comment');
+       
+        $add->save();        
+
+        $waterid =  Env_water::max('water_id');        
+
+        if($request->water_parameter_id != '' || $request->water_parameter_id != null){
+
+            $water_parameter_id                             = $request->water_parameter_id;
+            $water_parameter_unit                           = $request->water_parameter_unit;
+            $use_analysis_results                           = $request->use_analysis_results;
+            $water_parameter_normal                         = $request->water_parameter_normal;
+            $water_qty                                      = $request->water_qty;
+            $water_parameter_short_name                     = $request->water_parameter_short_name;                             
+
+            $number =count($water_parameter_id);
+            $count = 0;
+                for($count = 0; $count< $number; $count++)
+                {
+                    $idwater = Env_water_parameter::where('water_parameter_id','=',$water_parameter_id[$count])->first();
+                    
+                    $add_sub = new Env_water_sub();
+                    $add_sub->water_id                              = $waterid;
+                    $add_sub->water_list_idd                        = $idwater->water_parameter_id;
+                    $add_sub->water_list_detail                     = $idwater->water_parameter_name;
+                    $add_sub->water_list_unit                       = $water_parameter_unit[$count]; 
+                    $add_sub->water_qty                             = $water_qty[$count];
+                    $add_sub->water_results                         = $idwater->water_parameter_icon.''.$idwater->water_parameter_normal;
+                    $add_sub->use_analysis_results                  = $idwater->water_parameter_icon_end.''.$idwater->water_parameter_normal_end;
+
+                    $qty = $water_qty[$count];
+                    
+                    if ($idwater->water_parameter_id == '1' && $qty <= '20' ) {
+                        $status = 'ปกติ';                    
+                    }elseif($idwater->water_parameter_id == '2' && $qty <= '120' ) {
+                        $status = 'ปกติ';                         
+                    }elseif($idwater->water_parameter_id == '3' && $qty <= '500' ) {
+                        $status = 'ปกติ'; 
+                    }elseif($idwater->water_parameter_id == '4' && $qty <= '30' ) {
+                        $status = 'ปกติ'; 
+                    }elseif($idwater->water_parameter_id == '5' && $qty <= '0.5' ) {
+                        $status = 'ปกติ'; 
+                    }elseif($idwater->water_parameter_id == '6' && $qty <= '35' ) {
+                        $status = 'ปกติ'; 
+                    }elseif($idwater->water_parameter_id == '7' && $qty >= '4.9' && $idwater->water_parameter_id == '7' && $qty <= '9') {
+                        $status = 'ปกติ';                     
+                    }elseif($idwater->water_parameter_id == '8' && $qty <= '1.0' ) {
+                        $status = 'ปกติ'; 
+                    }elseif($idwater->water_parameter_id == '9' && $qty <= '20' ) {
+                        $status = 'ปกติ'; 
+                    }elseif($idwater->water_parameter_id == '10' && $qty <= '5000' ) {
+                        $status = 'ปกติ'; 
+                    }elseif($idwater->water_parameter_id == '11' && $qty <= '1000' ) {
+                        $status = 'ปกติ'; 
+                    }elseif($idwater->water_parameter_id == '12' && $qty <= '1' ) {
+                        $status = 'ปกติ'; 
+                    }elseif($idwater->water_parameter_id == '13' && $qty <= '1000' ) {
+                        $status = 'ปกติ'; 
+                    }elseif($idwater->water_parameter_id == '14' && $qty >= '2' ) {
+                        $status = 'ปกติ'; 
+                    }elseif($idwater->water_parameter_id == '15' && $qty >= '400' ) {
+                        $status = 'ปกติ'; 
+                    }elseif($idwater->water_parameter_id == '16' && $qty >= '0.5' && $idwater->water_parameter_id == '16' && $qty <= '1') {
+                        $status = 'ปกติ'; 
+                    } else {
+                        $status = 'ผิดปกติ';
+                    }
+                    
+
+                    $add_sub->status                         = $status;
+                    $add_sub->water_parameter_short_name     = $water_parameter_short_name[$count];
+                    $add_sub->save();        
+                }
+        } 
+
+        // $idsub = Env_water_parameter::max('water_parameter_id');
+        $data_loob = Env_water_sub::where('water_id','=',$waterid)->get();
+        // $name = User::where('id','=',$iduser)->first();
+        $data_users = User::where('id','=',$request->water_user)->first();
+        $name = $data_users->fname.' '.$data_users->lname;
+
+        $mMessage = array();
+        foreach ($data_loob as $key => $value) { 
+
+               $mMessage[] = [
+                    'water_parameter_short_name'    => $value->water_parameter_short_name,
+                    'water_qty'                     => $value->water_qty, 
+                    'status'                        => $value->status,           
+                ];   
+            }   
+       
+            $linetoken = "q2PXmPgx0iC5IZXjtkeZUFiNwtmEkSGjRp1PsxFUaYe"; //ใส่ token line ENV แล้ว    
+            //$linetoken = "DVWB9QFYmafdjEl9rvwB0qdPgCdsD59NHoWV7WhqbN4"; //ใส่ token line ENV แล้ว       
+           
+            // $smessage = [];
+            $header = "ข้อมูลตรวจน้ำ";
+            $message =  $header. 
+                    "\n"."วันที่บันทึก : "      . $request->input('water_date'). 
+                   "\n"."ผู้บันทึก  : "        . $name . 
+                   "\n"."สถานที่เก็บตัวอย่าง : " . $namepond->pond_name; 
+ 
+            foreach ($mMessage as $key => $smes) {
+                $na_mesage           = $smes['water_parameter_short_name'];
+                $qt_mesage           = $smes['water_qty'];
+                $status_mesage       = $smes['status'];
+
+                $message.="\n"."รายการพารามิเตอร์  : " . $na_mesage .
+                          "\n"."ผลการวิเคราะห์ : " . $qt_mesage . 
+                          "\n"."สถานะ : "       . $status_mesage;  
+            } 
+              
+
+                if($linetoken == null){
+                    $send_line ='';
+                }else{
+                    $send_line = $linetoken;
+                }  
+                if($send_line !== '' && $send_line !== null){ 
+
+                    // function notify_message($smessage,$linetoken)
+                    // {
+                        $chOne = curl_init();
+                        curl_setopt( $chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify");
+                        curl_setopt( $chOne, CURLOPT_SSL_VERIFYHOST, 0);
+                        curl_setopt( $chOne, CURLOPT_SSL_VERIFYPEER, 0);
+                        curl_setopt( $chOne, CURLOPT_POST, 1);
+                        // curl_setopt( $chOne, CURLOPT_POSTFIELDS, $message);
+                        curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=$message");
+                        curl_setopt( $chOne, CURLOPT_FOLLOWLOCATION, 1);
+                        $headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer '.$linetoken.'', );
+                        curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+                        curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1);
+                        $result = curl_exec($chOne);
+                        if (curl_error($chOne)) {echo 'error:' . curl_error($chOne);} else { $result_ = json_decode($result, true);
+                            echo "status : " . $result_['status'];
+                            echo "message : " . $result_['message'];}
+                        curl_close($chOne);
+                    // } 
+                    // foreach ($mMessage as $linetoken) {
+                    //     notify_message($linetoken,$smessage);
+                    // } 
+
+                }              
+                    
+        // } 
+        return redirect()->route('env.env_water');
+        
+        
     }
 
     public function env_water_add_pond2 (Request $request) //บ่อคลองวนเวียน
@@ -716,8 +862,7 @@ class EnvController extends Controller
         $data['p4p_workgroupset'] = P4p_workgroupset::where('p4p_workgroupset_user','=',$iduser)->get();
         $data['env_water_icon'] = DB::table('env_water_icon')->get();
  
-        // $data_edit = DB::table('env_water_parameter')->where('water_parameter_id','=',$id)->first();
-
+       
         $water_parameter = DB::table('env_water_parameter')->where('water_parameter_id','=',$id)->first();
 
         return view('env.env_water_parameter_edit', $data,[
@@ -817,8 +962,6 @@ class EnvController extends Controller
 
     public function env_water_parameter_para_id(Request $request,$id)
     {
-        
-        // $data_para = Env_pond_sub::where('pond_sub_id','=',$id)->first();
         $data_para = DB::table('env_pond_sub')->where('pond_sub_id','=',$id)->first();
 
         return response()->json([
@@ -829,13 +972,7 @@ class EnvController extends Controller
 
     public function env_water_parameter_set_save(Request $request)
     {  
-        // $add = new Env_pond_sub(); 
-        // $add->pond_id                       = $request->input('pond_id');
-        // $add->pond_name                     = $request->input('pond_name');
-        // $add->water_parameter_id            = $request->input('water_parameter_id');
-        // $add->water_parameter_short_name    = $request->input('water_parameter_short_name'); 
-        // $add->save();
-
+        
         DB::table('env_pond_sub')->insert([
             'pond_id'                     => $request->input('pond_id'),
             'pond_name'                   => $request->input('pond_name'),
@@ -863,7 +1000,7 @@ class EnvController extends Controller
         $check_count = DB::table('env_pond_sub')->where('pond_id',$pondid)->where('water_parameter_id',$request->editwater_parameter_id)->count();
         $idpond_     = Env_pond::where('pond_id',$pondid)->first();
         $idpond      = $idpond_->pond_id;
-        $namepond      = $idpond_->pond_name;
+        $namepond    = $idpond_->pond_name;
         if ( $check_count > 0) {
             
             return response()->json([
@@ -886,7 +1023,8 @@ class EnvController extends Controller
     public function env_parameter_destroy(Request $request,$id)
     { 
         $del = DB::table('env_pond_sub')->where('pond_sub_id',$id);
-        $del->delete();  
+        $del->delete();
+
         return response()->json(['status' => '200']);
     }
 

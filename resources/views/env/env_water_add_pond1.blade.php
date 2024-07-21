@@ -183,8 +183,6 @@ $datenow = date('Y-m-d');
         </div>
         <div class="col"></div>
     </div>
-
-    
 </div>
 
 @endsection
