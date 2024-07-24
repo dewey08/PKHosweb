@@ -668,6 +668,75 @@ class PreauditController extends Controller
         ]);
     } 
 
+
+    public function audit_only(Request $request)
+    {
+        $startdate = $request->startdate;
+        $enddate = $request->enddate;
+ 
+        $date = date('Y-m-d');
+        $y = date('Y') + 543;
+        $yy = date('Y');
+        $m = date('m');
+        // dd($m);
+        $newweek = date('Y-m-d', strtotime($date . ' -3 week')); //ย้อนหลัง 3 สัปดาห์
+        $newDate = date('Y-m-d', strtotime($date . ' -3 months')); //ย้อนหลัง 3 เดือน
+        $newyear = date('Y-m-d', strtotime($date . ' -1 year')); //ย้อนหลัง 1 ปี
+        $yearnew = date('Y');
+        $yearold = date('Y')-1;
+        $start = (''.$yearold.'-10-01');
+        $end = (''.$yearnew.'-09-30'); 
+        if ($startdate == '') { 
+            
+            $data['fdh_ofc']    = DB::connection('mysql')->select(
+                'SELECT year(vstdate) as years ,month(vstdate) as months,year(vstdate) as days 
+                    ,count(DISTINCT vn) as countvn  
+                    ,sum(debit) as sum_total 
+                    FROM d_fdh   
+                    WHERE projectcode ="OFC" AND debit > 0 
+                    AND (an IS NULL OR an ="") 
+                   
+                    AND vstdate BETWEEN "'.$start.'" AND "'.$end.'"  
+                    GROUP BY month(vstdate)
+            '); 
+           
+            $data['fdh_ofc_all']  = DB::connection('mysql')->select(
+                'SELECT * FROM d_fdh 
+                    WHERE projectcode ="OFC"  
+                    AND hn <>"" 
+                    AND (authen IS NULL OR authen ="") 
+                    AND (an IS NULL OR an ="") AND debit > 0
+                    AND vstdate BETWEEN "'.$start.'" AND "'.$end.'" 
+                   
+            '); 
+                
+                $data['fdh_ofc_momth']    = DB::connection('mysql')->select(
+                    'SELECT * FROM d_fdh 
+                    WHERE projectcode ="OFC" 
+                    AND hn <>""
+                    AND (authen IS NULL OR authen ="") 
+                    AND (an IS NULL OR an ="")
+                    AND month(vstdate) ="'.$m.'" AND year(vstdate) ="'.$yy.'" AND debit > 0
+     
+                '); 
+           
+        } else {
+            $data['fdh_ofc']    = DB::connection('mysql')->select(
+                'SELECT year(vstdate) as years ,month(vstdate) as months,year(vstdate) as days 
+                    ,count(DISTINCT vn) as countvn,count(DISTINCT authen) as countauthen,count(DISTINCT vn)-count(DISTINCT authen) as count_no_approve ,sum(debit) as sum_total  
+                    FROM d_fdh WHERE vstdate BETWEEN "'.$startdate.'" AND "'.$enddate.'" AND projectcode ="OFC" 
+                    AND (an IS NULL OR an ="") AND (hn IS NOT NULL OR hn <>"") AND debit > 0
+                    GROUP BY month(vstdate)
+            '); 
+               
+            }   
+                     
+        return view('audit.audit_only',$data,[
+            'startdate'     =>     $startdate,
+            'enddate'       =>     $enddate, 
+        ]);
+    } 
+
    
    
      

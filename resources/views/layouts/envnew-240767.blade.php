@@ -350,7 +350,7 @@
                             </ul>
                         </li>
 
-                        {{-- @if ($countpermiss_env !=0)
+                        @if ($countpermiss_env !=0)
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="fa-solid fa-file-pen text-danger"></i>
@@ -360,10 +360,10 @@
                                 <li><a href="{{ url('env_water_parameter') }}">ตั้งค่า Parameter น้ำ</a></li>
                                 <li><a href="{{ url('env_water_parameter_set') }}">ตั้งค่า บ่อบำบัด</a></li>
                                 <li><a href="{{ url('env_trash_parameter') }}">ตั้งค่า ประเภทขยะ</a></li>
-                                
+                                {{-- <li><a href="{{ url('env_vendor') }}">ตั้งค่าบริษัท</a></li> --}}
                             </ul>
                         </li>
-                        @endif --}}
+                        @endif
 
                         
                       

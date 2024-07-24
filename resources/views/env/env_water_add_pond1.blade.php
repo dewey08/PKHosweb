@@ -72,27 +72,15 @@ $count_service = StaticController::count_service();
 $datenow = date('Y-m-d');
 ?>
 
-@section('content')
-
-
-
 <div class="container-fluid" style="width: 100%">
     <div class="row ">
         <div class="col-md-4">
             <h3 style="color:green ">บ่อปรับเสถียร</h3>
-            <p class="card-title-desc"></p>
+            <p class="card-title-desc">ข้อมูลตรวจวัดค่าพารามิเตอร์</p>
         </div>
     </div>
 
-    <div class="row ">        
-        <div class="col-md-4">
-            <h2 class="card-title">ข้อมูลตรวจวัดค่าพารามิเตอร์</h2>
-            <p class="card-title-desc"></p>
-        </div>
-
-    </div>
-
-    <div class="row">
+        <div class="row">
         <div class="col-md-2 text-end">
             <label for="water_date">วันที่บันทึก :</label>
         </div>
@@ -120,54 +108,46 @@ $datenow = date('Y-m-d');
                 </select>
             </div>
         </div>        
-    </div>
-
-    <label for=""></label> 
+    </div>   
 
     <div class="row">        
-        <div class="col"></div>      
-        <div class="col-md-10">            
-            <table class="gwt-table table-striped table-vcenter" style="width: 100%;">
-                <thead style="background-color: #aecefd;">
-                    <tr height="40">
-                        <th style="text-align: center;font-family: 'Kanit', sans-serif;font-size: 14px;font-family: 'Kanit', sans-serif;font-size: 13px;" width="3%">ลำดับ</td>
-                        <th style="text-align: center;font-family: 'Kanit', sans-serif;font-size: 14px;" width="15%">รายการพารามิเตอร์</th>                                                        
-                        {{-- <th style="text-align: center;font-family: 'Kanit', sans-serif;font-size: 14px;" width="5%">ค่าที่กำหนด</th>   --}}
-                        <th style="text-align: center;font-family: 'Kanit', sans-serif;font-size: 14px;" width="10%">ผลการวิเคราะห์</th>
-                        <th style="text-align: center;font-family: 'Kanit', sans-serif;font-size: 14px;" width="7%">หน่วย</th>                                                       
-                        {{-- <th style="text-align: center;font-family: 'Kanit', sans-serif;font-size: 14px;" width="15%">ค่ามาตรฐาน</th> --}}
-                    </tr>
-                </thead>
-                <tbody class="tbody">
-                    <?php $number = 1; ?>
-                    @foreach($env_pond_sub as $items) 
-                    <tr height="20">                                             
-                        <td style="text-align: center;font-family: 'Kanit', sans-serif;font-size: 13px;"> {{ $number++}} </td>                                           
-                        <td>
-                            <input type="hidden" value="{{ $items->pond_id }}" name="pond_id[]" id="pond_id[]" class="form-control input-sm fo13" >
-                            <input value="{{ $items->water_parameter_name }}" name="" id="" class="form-control input-sm fo13" readonly>
-                        </td>
+        
+        <div class="col-md-12">            
+        
+                <table id="example" class="table table-bordered" border="1px">
+                    <thead>
+                        <tr >
+                            <th width="3%">ลำดับ</td>
+                            <th width="15%">รายการพารามิเตอร์</th>     
+                            <th width="10%">ผลการวิเคราะห์</th>
+                            <th width="7%">หน่วย</th>   
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $number = 1; ?>
+                        @foreach($env_pond_sub as $items) 
+                            <tr height="20">                                             
+                                <td style="text-align: center;font-family: 'Kanit', sans-serif;font-size: 13px;"> {{ $number++}} </td>                                           
+                                <td>
+                                    <input type="hidden" value="{{ $items->pond_id }}" name="pond_id[]" id="pond_id[]" class="form-control input-sm fo13" >
+                                    <input value="{{ $items->water_parameter_name }}" name="" id="" class="form-control input-sm fo13" readonly>
+                                </td> 
+                                <td><input style="text-align: center" name="water_qty[]" id="water_qty[]" class="form-control input-sm fo13" type="text" required></td> 
+                                <td>
+                                    <input style="text-align: center" value="{{ $items->water_parameter_unit }}" name="water_parameter_unit[]" id="water_parameter_unit[]" class="form-control input-sm fo13" readonly > 
+                                </td> 
+                            </tr>
                         
-                        <td><input style="text-align: center" name="water_qty[]" id="water_qty[]" class="form-control input-sm fo13" type="text" required></td>
-                        
-                        <td>
-                            <input style="text-align: center" value="{{ $items->water_parameter_unit }}" name="water_parameter_unit[]" id="water_parameter_unit[]" class="form-control input-sm fo13" readonly >
-                            {{-- <input type="hidden" value="{{ $items->water_parameter_short_name }}" name="water_parameter_short_name[]" id="water_parameter_short_name[]" class="form-control input-sm fo13" > --}}
-                        </td>
-                        
-                        {{-- <td><input type="hidden" value="{{ $items->water_parameter_normal }}" name="water_parameter_normal[]" id="water_parameter_normal[]" class="form-control input-sm fo13" readonly></td> --}}
-                    </tr>
-                    
-                    @endforeach 
-                </tbody>
-            </table> 
-        </div> 
-                
-        <div class="col"></div>
+                        @endforeach 
+                    </tbody>
+                </table> 
+        </div>
         
     </div>
-    <div class="card-footer">
-        <div class="col-md-11 text-end">
+    
+    <div class="row mt-3"> 
+        
+        <div class="col-md-12 text-end">
             <div class="form-group">
 
                 <button type="submit" class="btn btn-primary btn-sm">
@@ -180,8 +160,8 @@ $datenow = date('Y-m-d');
                     ยกเลิก
                 </a>
             </div>    
-        </div>
-        <div class="col"></div>
+        </div>        
+       
     </div>
 </div>
 

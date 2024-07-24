@@ -9,12 +9,16 @@
 
     <!-- Font Awesome -->
     <link href="{{ asset('assets/fontawesome/css/all.css') }}" rel="stylesheet">
+    {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Srisakdi&display=swap" rel="stylesheet"> --}}
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('pkclaim/images/logo150.ico') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-   
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+        integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     {{-- <link href="{{ asset('pkclaim/libs/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css"> --}}
     <link href="{{ asset('pkclaim/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}" rel="stylesheet">
@@ -45,22 +49,28 @@
     <link href="{{ asset('pkclaim/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 
     <link href="{{ asset('css/fullcalendar.css') }}" rel="stylesheet">
-   <!-- select2 -->
-    <link rel="stylesheet" href="{{asset('asset/js/plugins/select2/css/select2.min.css')}}">
-   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-   <link rel="stylesheet"
-   href="{{ asset('disacc/vendors/pixeden-stroke-7-icon-master/pe-icon-7-stroke/dist/pe-icon-7-stroke.css') }}">
-<!-- Plugins css -->
-{{-- <link href="assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" /> --}}
-<link href="{{ asset('disacc/styles/css/base.css') }}" rel="stylesheet">
+    <!-- select2 -->
+    <link rel="stylesheet" href="{{ asset('asset/js/plugins/select2/css/select2.min.css') }}">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- <link rel="stylesheet"
+        href="{{ asset('disacc/vendors/pixeden-stroke-7-icon-master/pe-icon-7-stroke/dist/pe-icon-7-stroke.css') }}">
+    <link href="{{ asset('acccph/styles/css/base.css') }}" rel="stylesheet"> --}}
+
+    <link rel="stylesheet" href="{{ asset('disacc/vendors/@fortawesome/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('disacc/vendors/ionicons-npm/css/ionicons.css') }}">
+    <link rel="stylesheet" href="{{ asset('disacc/vendors/linearicons-master/dist/web-font/style.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('disacc/vendors/pixeden-stroke-7-icon-master/pe-icon-7-stroke/dist/pe-icon-7-stroke.css') }}">
+    <link href="{{ asset('disacc/styles/css/base.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/dacccss.css') }}">
+ 
 </head>
-  <style>
-        body{   
-        background:
-            /* url(/pkbackoffice/public/images/bg5.jpg); */
-            /* url(/pkbackoffice/public/images/bg5.jpg); */
-            /* -webkit-background-size: cover; */
-            background-color: rgb(245, 240, 240);
+<style>
+    body {
+        /* background: */
+        /* url(/pkbackoffice/public/images/bg7.png);  */
+        /* -webkit-background-size: cover; */
+        background-color: rgb(245, 240, 240);
         background-repeat: no-repeat;
         background-attachment: fixed;
         /* background-size: cover; */
@@ -69,36 +79,43 @@
         /* align-items: center; */
         /* justify-content: center; */
         /* width: 100vw;   ให้เต็มพอดี */
-        /* height: 100vh; ให้เต็มพอดี  */ 
-        }
+        /* height: 100vh; ให้เต็มพอดี  */
+    }
+
     .Bgsidebar {
-  		background-image: url('/pkbackoffice/public/images/bgside.jpg');
-		background-repeat: no-repeat;
-	}
+        background-image: url('/pkbackoffice/public/images/bgside.jpg');
+        background-repeat: no-repeat;
+    }
+
+    .Bgheader {
+        background-image: url('/pkbackoffice/public/images/bgheader.jpg');
+        background-repeat: no-repeat;
+    }
+    .myTable tbody tr{
+        font-size:13px;
+        height: 13px;
+    }
     .card_audit_2b{
         border-radius: 0em 0em 3em 3em;
-        box-shadow: 0 0 10px rgb(4, 224, 4);
-    }
-    .card_audit_4c{
-        border-radius: 2em 2em 2em 2em;
-        box-shadow: 0 0 15px rgb(4, 224, 4);
-        border:solid 1px #80acfd;
+        box-shadow: 0 0 10px rgb(250, 128, 124);
     }
     .card_audit_4{
         border-radius: 3em 3em 3em 3em;
-        box-shadow: 0 0 10px rgb(4, 224, 4);
+        box-shadow: 0 0 10px rgb(250, 128, 124);
     }
-    .dcheckbox_{         
+    .auditcheckbox{         
         width: 20px;
         height: 20px;       
         /* border-radius: 2em 2em 2em 2em; */
-        border: 10px solid rgb(4, 224, 4);
+        border: 10px solid rgb(250, 128, 124);
         /* color: teal; */
         /* border-color: teal; */
-        box-shadow: 0 0 10px rgb(4, 224, 4);
+        box-shadow: 0 0 10px rgb(250, 128, 124);
         /* box-shadow: 0 0 10px teal; */
     }
-  </style>
+ 
+</style>
+   
     <?php
         if (Auth::check()) {
             $type = Auth::user()->type;
@@ -350,7 +367,7 @@
                             </ul>
                         </li>
 
-                        {{-- @if ($countpermiss_env !=0)
+                        @if ($countpermiss_env !=0)
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="fa-solid fa-file-pen text-danger"></i>
@@ -360,10 +377,10 @@
                                 <li><a href="{{ url('env_water_parameter') }}">ตั้งค่า Parameter น้ำ</a></li>
                                 <li><a href="{{ url('env_water_parameter_set') }}">ตั้งค่า บ่อบำบัด</a></li>
                                 <li><a href="{{ url('env_trash_parameter') }}">ตั้งค่า ประเภทขยะ</a></li>
-                                
+                                {{-- <li><a href="{{ url('env_vendor') }}">ตั้งค่าบริษัท</a></li> --}}
                             </ul>
                         </li>
-                        @endif --}}
+                        @endif
 
                         
                       
@@ -381,7 +398,7 @@
         <!-- ============================================================== -->
         <div class="main-content">
             {{-- background:url(/pkbackoffice/public/sky16/images/logo250.png)no-repeat 50%; --}}
-            <div class="page-content Backgroupbody">
+            <div class="page-content">
 
                 @yield('content')
 
@@ -432,9 +449,17 @@
     <script src="{{ asset('pkclaim/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js') }}"></script>
     <script src="{{ asset('pkclaim/libs/admin-resources/bootstrap-filestyle/bootstrap-filestyle.min.js') }}"></script>
     <script src="{{ asset('pkclaim/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
+ 
+    <script type="text/javascript" src="{{ asset('acccph/vendors/jquery-circle-progress/dist/circle-progress.min.js') }}"></script>  
+    <script type="text/javascript" src="{{ asset('acccph/vendors/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('acccph/vendors/toastr/build/toastr.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('acccph/vendors/jquery.fancytree/dist/jquery.fancytree-all-deps.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('acccph/vendors/apexcharts/dist/apexcharts.min.js') }}"></script>
 
     <script src="{{ asset('pkclaim/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.th.min.js" integrity="sha512-cp+S0Bkyv7xKBSbmjJR0K7va0cor7vHYhETzm2Jy//ZTQDUvugH/byC4eWuTii9o5HN9msulx2zqhEXWau20Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.th.min.js"
+        integrity="sha512-cp+S0Bkyv7xKBSbmjJR0K7va0cor7vHYhETzm2Jy//ZTQDUvugH/byC4eWuTii9o5HN9msulx2zqhEXWau20Dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- jquery.vectormap map -->
     <script src="{{ asset('pkclaim/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
@@ -474,23 +499,41 @@
     <script type="text/javascript" src="{{ asset('fullcalendar/fullcalendar.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('fullcalendar/lang/th.js') }}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- <script type="text/javascript" src="{{ asset('acccph/vendors/@chenfengyuan/datepicker/dist/datepicker.min.js') }}"></script> --}}
+    <script type="text/javascript" src="{{ asset('acccph/vendors/daterangepicker/daterangepicker.js') }}"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('assets/jquery-tabledit/jquery.tabledit.min.js') }}"></script>
+
+    
+    {{-- <script type="text/javascript" src="{{ asset('acccph/js/form-components/toggle-switch.js') }}"></script> --}}
+    {{-- <script type="text/javascript" src="{{ asset('acccph/js/form-components/datepicker.js') }}"></script> --}}
+    {{-- <script type="text/javascript" src="{{ asset('acccph/js/circle-progress.js') }}"></script> --}}
     <!-- App js -->
     <script src="{{ asset('pkclaim/js/app.js') }}"></script>
     {{-- <link href="{{ asset('acccph/styles/css/base.css') }}" rel="stylesheet"> --}}
-    
+
+    <script type="text/javascript" src="{{ asset('acccph/js/charts/apex-charts.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('acccph/js/circle-progress.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('acccph/js/demo.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('acccph/js/scrollbar.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('acccph/js/toastr.js') }}"></script>
+    {{-- <script type="text/javascript" src="{{ asset('acccph/js/treeview.js') }}"></script> --}}
+    <script type="text/javascript" src="{{ asset('acccph/js/form-components/toggle-switch.js') }}"></script>
+    {{-- <script type="text/javascript" src="{{ asset('acccph/js/tables.js') }}"></script> --}}
+    {{-- <script type="text/javascript" src="{{ asset('acccph/js/carousel-slider.js') }}"></script> --}}
+    {{-- <script type="text/javascript" src="{{ asset('disacc/js/charts/chartjs.js') }}"></script> --}}
+    {{-- <script type="text/javascript" src="{{ asset('acccph/js/app.js') }}"></script> --}} 
+    {{-- <script src="{{ asset('js/ladda.js') }}"></script>  --}}
     @yield('footer')
 
-    
+
     <script type="text/javascript">
         $(document).ready(function() {
             $('#example').DataTable();
             $('#example2').DataTable();
             $('#example3').DataTable();
-            $('#example4').DataTable();
-            $('#example5').DataTable();
-           
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -498,8 +541,10 @@
             });
 
         });
- 
-       
+
+        $(document).ready(function() {
+
+        });
     </script>
 
 </body>
