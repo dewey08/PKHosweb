@@ -223,6 +223,7 @@ $pos = strrpos($url, '/') + 1;
 
 use App\Http\Controllers\StaticController;
 use App\Models\Products_request_sub;
+
 $permiss_account = StaticController::permiss_account($iduser);
 $permiss_setting_upstm = StaticController::permiss_setting_upstm($iduser);
 $permiss_ucs = StaticController::permiss_ucs($iduser);
@@ -232,7 +233,7 @@ $permiss_lgo = StaticController::permiss_lgo($iduser);
 $permiss_prb = StaticController::permiss_prb($iduser);
 $permiss_ti = StaticController::permiss_ti($iduser);
 $permiss_rep_money = StaticController::permiss_rep_money($iduser);
-
+$countpermiss_env = StaticController::countpermiss_env($iduser); 
 ?>
  {{-- <body data-sidebar="white" data-keep-enlarged="true" class="vertical-collpsed"> --}}
 <body data-topbar="dark">

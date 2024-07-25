@@ -88,9 +88,9 @@ $datenow = date('Y-m-d');
         <div class="col"></div>
 
         <div class="col-md-3 ">
-            <div class="main-card mb-3 card shadow" style="height: 300px " >
+            <div class="card card_audit_4 main-card mb-3 card shadow" style="height: 300px " >
 
-                <div class="card-header ">
+                <div class="card card_audit_4 card-header ">
                     <div class=" d-flex ">                        
                         <div class="card-body p-3">
                             <label for=""> บ่อปรับเสถียร </label>
