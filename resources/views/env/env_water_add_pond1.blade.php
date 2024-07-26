@@ -80,17 +80,20 @@ $datenow = date('Y-m-d');
         </div>
     </div>
 
-        <div class="row">
-        <div class="col-md-2 text-end">
+    <div class="row">
+        <div class="col"></div>
+
+        <div class="col-md-1 ">
             <label for="water_date">วันที่บันทึก :</label>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2" >
             <div class="form-group">
                 <input id="water_date" type="date"
-                    class="form-control form-control-sm" name="water_date" value="{{$datenow}}">
+                class="form-control form-control-sm" name="water_date" value="{{$datenow}}">
             </div>
         </div>
-        <div class="col-md-2 text-end">
+
+        <div class="col-md-1 text-end">
             <label for="water_user">ผู้บันทึก :</label>
         </div>
         <div class="col-md-2">
@@ -107,10 +110,23 @@ $datenow = date('Y-m-d');
                     @endforeach
                 </select>
             </div>
-        </div>        
+        </div>
+
+                                                   
+            <div class="col-md-1 text-end">
+                <label for="water_comment">หมายเหตุ :</label>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <input id="water_comment" type="text"
+                    class="form-control form-control-sm" name="water_comment">
+                </div>
+            </div>                                           
+            <div class="col"></div>
+
     </div>   
 
-    <div class="row">        
+    <div class="row mt-3">        
         
         <div class="col-md-12">            
         
