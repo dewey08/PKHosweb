@@ -106,10 +106,10 @@ $datenow = date('Y-m-d');
         </div>
 
         <div class="col-md-3">
-            <div class="main-card mb-3 card shadow" style="height: 300px">                 
-                <div class="card-header">
+            <div class="card card_audit_4 main-card mb-3 card shadow" style="height: 300px">                 
+                <div class="card card_audit_4 card-header">
                     <div class="d-flex">
-                        <div class="">
+                        <div class="card-body p-3">
                             <label for=""> บ่อคลองวนเวียน </label>
                         </div>
                         <div class="ms-auto">
@@ -123,10 +123,10 @@ $datenow = date('Y-m-d');
         </div>
 
         <div class="col-md-3">
-            <div class="main-card mb-3 card shadow" style="height: 300px">                 
-                <div class="card-header">
+            <div class="card card_audit_4 main-card mb-3 card shadow" style="height: 300px">                 
+                <div class="card card_audit_4 card-header">
                     <div class="d-flex">
-                        <div class="">
+                        <div class="card-body p-3">
                             <label for=""> บ่อสัมผัสคลอลีน </label>
                         </div>
                         <div class="ms-auto">

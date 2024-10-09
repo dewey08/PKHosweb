@@ -777,28 +777,84 @@ class EnvController extends Controller
         
     }
 
-    public function env_water_add_pond2 (Request $request) //บ่อคลองวนเวียน
+    public function env_water_add_pond2 (Request $request,$id) //บ่อคลองวนเวียน
     { 
-        // $startdate = $request->startdate;
-        // $enddate = $request->enddate;
-        
-        
-        return view('env.env_water_add_pond2', [
-            // 'startdate'  =>  $startdate,
-            // 'enddate'    =>  $enddate,
+        $startdate     = $request->startdate;
+        $enddate       = $request->enddate;
+        $data_insert   = $request->data_insert;
+        $data['users'] = User::get();
+        $dabudget_year = DB::table('budget_year')->where('active', '=', true)->first();
+        $leave_month_year = DB::table('leave_month')->orderBy('MONTH_ID', 'ASC')->get();
+        $date = date('Y-m-d');
+        $y = date('Y') + 543;
+        $newweek = date('Y-m-d', strtotime($date . ' -1 week')); //ย้อนหลัง 1 สัปดาห์
+        $newDate = date('Y-m-d', strtotime($date . ' -5 months')); //ย้อนหลัง 5 เดือน
+        $newyear = date('Y-m-d', strtotime($date . ' -1 year')); //ย้อนหลัง 1 ปี
+
+        if ($data_insert == '') {
+            # code...
+        } else {
+            
+        }
+
+        $datashow = DB::connection('mysql')->select('SELECT * FROM env_pond_sub WHERE pond_id = "2"');
+
+        $count    = DB::table('env_pond_sub')->where('pond_id', '=',$id)->where('water_parameter_id', '=',$request->enddate)->count();
+        if ($count > 0) {
+            # code...
+        } else {             
+
+        }        
+
+        $env_pond_sub = DB::table('env_pond_sub')->where('pond_id', '=',$id )->get();
+
+        return view('env.env_water_add_pond2', $data, [
+            'startdate'        => $startdate,
+            'enddate'          => $enddate,
+            'datashow'         => $datashow,
+            'env_pond_sub'     => $env_pond_sub,
+
 
         ]);
     }
 
-    public function env_water_add_pond3 (Request $request) //บ่อสัมผัสคลอลีน
+    public function env_water_add_pond3 (Request $request,$id) //บ่อสัมผัสคลอลีน
     { 
-        // $startdate = $request->startdate;
-        // $enddate = $request->enddate;
-        
-        
-        return view('env.env_water_add_pond3', [
-            // 'startdate'  =>  $startdate,
-            // 'enddate'    =>  $enddate,
+        $startdate     = $request->startdate;
+        $enddate       = $request->enddate;
+        $data_insert   = $request->data_insert;
+        $data['users'] = User::get();
+        $dabudget_year = DB::table('budget_year')->where('active', '=', true)->first();
+        $leave_month_year = DB::table('leave_month')->orderBy('MONTH_ID', 'ASC')->get();
+        $date = date('Y-m-d');
+        $y = date('Y') + 543;
+        $newweek = date('Y-m-d', strtotime($date . ' -1 week')); //ย้อนหลัง 1 สัปดาห์
+        $newDate = date('Y-m-d', strtotime($date . ' -5 months')); //ย้อนหลัง 5 เดือน
+        $newyear = date('Y-m-d', strtotime($date . ' -1 year')); //ย้อนหลัง 1 ปี
+
+        if ($data_insert == '') {
+            # code...
+        } else {
+            
+        }
+
+        $datashow = DB::connection('mysql')->select('SELECT * FROM env_pond_sub WHERE pond_id = "3"');
+
+        $count    = DB::table('env_pond_sub')->where('pond_id', '=',$id)->where('water_parameter_id', '=',$request->enddate)->count();
+        if ($count > 0) {
+            # code...
+        } else {             
+
+        }        
+
+        $env_pond_sub = DB::table('env_pond_sub')->where('pond_id', '=',$id )->get();
+
+        return view('env.env_water_add_pond3', $data, [
+            'startdate'        => $startdate,
+            'enddate'          => $enddate,
+            'datashow'         => $datashow,
+            'env_pond_sub'     => $env_pond_sub,
+
 
         ]);
     }

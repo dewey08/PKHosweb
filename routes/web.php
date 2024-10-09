@@ -3077,7 +3077,10 @@ Route::match(['get','post'],'env_water_add_pond1/{id}',[App\Http\Controllers\Env
 Route::match(['get','post'],'env_water_add_pond1_save',[App\Http\Controllers\EnvController::class, 'env_water_add_pond1_save'])->name('env_water_add_pond1_save');//บันทึกบ่อปรับเสถียร
 
 Route::match(['get','post'],'env_water_add_pond2/{id}',[App\Http\Controllers\EnvController::class, 'env_water_add_pond2'])->name('env.env_water_add_pond2');//บ่อคลองวนเวียน
+Route::match(['get','post'],'env_water_add_pond2_save',[App\Http\Controllers\EnvController::class, 'env_water_add_pond2_save'])->name('env_water_add_pond2_save');//บันทึกบ่อคลองวนเวียน
+
 Route::match(['get','post'],'env_water_add_pond3/{id}',[App\Http\Controllers\EnvController::class, 'env_water_add_pond3'])->name('env.env_water_add_pond3');//บ่อสัมผัสคลอลีน
+Route::match(['get','post'],'env_water_add_pond3_save',[App\Http\Controllers\EnvController::class, 'env_water_add_pond3_save'])->name('env_water_add_pond3_save');//บันทึกคลอลีน
 
 //ขยะ//////////////////////////////////////////////////////////////
 //ลงผลข้อมูลขยะ
